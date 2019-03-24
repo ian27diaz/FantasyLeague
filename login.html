@@ -10,7 +10,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <link rel="stylesheet" href="styles/loginCSS.css">
 </head>
@@ -63,28 +64,52 @@
 
 
     <div class="container" id="logIn">
-        <div class="row" id="formLogin">
+        <div class="row" id="formLogin" >
             <div class="jumbotron col-12">
-                <form class="col-12">
+                <img src="images/LoginIcon.png" alt="" srcset="">
+                <form>
                     <div class="form-group row col-12">
-                        <label1 for="inputEmail3" class="col-form-label">Email:</label>
-                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                        <label for="inputEmail1" class="col-form-label">Email:</label>
+                        <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
                     </div>
                     <div class="form-group row col-12">
-                        <label for="inputPassword3" class="col-form-label">Contraseña: </label>
-                        <input type="password" required class="form-control" id="inputPassword3"
+                        <label for="inputPassword1" class="col-form-label">Contraseña: </label>
+                        <input type="password" required class="form-control" id="inputPassword1"
                             placeholder="Contraseña">
                     </div>
                     <div class="form-group row col-12">
                         <button type="submit" class="btn btn-primary">Ingresar</button>
+                        <button type="submit" class="btn btn-info">Registrate</button>
+                    </div>
+            </div>
+            </form>
+        </div>
+
+        <div class="row" id="formLogin" hidden>
+            <div class="jumbotron col-12">
+                <img src="images/LoginIcon.png" alt="" srcset="">
+                <form>
+                    <div class="form-group row col-12">
+                        <label for="inputEmail2" class="col-form-label">Email:</label>
+                        <input type="email" class="form-control" id="inputEmail2" placeholder="Email">
+                    </div>
+                    <div class="form-group row col-12">
+                        <label for="inputPassword2" class="col-form-label">Contraseña: </label>
+                        <input type="password" required class="form-control" id="inputPassword2" placeholder="Contraseña">
+                    </div>
+                    <div class="form-group row col-12">
+                        <label for="inputPassword3" class="col-form-label">Confirmar contraseña: </label>
+                        <input type="password" required class="form-control" id="inputPassword3" placeholder="Contraseña">
+                    </div>
+                    <div class="form-group row col-12">
+                        <button type="submit" class="btn btn-primary">Registrate</button>
+                        <button type="submit" class="btn btn-info">Ingresa a tu cuenta</button>
                     </div>
             </div>
             </form>
         </div>
     </div>
-    </div>
-
-    <div class="container" id="SignIn" hidden>
+    <!-- <div class="container" id="SignIn">
         <div class="row" id="formLogin">
             <div class="jumbotron col-12">
                 <form class="col-12">
@@ -94,13 +119,11 @@
                     </div>
                     <div class="form-group row col-12">
                         <label for="inputPassword3" class="col-form-label">Contraseña: </label>
-                        <input type="password" required class="form-control" id="inputPassword3"
-                            placeholder="Contraseña">
+                        <input type="password" required class="form-control" id="inputPassword3" placeholder="Contraseña">
                     </div>
                     <div class="form-group row col-12">
                         <label for="inputPassword3" class="col-form-label">Confirmar contraseña: </label>
-                        <input type="password" required class="form-control" id="inputPassword3"
-                            placeholder="Contraseña">
+                        <input type="password" required class="form-control" id="inputPassword3" placeholder="Contraseña">
                     </div>
                     <div class="form-group row col-12">
                         <button type="submit" class="btn btn-primary">Registrate</button>
@@ -108,8 +131,7 @@
             </div>
             </form>
         </div>
-    </div>
-    </div>
+    </div> -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

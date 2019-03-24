@@ -35,7 +35,22 @@ nav span{
     background-color: rgba(233, 236, 239, 0.8);
     font-weight: bold;
 }
-/* 
-#formLogin{
-    width: 90%;
-} */
+
+div div.row{
+    width: 60%;
+    margin: 10px auto; 
+
+}
+
+.jumbotron img{
+    height: 100px;
+    margin: auto;
+    display: block;
+}
+
+
+.jumbotron button:nth-child(2){
+    margin-left: 3%;
+    display: inline-block;
+}
+

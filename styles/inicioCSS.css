@@ -39,7 +39,7 @@ nav img{
 }
 
 .canchaContainer{
-    background-image: url("/images/Cancha.jpg");
+    background-image: url("../images/Cancha.jpg");
     background-size: 100% 100%;
 }
 

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Enfrentamientos</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+
+        }
+
+        .logoImg {
+            border-radius: 50%;
+            height: 90px;
+        }
+
+        .teamStats div {
+            border: 1px solid white;
+            color: white;
+            background-color: rgb(50, 50, 50);
+            line-height: inherit;
+            opacity: .7;
+        }
+
+        .teamStats :hover {
+            opacity: 1.0;
+        }
+
+        #teamStats h3 {
+            line-height: 70px;
+            font-weight: bold;
+        }
+
+        .Centrado {
+            text-align: center;
+        }
+
+        #Enfrentamientos {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .Oscuro {
+            background-color: white !important;
+            color: black !important;
+            border: 1px solid black !important;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                            <a href="PantallaLobby.html" class="nav-link">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="miEquipo.html" class="nav-link">Mi equipo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="PantallaEnfrentamientos.html" class="nav-link">Liga</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="PantallaJugadores.html" class="nav-link">Jugadores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">Mercado</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="reglamento.html" class="nav-link">Reglamento</a>
+                        </li>
+            </ul>
+        </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto" href="#">Fantasy League <i class="fas fa-futbol"></i></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse w-100 order-3">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user"></i> Usuario </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-info"
+                        aria-labelledby="navbarDropdownMenuLink-4">
+                        <a class="dropdown-item" href="#">Mi cuenta</a>
+                        <a class="dropdown-item" href="#">Cerrar sesión</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="" class="nav-link">Tabla Posiciones</a>
+                </li>
+                <li class="nav-item active">
+                    <a href="" class="nav-link">Enfrentamientos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid" id="Enfrentamientos">
+
+        <h4>Jornada</h4>
+
+        <nav aria-label="Page navigation example" class="pag">
+
+            <ul class="pagination justify-content-center pagination pagination-sm">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                <li class="page-item"><a class="page-link" href="#">6</a></li>
+                <li class="page-item"><a class="page-link" href="#">7</a></li>
+                <li class="page-item"><a class="page-link" href="#">8</a></li>
+                <li class="page-item"><a class="page-link" href="#">9</a></li>
+                <li class="page-item"><a class="page-link" href="#">10</a></li>
+                <li class="page-item"><a class="page-link" href="#">11</a></li>
+                <li class="page-item"><a class="page-link" href="#">12</a></li>
+                <li class="page-item"><a class="page-link" href="#">13</a></li>
+                <li class="page-item"><a class="page-link" href="#">14</a></li>
+                <li class="page-item"><a class="page-link" href="#">15</a></li>
+                <li class="page-item"><a class="page-link" href="#">16</a></li>
+                <li class="page-item"><a class="page-link" href="#">17</a></li>
+                <li class="page-item"><a class="page-link" href="#">18</a></li>
+                <li class="page-item"><a class="page-link" href="#">19</a></li>
+                <li class="page-item"><a class="page-link" href="#">20</a></li>
+                <li class="page-item"><a class="page-link" href="#">21</a></li>
+                <li class="page-item"><a class="page-link" href="#">22</a></li>
+                <li class="page-item"><a class="page-link" href="#">23</a></li>
+                <li class="page-item"><a class="page-link" href="#">24</a></li>
+                <li class="page-item"><a class="page-link" href="#">25</a></li>
+                <li class="page-item"><a class="page-link" href="#">26</a></li>
+                <li class="page-item"><a class="page-link" href="#">27</a></li>
+                <li class="page-item"><a class="page-link" href="#">28</a></li>
+                <li class="page-item"><a class="page-link" href="#">29</a></li>
+                <li class="page-item"><a class="page-link" href="#">30</a></li>
+                <li class="page-item"><a class="page-link" href="#">31</a></li>
+                <li class="page-item"><a class="page-link" href="#">32</a></li>
+                <li class="page-item"><a class="page-link" href="#">33</a></li>
+                <li class="page-item"><a class="page-link" href="#">34</a></li>
+                <li class="page-item"><a class="page-link" href="#">35</a></li>
+                <li class="page-item"><a class="page-link" href="#">36</a></li>
+                <li class="page-item"><a class="page-link" href="#">37</a></li>
+                <li class="page-item"><a class="page-link" href="#">38</a></li>
+
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="row teamStats">
+            <div class="col-md-4 col-sm-10 Oscuro">
+                <h3><img src="images/Micky.jpg" alt="" class="logoImg">&nbsp Mickey Mouse</h3>
+            </div>
+            <div class="col-md-1 col-sm-2">
+                <h3 class="Centrado">50</h3>
+            </div>
+            <div class="col-md-2 col-sm-12 ">
+                <h3 class="Centrado">VS</h3>
+            </div>
+            <div class="col-md-1 col-sm-2">
+                <h3 class="Centrado">55</h3>
+            </div>
+            <div class="col-md-4 col-sm-10 Oscuro">
+                <h3><img src="images/EscudoEquipo5.jpeg" alt="" class="logoImg">&nbsp Pallacracks</h3>
+            </div>
+        </div>
+
+        <div class="row teamStats">
+            <div class="col-md-4 col-sm-10 Oscuro">
+                <h3><img src="images/escudoPrueba.png" alt="" class="logoImg">&nbsp Equipo A</h3>
+            </div>
+            <div class="col-md-1 col-sm-2">
+                <h3 class="Centrado">50</h3>
+            </div>
+            <div class="col-md-2 col-sm-12 ">
+                <h3 class="Centrado">VS</h3>
+            </div>
+            <div class="col-md-1 col-sm-2">
+                <h3 class="Centrado">55</h3>
+            </div>
+            <div class="col-md-4 col-sm-10 Oscuro">
+                <h3><img src="images/escudoPrueba.png" alt="" class="logoImg">&nbsp Equipo B</h3>
+            </div>
+        </div>
+
+        <div class="row teamStats">
+            <div class="col-md-4 col-sm-10 Oscuro">
+                <h3><img src="images/escudoPrueba.png" alt="" class="logoImg">&nbsp Equipo C</h3>
+            </div>
+            <div class="col-md-1 col-sm-2">
+                <h3 class="Centrado">50</h3>
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <h3 class="Centrado">VS</h3>
+            </div>
+            <div class="col-md-1 col-sm-2">
+                <h3 class="Centrado">55</h3>
+            </div>
+            <div class="col-md-4 col-sm-10 Oscuro">
+                <h3><img src="images/escudoPrueba.png" alt="" class="logoImg">&nbsp Equipo D</h3>
+            </div>
+        </div>
+
+        <div class="row teamStats">
+            <div class="col-md-4 col-sm-10 Oscuro">
+                <h3><img src="images/escudoPrueba.png" alt="" class="logoImg">&nbsp Equipo E</h3>
+            </div>
+            <div class="col-md-1 col-sm-2">
+                <h3 class="Centrado">50</h3>
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <h3 class="Centrado">VS</h3>
+            </div>
+            <div class="col-md-1 col-sm-2">
+                <h3 class="Centrado">55</h3>
+            </div>
+            <div class="col-md-4 col-sm-10 Oscuro">
+                <h3><img src="images/escudoPrueba.png" alt="" class="logoImg">&nbsp Equipo F</h3>
+            </div>
+        </div>
+
+        <div class="row teamStats">
+            <div class="col-md-4 col-sm-10 Oscuro">
+                <h3><img src="images/escudoPrueba.png" alt="" class="logoImg">&nbsp Equipo G</h3>
+            </div>
+            <div class="col-md-1 col-sm-2">
+                <h3 class="Centrado">50</h3>
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <h3 class="Centrado">VS</h3>
+            </div>
+            <div class="col-md-1 col-sm-2">
+                <h3 class="Centrado">55</h3>
+            </div>
+            <div class="col-md-4 col-sm-10 Oscuro">
+                <h3><img src="images/escudoPrueba.png" alt="" class="logoImg">&nbsp Equipo H</h3>
+            </div>
+        </div>
+
+        <div class="row teamStats">
+            <div class="col-md-4 col-sm-10 Oscuro">
+                <h3><img src="images/escudoPrueba.png" alt="" class="logoImg">&nbsp Equipo I</h3>
+            </div>
+            <div class="col-md-1 col-sm-2">
+                <h3 class="Centrado">50</h3>
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <h3 class="Centrado">VS</h3>
+            </div>
+            <div class="col-md-1 col-sm-2">
+                <h3 class="Centrado">55</h3>
+            </div>
+            <div class="col-md-4 col-sm-10 Oscuro">
+                <h3><img src="images/escudoPrueba.png" alt="" class="logoImg">&nbsp Equipo J</h3>
+            </div>
+        </div>
+
+        <div class="row teamStats">
+            <div class="col-md-4 col-sm-10 Oscuro">
+                <h3><img src="images/escudoPrueba.png" alt="" class="logoImg">&nbsp Equipo K</h3>
+            </div>
+            <div class="col-md-1 col-sm-2">
+                <h3 class="Centrado">50</h3>
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <h3 class="Centrado">VS</h3>
+            </div>
+            <div class="col-md-1 col-sm-2">
+                <h3 class="Centrado">55</h3>
+            </div>
+            <div class="col-md-4 col-sm-10 Oscuro">
+                <h3><img src="images/escudoPrueba.png" alt="" class="logoImg">&nbsp Equipo L</h3>
+            </div>
+        </div>
+
+        <div class="row teamStats">
+            <div class="col-md-4 col-sm-10 Oscuro">
+                <h3><img src="images/escudoPrueba.png" alt="" class="logoImg">&nbsp Equipo M</h3>
+            </div>
+            <div class="col-md-1 col-sm-2">
+                <h3 class="Centrado">50</h3>
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <h3 class="Centrado">VS</h3>
+            </div>
+            <div class="col-md-1 col-sm-2">
+                <h3 class="Centrado">55</h3>
+            </div>
+            <div class="col-md-4 col-sm-10 Oscuro">
+                <h3><img src="images/escudoPrueba.png" alt="" class="logoImg">&nbsp Equipo N</h3>
+            </div>
+        </div>
+
+        <div class="row teamStats">
+            <div class="col-md-4 col-sm-10 Oscuro">
+                <h3><img src="images/escudoPrueba.png" alt="" class="logoImg">&nbsp Equipo O</h3>
+            </div>
+            <div class="col-md-1 col-sm-2">
+                <h3 class="Centrado">50</h3>
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <h3 class="Centrado">VS</h3>
+            </div>
+            <div class="col-md-1 col-sm-2">
+                <h3 class="Centrado">55</h3>
+            </div>
+            <div class="col-md-4 col-sm-10 Oscuro">
+                <h3><img src="images/escudoPrueba.png" alt="" class="logoImg">&nbsp Equipo P</h3>
+            </div>
+        </div>
+
+        <div class="row teamStats">
+            <div class="col-md-4 col-sm-10 Oscuro">
+                <h3><img src="images/escudoPrueba.png" alt="" class="logoImg">&nbsp Equipo Q</h3>
+            </div>
+            <div class="col-md-1 col-sm-2">
+                <h3 class="Centrado">50</h3>
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <h3 class="Centrado">VS</h3>
+            </div>
+            <div class="col-md-1 col-sm-2">
+                <h3 class="Centrado">55</h3>
+            </div>
+            <div class="col-md-4 col-sm-10 Oscuro">
+                <h3><img src="images/escudoPrueba.png" alt="" class="logoImg">&nbsp Equipo R</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>

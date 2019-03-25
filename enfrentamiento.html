@@ -1,23 +1,377 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="styles/enfrentamientoCSS.css">
 </head>
-  <body>
-      
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary sticky-top">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Mi equipo</a>
+                </li>
+                <li class="nav-item active">
+                    <a href="" class="nav-link">Liga</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Jugadores</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Mercado</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="" class="nav-link">Reglamento</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto" href="#">Fantasy League <i class="fas fa-futbol"></i></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse w-100 order-3">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user"></i> Usuario </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-info"
+                        aria-labelledby="navbarDropdownMenuLink-4">
+                        <a class="dropdown-item" href="#">Mi cuenta</a>
+                        <a class="dropdown-item" href="#">Cerrar sesión</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="" class="nav-link">Tabla Posiciones</a>
+                </li>
+                <li class="nav-item active">
+                    <a href="" class="nav-link">Enfrentamientos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="row breadcrumb">
+                <li class="breadcrumb-item active" aria-current="page">Enfrentamiento Jornada 1</li>
+            </ol>
+        </nav>
+        <div class="row" id="teamStats">
+            <div class="col-md-4 col-sm-10">
+
+                <h3><img src="images/a.png" alt="" class="logoImg"> &nbsp Mickey Mouse</h3>
+            </div>
+            <div class="col-md-1 col-sm-2">
+                <h3>50</h3>
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <h3>VS</h3>
+            </div>
+            <div class="col-md-1 col-sm-2">
+                <h3>55</h3>
+            </div>
+            <div class="col-md-4 col-sm-10">
+                <h3><img src="images/LogosDeEquipos/pallacracks.jpg" alt="" class="logoImg"> &nbsp Pallacracks</h3>
+            </div>
+        </div>
+
+        <div class="row canchaContainer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-2">
+                        <p>
+                            <span class="nombreDeJugadorIzq">Donald</span>
+                            <img src="/images/CamisaIzquierda.png" alt="">
+                            <span>10</span>
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <p>
+                            <span class="nombreDeJugadorIzq">Goofy</span>
+                            <img src="/images/CamisaIzquierda.png" alt="">
+                            <span>10</span>
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <p>
+                            <span class="nombreDeJugadorIzq">Pluto</span>
+                            <img src="/images/CamisaIzquierda.png" alt="">
+                            <span>2</span>
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <p>
+                            <span>4</span>
+                            <img src="/images/CamisaDerecha.png" alt="">
+                            <span class="nombreDeJugadorDerecho">Pallaro</span>
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <p>
+                                <span>3</span>
+                            <img src="/images/CamisaDerecha.png" alt="">
+                            <span class="nombreDeJugadorDerecho">Kennedy</span>
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <p>
+                            <span>2</span>
+                            <img src="/images/CamisaDerecha.png" alt="">
+                            <span class="nombreDeJugadorDerecho">Ortiz J.C</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- -------------------------------------------------- -->
+
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-2">
+                        <p>
+                            <span class="nombreDeJugadorIzq">Minnie</span>
+                            <img src="/images/CamisaIzquierda.png" alt="">
+                            <span>10</span>
+                        </p>
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-2"></div>
+                    <div class="col-2">
+                        <p>
+                                <span>8</span>
+                            <img src="/images/CamisaDerecha.png" alt="">
+                            <span class="nombreDeJugadorDerecho">Tanque</span>
+                        </p>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+
+                <!-- -------------------------------------------------- -->
+
+                <div class="row">
+                    <div class="col-2">
+                        <p>
+                            <span class="nombreDeJugadorIzq">Daisy</span>
+                            <img src="/images/CamisaIzquierda.png" alt="">
+                            <span>5</span>
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <p>
+                            <span class="nombreDeJugadorIzq">Chip</span>
+                            <img src="/images/CamisaIzquierda.png" alt="">
+                            <span>1</span>
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <p>
+                            <span class="nombreDeJugadorIzq">Ludwig</span>
+                            <img src="/images/CamisaIzquierda.png" alt="">
+                            <span>6</span>
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <p>
+                                <span>3</span>
+                            <img src="/images/CamisaDerecha.png" alt="">
+                            <span class="nombreDeJugadorDerecho">Pallaro Jr.</span>
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <p>
+                                <span>4</span>
+                            <img src="/images/CamisaDerecha.png" alt="">
+                            <span class="nombreDeJugadorDerecho">Valderrama M.</span>
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <p>
+                                <span>7</span>
+                            <img src="/images/CamisaDerecha.png" alt="">
+                            <span class="nombreDeJugadorDerecho">Valderrama D.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- -------------------------------------------------- -->
+
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-2">
+                        <p>
+                            <span class="nombreDeJugadorIzq">Toodles</span>
+                            <img src="/images/CamisaIzquierda.png" alt="">
+                            <span>10</span>
+                        </p>
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-2"></div>
+                    <div class="col-2">
+                        <p>
+                            <span>8</span>
+                            <img src="/images/CamisaDerecha.png" alt="">
+                            <span class="nombreDeJugadorDerecho">Avalos J.</span>
+                        </p>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                
+                <!-- -------------------------------------------------- -->
+
+                <div class="row">
+                    <div class="col-2">
+                        <p>
+                            <span class="nombreDeJugadorIzq">Chip</span>
+                            <img src="/images/CamisaIzquierda.png" alt="">
+                            <span>2</span>
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <p>
+                            <span class="nombreDeJugadorIzq">Dale</span>
+                            <img src="/images/CamisaIzquierda.png" alt="">
+                            <span>4</span>
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <p>
+                            <span class="nombreDeJugadorIzq">Clarabella</span>
+                            <img src="/images/CamisaIzquierda.png" alt="">
+                            <span>3</span>
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <p>
+                            <span>3</span>
+                            <img src="/images/CamisaDerecha.png" alt="">
+                            <span class="nombreDeJugadorDerecho">Mauri</span>
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <p>
+                                <span>4</span>
+                            <img src="/images/CamisaDerecha.png" alt="">
+                            <span class="nombreDeJugadorDerecho">Salgado A.</span>
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <p>
+                            <span>7</span>
+                            <img src="/images/CamisaDerecha.png" alt="">
+                            <span class="nombreDeJugadorDerecho">Diaz I.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row bancaContainer">
+            <div class="col-6">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-3">
+                            Banca
+                        </div>
+                    <div class="col-3">
+                        <p>
+                            <img src="images/camisaEjemplo.png" alt="">
+                            <span>4</span>
+                        </p>
+                        
+                        <p>Hugo</p>
+                    </div>
+                    <div class="col-3">
+                        <p>
+                            <img src="images/camisaEjemplo.png" alt="">
+                            <span>6</span>
+                        </p>
+                        
+                        <p>Paco</p>
+                    </div>
+                    <div class="col-3">
+                        <p>
+                            <img src="images/camisaEjemplo.png" alt="">
+                            <span>5</span>
+                        </p>
+                        
+                        <p>Luis</p>
+                    </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-3">Banca</div>
+                        <div class="col-3">
+                            <p>
+                                <img src="images/camisaEjemplo.png" alt="">
+                                <span>4</span>
+                            </p>
+                            <p>Chavez H.</p>
+                        </div>
+                        <div class="col-3">
+                            <p>
+                                <img src="images/camisaEjemplo.png" alt="">
+                                <span>2</span>
+                            </p>
+                            <p>Victor Hugo Ortega</p>
+                        </div>
+                        <div class="col-3">
+                            <p>
+                                <img src="images/camisaEjemplo.png" alt="">
+                                <span>3</span>
+                            </p>
+                            
+                            <p>Galindo D.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>

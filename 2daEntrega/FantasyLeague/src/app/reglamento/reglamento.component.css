@@ -1,0 +1,19 @@
+li{
+    padding: 15px 0px;
+    text-align: justify;
+    font-size: 15px;    
+}
+
+table{
+    width: 100%;
+    border: 2px solid black;
+}
+
+td{
+    border: 2px solid black;
+}
+
+.container-fluid{
+    text-align: center;
+    padding-bottom: 30px;
+}

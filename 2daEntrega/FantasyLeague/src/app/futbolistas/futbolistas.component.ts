@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Futbolista } from './futbolista/Futbolista';
+import { FutbolistasService } from './futbolistas.service';
+
 
 @Component({
   selector: 'app-futbolistas',
@@ -6,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./futbolistas.component.css']
 })
 export class FutbolistasComponent implements OnInit {
+  futbolistas: Futbolista[];
 
-  constructor() { }
+  constructor(private futbolistasService: FutbolistasService) { }
 
   ngOnInit() {
+    this.futbolistas = this.futbolistasService.getFutbolista();
   }
 
 }

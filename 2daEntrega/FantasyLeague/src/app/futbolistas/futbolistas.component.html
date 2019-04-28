@@ -1,3 +1,123 @@
-<p>
-  futbolistas works!
-</p>
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary" id="filtros">
+
+      <div class="navbar-collapse w-100">
+          <div class="dropdown">
+              <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Competición
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">Serie A</a>
+                  <a class="dropdown-item" href="#">Bundesliga</a>
+                  <a class="dropdown-item" href="#">Ligue 1</a>
+                  <a class="dropdown-item" href="#">Premier League</a>
+                  <a class="dropdown-item" href="#">LaLiga</a>
+              </div>
+          </div>
+      </div>
+
+
+
+      <div class="navbar-collapse w-100">
+          <div class="dropdown">
+              <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Equipo
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">Atalanta</a>
+                  <a class="dropdown-item" href="#">Bologna</a>
+                  <a class="dropdown-item" href="#">Cagliari</a>
+                  <a class="dropdown-item" href="#">Chievo</a>
+                  <a class="dropdown-item" href="#">Empoli</a>
+                  <a class="dropdown-item" href="#">Fiorentina</a>
+                  <a class="dropdown-item" href="#">Frosinone</a>
+                  <a class="dropdown-item" href="#">Genoa</a>
+                  <a class="dropdown-item" href="#">Inter</a>
+                  <a class="dropdown-item" href="#">Juventus</a>
+                  <a class="dropdown-item" href="#">Lazio</a>
+                  <a class="dropdown-item" href="#">Milan</a>
+                  <a class="dropdown-item" href="#">Napoli</a>
+                  <a class="dropdown-item" href="#">Parma</a>
+                  <a class="dropdown-item" href="#">Roma</a>
+                  <a class="dropdown-item" href="#">Sampdoria</a>
+                  <a class="dropdown-item" href="#">Sassuolo</a>
+                  <a class="dropdown-item" href="#">Spal</a>
+                  <a class="dropdown-item" href="#">Torino</a>
+                  <a class="dropdown-item" href="#">Udinese</a>
+              </div>
+          </div>
+      </div>
+
+
+
+      <div class="navbar-collapse w-100">
+          <div class="dropdown">
+              <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Posicion
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">PO</a>
+                  <a class="dropdown-item" href="#">LD</a>
+                  <a class="dropdown-item" href="#">DFD</a>
+                  <a class="dropdown-item" href="#">DFC</a>
+                  <a class="dropdown-item" href="#">DFI</a>
+                  <a class="dropdown-item" href="#">LI</a>
+                  <a class="dropdown-item" href="#">MCD</a>
+                  <a class="dropdown-item" href="#">MC</a>
+                  <a class="dropdown-item" href="#">MCO</a>
+                  <a class="dropdown-item" href="#">MD</a>
+                  <a class="dropdown-item" href="#">MI</a>
+                  <a class="dropdown-item" href="#">ED</a>
+                  <a class="dropdown-item" href="#">EI</a>
+                  <a class="dropdown-item" href="#">MP</a>
+                  <a class="dropdown-item" href="#">DC</a>
+              </div>
+          </div>
+      </div>
+
+
+
+      <div class="navbar-collapse w-100">
+          <p>Edad min:</p>
+          15<input type="range" name="points" min="15" max="50">50
+
+          <p>Edad Max:</p>
+          15<input type="range" name="points" min="15" max="50">50 <br>
+      </div>
+
+      <div class="navbar-collapse w-100">
+          <p>Precio min:</p>
+          0<input type="range" name="points" min="0" max="500">500
+
+          <p>Precio Max:</p>
+          0<input type="range" name="points" min="0" max="500">500 <br>
+      </div>
+
+      <form class="form-inline">
+          <div class="md-form my-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-light btn-block">Buscar</button>
+          </div>
+      </form>
+  </nav>
+
+  <div id="listaJugadores">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Propietario</th>
+                <th>Posiciones</th>
+                <th>Precio</th>
+                <th>Puntos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <app-futbolista *ngFor="let fut of futbolistas" [futbolista]="fut">
+            </app-futbolista>
+        </tbody>
+      </table>

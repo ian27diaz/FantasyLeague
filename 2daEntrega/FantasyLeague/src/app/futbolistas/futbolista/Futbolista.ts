@@ -1,7 +1,9 @@
-export class Futbolista{
+
+export class Futbolista {
 
     constructor(
         public id: number,
+        public nombre: string,
         public foto: string,
         public edad: number,
         public posiciones: string,
@@ -9,5 +11,5 @@ export class Futbolista{
         public club: string,
         public competicion: string,
         public nacionalidad: string
-        ){}
+        ) {}
 }

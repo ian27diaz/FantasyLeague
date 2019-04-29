@@ -1,6 +1,4 @@
-
 export class Futbolista {
-
     constructor(
         public id: number,
         public nombre: string,

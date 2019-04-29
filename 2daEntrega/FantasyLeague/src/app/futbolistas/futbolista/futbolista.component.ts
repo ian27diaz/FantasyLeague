@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Futbolista } from './Futbolista';
+import { Futbolista } from './Futbolista';
 
 @Component({
   selector: 'app-futbolista',

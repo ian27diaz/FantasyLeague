@@ -7,7 +7,11 @@ import { FutbolistasComponent } from './futbolistas/futbolistas.component';
 import { LigaComponent } from './liga/liga.component';
 import { EnfrentamientosComponent } from './Liga/enfrentamientos/enfrentamientos.component';
 import { TablaPosicionesComponent } from './Liga/tabla-posiciones/tabla-posiciones.component';
+
 import { LobbyComponent } from './lobby/lobby.component';
+
+import { EnfrentamientoComponent } from './Liga/Enfrentamientos/enfrentamiento/enfrentamiento.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo: '/authentication', pathMatch: 'full'},
@@ -18,12 +22,14 @@ const routes: Routes = [
     {path: '', component: TablaPosicionesComponent},
     {path: 'enfrentamientos', component: EnfrentamientosComponent, children: [
       {path: '', component: EnfrentamientosComponent},
-      {path: 'enfrentamiento/:id', component: MiEquipoComponent}
+      {path: ':id', component: EnfrentamientoComponent}
     ]},
     {path: 'posiciones', component: TablaPosicionesComponent}
+
   ]},
   {path: 'futbolistas', component: FutbolistasComponent},
-  {path: 'lobby', component: LobbyComponent}
+  {path: 'lobby', component: LobbyComponent},
+  {path: 'pruebaEnfrentamiento', component: EnfrentamientoComponent}
 ];
 
 @NgModule({

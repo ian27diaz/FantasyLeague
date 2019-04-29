@@ -1,0 +1,36 @@
+.logoImg {
+    border-radius: 50%;
+    height: 90px;
+}
+
+.teamStats div {
+    border: 1px solid white;
+    color: white;
+    background-color: rgb(50, 50, 50);
+    line-height: inherit;
+    opacity: .7;
+}
+
+.teamStats :hover {
+    opacity: 1.0;
+}
+
+#teamStats h3 {
+    line-height: 70px;
+    font-weight: bold;
+}
+
+.Centrado {
+    text-align: center;
+}
+
+#Enfrentamientos {
+    padding: 10px;
+    margin: 10px;
+}
+
+.Oscuro {
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid black !important;
+}

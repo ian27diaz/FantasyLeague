@@ -7,8 +7,6 @@
             <br>
         </div>
 
-        
-
         <button type="button" class="btn btn-success">+</button>
         <button type="button" class="btn btn-info">Ajustes</button>
 
@@ -16,28 +14,28 @@
 
     <div class="col-sm-8" id="informacionCompeticiones">
         <div class="row" id="logosCompeticiones">
-            <div class="col"><img src="assets/images/LogoCompetencia/Competencia-1.png"></div>
-            <div class="col"><img src="assets/images/LogoCompetencia/Competencia-2.png"></div>
-            <div class="col"><img src="assets/images/LogoCompetencia/Competencia-3.png"></div>
-            <div class="col"><img src="assets/images/LogoCompetencia/Competencia-4.png"></div>
-            <div class="col"><img src="assets/images/LogoCompetencia/Competencia-5.png"></div>
+            <div class="col" (click)= "cambiarInfoLiga(1)"><img src="assets/images/LogoCompetencia/Competencia-1.png"></div>
+            <div class="col" (click)= "cambiarInfoLiga(2)"><img src="assets/images/LogoCompetencia/Competencia-2.png"></div>
+            <div class="col" (click)= "cambiarInfoLiga(3)"><img src="assets/images/LogoCompetencia/Competencia-3.png"></div>
+            <div class="col" (click)= "cambiarInfoLiga(4)"><img src="assets/images/LogoCompetencia/Competencia-4.png"></div>
+            <div class="col" (click)= "cambiarInfoLiga(5)"><img src="assets/images/LogoCompetencia/Competencia-5.png"></div>
         </div>
 
         <nav class="navbar navbar-expand-md navbar-dark bg-dark" id="opcionesCompeticiones">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a href="" class="nav-link">Tabla de Liga</a>
+                <li class= {{activeTabla}}>
+                    <h3  class="nav-link" (click)= "cambiarInfoRubro(1)">Tabla de Liga</h3>
                 </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link">Enfrentamientos Jornada</a>
+                <li class= {{activeEnfrentamientos}}>
+                    <h3  class="nav-link" (click)= "cambiarInfoRubro(2)">Enfrentamientos Jornada</h3>
                 </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link">Estadísticas Jugadores</a>
+                <li class= {{activeEstadisticas}}>
+                    <h3  class="nav-link" (click)= "cambiarInfoRubro(3)">Estadísticas Jugadores</h3>
                 </li>
             </ul>
         </nav>
 
-        <div class="col-sm-12" id="tablaPosiciones">
+        <div class="col-sm-12" id="tablaPosiciones" *ngIf="infoRubro == 1">
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
@@ -54,10 +52,10 @@
                         <th>Puntos</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody *ngIf="infoLiga == 1">
                     <tr>
                         <td>1</td>
-                        <td><img src="images/SerieA.jpeg"></td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-1.png"></td>
                         <td>Inter</td>
                         <td>10</td>
                         <td>10</td>
@@ -70,7 +68,7 @@
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td><img src="images/SerieA.jpeg"></td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-1.png"></td>
                         <td>Juventus</td>
                         <td>10</td>
                         <td>9</td>
@@ -83,7 +81,7 @@
                     </tr>
                     <tr>
                         <td>3</td>
-                        <td><img src="images/SerieA.jpeg"></td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-1.png"></td>
                         <td>Milan</td>
                         <td>10</td>
                         <td>8</td>
@@ -96,7 +94,7 @@
                     </tr>
                     <tr>
                         <td>4</td>
-                        <td><img src="images/SerieA.jpeg"></td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-1.png"></td>
                         <td>Napoli</td>
                         <td>10</td>
                         <td>8</td>
@@ -109,7 +107,7 @@
                     </tr>
                     <tr>
                         <td>5</td>
-                        <td><img src="images/SerieA.jpeg"></td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-1.png"></td>
                         <td>Roma</td>
                         <td>10</td>
                         <td>7</td>
@@ -122,7 +120,7 @@
                     </tr>
                     <tr>
                         <td>6</td>
-                        <td><img src="images/SerieA.jpeg"></td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-1.png"></td>
                         <td>Lazio</td>
                         <td>10</td>
                         <td>7</td>
@@ -135,7 +133,7 @@
                     </tr>
                     <tr>
                         <td>7</td>
-                        <td><img src="images/SerieA.jpeg"></td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-1.png"></td>
                         <td>Fiorentina</td>
                         <td>10</td>
                         <td>6</td>
@@ -148,7 +146,7 @@
                     </tr>
                     <tr>
                         <td>8</td>
-                        <td><img src="images/SerieA.jpeg"></td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-1.png"></td>
                         <td>Torino</td>
                         <td>10</td>
                         <td>6</td>
@@ -161,7 +159,7 @@
                     </tr>
                     <tr>
                         <td>9</td>
-                        <td><img src="images/SerieA.jpeg"></td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-1.png"></td>
                         <td>Atalanta</td>
                         <td>10</td>
                         <td>5</td>
@@ -174,7 +172,7 @@
                     </tr>
                     <tr>
                         <td>10</td>
-                        <td><img src="images/SerieA.jpeg"></td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-1.png"></td>
                         <td>Sampdoria</td>
                         <td>5</td>
                         <td>5</td>
@@ -187,7 +185,7 @@
                     </tr>
                     <tr>
                         <td>11</td>
-                        <td><img src="images/SerieA.jpeg"></td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-1.png"></td>
                         <td>Genoa</td>
                         <td>10</td>
                         <td>4</td>
@@ -200,7 +198,7 @@
                     </tr>
                     <tr>
                         <td>12</td>
-                        <td><img src="images/SerieA.jpeg"></td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-1.png"></td>
                         <td>Udinese</td>
                         <td>10</td>
                         <td>4</td>
@@ -213,7 +211,7 @@
                     </tr>
                     <tr>
                         <td>13</td>
-                        <td><img src="images/SerieA.jpeg"></td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-1.png"></td>
                         <td>Bologna</td>
                         <td>10</td>
                         <td>3</td>
@@ -226,7 +224,7 @@
                     </tr>
                     <tr>
                         <td>14</td>
-                        <td><img src="images/SerieA.jpeg"></td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-1.png"></td>
                         <td>Sassuolo</td>
                         <td>10</td>
                         <td>3</td>
@@ -239,7 +237,7 @@
                     </tr>
                     <tr>
                         <td>15</td>
-                        <td><img src="images/SerieA.jpeg"></td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-1.png"></td>
                         <td>Cagliari</td>
                         <td>10</td>
                         <td>2</td>
@@ -252,7 +250,7 @@
                     </tr>
                     <tr>
                         <td>16</td>
-                        <td><img src="images/SerieA.jpeg"></td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-1.png"></td>
                         <td>Chievo</td>
                         <td>10</td>
                         <td>2</td>
@@ -265,7 +263,7 @@
                     </tr>
                     <tr>
                         <td>17</td>
-                        <td><img src="images/SerieA.jpeg"></td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-1.png"></td>
                         <td>Empoli</td>
                         <td>10</td>
                         <td>1</td>
@@ -278,7 +276,7 @@
                     </tr>
                     <tr>
                         <td>18</td>
-                        <td><img src="images/SerieA.jpeg"></td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-1.png"></td>
                         <td>Frosinone</td>
                         <td>10</td>
                         <td>4</td>
@@ -291,7 +289,7 @@
                     </tr>
                     <tr>
                         <td>19</td>
-                        <td><img src="images/SerieA.jpeg"></td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-1.png"></td>
                         <td>Parma</td>
                         <td>10</td>
                         <td>1</td>
@@ -304,7 +302,1055 @@
                     </tr>
                     <tr>
                         <td>20</td>
-                        <td><img src="images/SerieA.jpeg"></td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-1.png"></td>
+                        <td>SPAL</td>
+                        <td>10</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>1</b></td>
+                    </tr>
+                </tbody>
+                <tbody *ngIf= "infoLiga == 2">
+                    <tr>
+                        <td>1</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-2.png"></td>
+                        <td>Inter</td>
+                        <td>10</td>
+                        <td>10</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>30</td>
+                        <td>10</td>
+                        <td>20</td>
+                        <td><b>30</b></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-2.png"></td>
+                        <td>Juventus</td>
+                        <td>10</td>
+                        <td>9</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>27</b></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-2.png"></td>
+                        <td>Milan</td>
+                        <td>10</td>
+                        <td>8</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>25</b></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-2.png"></td>
+                        <td>Napoli</td>
+                        <td>10</td>
+                        <td>8</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>24</b></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-2.png"></td>
+                        <td>Roma</td>
+                        <td>10</td>
+                        <td>7</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>22</b></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-2.png"></td>
+                        <td>Lazio</td>
+                        <td>10</td>
+                        <td>7</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>21</b></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-2.png"></td>
+                        <td>Fiorentina</td>
+                        <td>10</td>
+                        <td>6</td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>19</b></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-2.png"></td>
+                        <td>Torino</td>
+                        <td>10</td>
+                        <td>6</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>18</b></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-2.png"></td>
+                        <td>Atalanta</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>16</b></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-2.png"></td>
+                        <td>Sampdoria</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>0</td>
+                        <td>5</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>15</b></td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-2.png"></td>
+                        <td>Genoa</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>13</b></td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-2.png"></td>
+                        <td>Udinese</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td>6</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>12</b></td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-2.png"></td>
+                        <td>Bologna</td>
+                        <td>10</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>6</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>10</b></td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-2.png"></td>
+                        <td>Sassuolo</td>
+                        <td>10</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>7</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>9</b></td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-2.png"></td>
+                        <td>Cagliari</td>
+                        <td>10</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>7</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>7</b></td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-2.png"></td>
+                        <td>Chievo</td>
+                        <td>10</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>8</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>6</b></td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-2.png"></td>
+                        <td>Empoli</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>7</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>5</b></td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-2.png"></td>
+                        <td>Frosinone</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td>6</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>4</b></td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-2.png"></td>
+                        <td>Parma</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>9</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>3</b></td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-2.png"></td>
+                        <td>SPAL</td>
+                        <td>10</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>1</b></td>
+                    </tr>
+                </tbody>
+                <tbody *ngIf="infoLiga ==  3">
+                    <tr>
+                        <td>1</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-3.png"></td>
+                        <td>Inter</td>
+                        <td>10</td>
+                        <td>10</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>30</td>
+                        <td>10</td>
+                        <td>20</td>
+                        <td><b>30</b></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-3.png"></td>
+                        <td>Juventus</td>
+                        <td>10</td>
+                        <td>9</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>27</b></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-3.png"></td>
+                        <td>Milan</td>
+                        <td>10</td>
+                        <td>8</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>25</b></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-3.png"></td>
+                        <td>Napoli</td>
+                        <td>10</td>
+                        <td>8</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>24</b></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-3.png"></td>
+                        <td>Roma</td>
+                        <td>10</td>
+                        <td>7</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>22</b></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-3.png"></td>
+                        <td>Lazio</td>
+                        <td>10</td>
+                        <td>7</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>21</b></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-3.png"></td>
+                        <td>Fiorentina</td>
+                        <td>10</td>
+                        <td>6</td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>19</b></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-3.png"></td>
+                        <td>Torino</td>
+                        <td>10</td>
+                        <td>6</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>18</b></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-3.png"></td>
+                        <td>Atalanta</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>16</b></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-3.png"></td>
+                        <td>Sampdoria</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>0</td>
+                        <td>5</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>15</b></td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-3.png"></td>
+                        <td>Genoa</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>13</b></td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-3.png"></td>
+                        <td>Udinese</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td>6</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>12</b></td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-3.png"></td>
+                        <td>Bologna</td>
+                        <td>10</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>6</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>10</b></td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-3.png"></td>
+                        <td>Sassuolo</td>
+                        <td>10</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>7</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>9</b></td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-3.png"></td>
+                        <td>Cagliari</td>
+                        <td>10</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>7</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>7</b></td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-3.png"></td>
+                        <td>Chievo</td>
+                        <td>10</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>8</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>6</b></td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-3.png"></td>
+                        <td>Empoli</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>7</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>5</b></td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-3.png"></td>
+                        <td>Frosinone</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td>6</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>4</b></td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-3.png"></td>
+                        <td>Parma</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>9</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>3</b></td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-3.png"></td>
+                        <td>SPAL</td>
+                        <td>10</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>1</b></td>
+                    </tr>
+                </tbody>
+                <tbody *ngIf="infoLiga == 4">
+                    <tr>
+                        <td>1</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-4.png"></td>
+                        <td>Inter</td>
+                        <td>10</td>
+                        <td>10</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>30</td>
+                        <td>10</td>
+                        <td>20</td>
+                        <td><b>30</b></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-4.png"></td>
+                        <td>Juventus</td>
+                        <td>10</td>
+                        <td>9</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>27</b></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-4.png"></td>
+                        <td>Milan</td>
+                        <td>10</td>
+                        <td>8</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>25</b></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-4.png"></td>
+                        <td>Napoli</td>
+                        <td>10</td>
+                        <td>8</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>24</b></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-4.png"></td>
+                        <td>Roma</td>
+                        <td>10</td>
+                        <td>7</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>22</b></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-4.png"></td>
+                        <td>Lazio</td>
+                        <td>10</td>
+                        <td>7</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>21</b></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-4.png"></td>
+                        <td>Fiorentina</td>
+                        <td>10</td>
+                        <td>6</td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>19</b></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-4.png"></td>
+                        <td>Torino</td>
+                        <td>10</td>
+                        <td>6</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>18</b></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-4.png"></td>
+                        <td>Atalanta</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>16</b></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-4.png"></td>
+                        <td>Sampdoria</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>0</td>
+                        <td>5</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>15</b></td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-4.png"></td>
+                        <td>Genoa</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>13</b></td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-4.png"></td>
+                        <td>Udinese</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td>6</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>12</b></td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-4.png"></td>
+                        <td>Bologna</td>
+                        <td>10</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>6</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>10</b></td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-4.png"></td>
+                        <td>Sassuolo</td>
+                        <td>10</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>7</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>9</b></td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-4.png"></td>
+                        <td>Cagliari</td>
+                        <td>10</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>7</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>7</b></td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-4.png"></td>
+                        <td>Chievo</td>
+                        <td>10</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>8</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>6</b></td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-4.png"></td>
+                        <td>Empoli</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>7</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>5</b></td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-4.png"></td>
+                        <td>Frosinone</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td>6</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>4</b></td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-4.png"></td>
+                        <td>Parma</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>9</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>3</b></td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-4.png"></td>
+                        <td>SPAL</td>
+                        <td>10</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>1</b></td>
+                    </tr>
+                </tbody>
+                <tbody *ngIf="infoLiga == 5">
+                    <tr>
+                        <td>1</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-5.png"></td>
+                        <td>Inter</td>
+                        <td>10</td>
+                        <td>10</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>30</td>
+                        <td>10</td>
+                        <td>20</td>
+                        <td><b>30</b></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-5.png"></td>
+                        <td>Juventus</td>
+                        <td>10</td>
+                        <td>9</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>27</b></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-5.png"></td>
+                        <td>Milan</td>
+                        <td>10</td>
+                        <td>8</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>25</b></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-5.png"></td>
+                        <td>Napoli</td>
+                        <td>10</td>
+                        <td>8</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>24</b></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-5.png"></td>
+                        <td>Roma</td>
+                        <td>10</td>
+                        <td>7</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>22</b></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-5.png"></td>
+                        <td>Lazio</td>
+                        <td>10</td>
+                        <td>7</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>21</b></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-5.png"></td>
+                        <td>Fiorentina</td>
+                        <td>10</td>
+                        <td>6</td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>19</b></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-5.png"></td>
+                        <td>Torino</td>
+                        <td>10</td>
+                        <td>6</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>18</b></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-5.png"></td>
+                        <td>Atalanta</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>16</b></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-5.png"></td>
+                        <td>Sampdoria</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>0</td>
+                        <td>5</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>15</b></td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-5.png"></td>
+                        <td>Genoa</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>13</b></td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-5.png"></td>
+                        <td>Udinese</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td>6</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>12</b></td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-5.png"></td>
+                        <td>Bologna</td>
+                        <td>10</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>6</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>10</b></td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-5.png"></td>
+                        <td>Sassuolo</td>
+                        <td>10</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>7</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>9</b></td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-5.png"></td>
+                        <td>Cagliari</td>
+                        <td>10</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>7</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>7</b></td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-5.png"></td>
+                        <td>Chievo</td>
+                        <td>10</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>8</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>6</b></td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-5.png"></td>
+                        <td>Empoli</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>7</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>5</b></td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-5.png"></td>
+                        <td>Frosinone</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td>6</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>4</b></td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-5.png"></td>
+                        <td>Parma</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>9</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>3</b></td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td><img src="assets/images/LogoCompetencia/Competencia-5.png"></td>
                         <td>SPAL</td>
                         <td>10</td>
                         <td>0</td>
@@ -318,5 +1364,22 @@
                 </tbody>
             </table>
         </div>
+
+        <div class = "fotosPrueba"  *ngIf="infoRubro == 2">
+            <img *ngIf="infoLiga == 1" src="assets/images/Otras/infoEnfrentamiento-1.jpg">
+            <img *ngIf="infoLiga == 2" src="assets/images/Otras/infoEnfrentamiento-2.jpg">
+            <img *ngIf="infoLiga == 3" src="assets/images/Otras/infoEnfrentamiento-3.jpg">
+            <img *ngIf="infoLiga == 4" src="assets/images/Otras/infoEnfrentamiento-4.jpg">
+            <img *ngIf="infoLiga == 5" src="assets/images/Otras/infoEnfrentamiento-5.jpg">
+        </div>
+
+        <div class = "fotosPrueba" *ngIf="infoRubro == 3">
+            <img *ngIf="infoLiga == 1" src="assets/images/Otras/infoEstadisticas-1.jpg">
+            <img *ngIf="infoLiga == 2" src="assets/images/Otras/infoEstadisticas-2.jpg">
+            <img *ngIf="infoLiga == 3" src="assets/images/Otras/infoEstadisticas-3.jpg">
+            <img *ngIf="infoLiga == 4" src="assets/images/Otras/infoEstadisticas-4.jpg">
+            <img *ngIf="infoLiga == 5" src="assets/images/Otras/infoEstadisticas-5.jpg">
+        </div>
+
     </div>
 </div>

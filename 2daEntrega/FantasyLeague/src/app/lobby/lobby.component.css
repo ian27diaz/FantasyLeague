@@ -96,3 +96,8 @@ body {
 #iconoFantasy {
     text-align: center;
 }
+
+.fotosPrueba img{
+    margin: 0% !important;
+    width: 100% !important;
+}

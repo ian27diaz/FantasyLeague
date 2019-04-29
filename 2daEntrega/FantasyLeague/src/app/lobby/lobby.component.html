@@ -1,3 +1,322 @@
-<p>
-  lobby works!
-</p>
+<div class="container-fluid" id="principal">
+    <div class="col-sm-4" id="ListaEquipos">
+        <h1 id="title1">Mis Equipos</h1>
+        <div *ngFor="let equ of equipos"  class="elementoEquipo">
+            <div class="escudo"> <img src={{equ.escudo}}></div>
+            <button class="btn btn-primary">{{equ.nombre}}</button>
+            <br>
+        </div>
+
+        
+
+        <button type="button" class="btn btn-success">+</button>
+        <button type="button" class="btn btn-info">Ajustes</button>
+
+    </div>
+
+    <div class="col-sm-8" id="informacionCompeticiones">
+        <div class="row" id="logosCompeticiones">
+            <div class="col"><img src="assets/images/LogoCompetencia/Competencia-1.png"></div>
+            <div class="col"><img src="assets/images/LogoCompetencia/Competencia-2.png"></div>
+            <div class="col"><img src="assets/images/LogoCompetencia/Competencia-3.png"></div>
+            <div class="col"><img src="assets/images/LogoCompetencia/Competencia-4.png"></div>
+            <div class="col"><img src="assets/images/LogoCompetencia/Competencia-5.png"></div>
+        </div>
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark" id="opcionesCompeticiones">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a href="" class="nav-link">Tabla de Liga</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Enfrentamientos Jornada</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Estadísticas Jugadores</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="col-sm-12" id="tablaPosiciones">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Posicion</th>
+                        <th>Escudo</th>
+                        <th>Nombre</th>
+                        <th>Partidos Jugados</th>
+                        <th>Ganados</th>
+                        <th>Empatados</th>
+                        <th>Perdidos</th>
+                        <th>Goles a Favor</th>
+                        <th>Goles en Contra</th>
+                        <th>Diferencia de Goles</th>
+                        <th>Puntos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="images/SerieA.jpeg"></td>
+                        <td>Inter</td>
+                        <td>10</td>
+                        <td>10</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>30</td>
+                        <td>10</td>
+                        <td>20</td>
+                        <td><b>30</b></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><img src="images/SerieA.jpeg"></td>
+                        <td>Juventus</td>
+                        <td>10</td>
+                        <td>9</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>27</b></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><img src="images/SerieA.jpeg"></td>
+                        <td>Milan</td>
+                        <td>10</td>
+                        <td>8</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>25</b></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><img src="images/SerieA.jpeg"></td>
+                        <td>Napoli</td>
+                        <td>10</td>
+                        <td>8</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>24</b></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><img src="images/SerieA.jpeg"></td>
+                        <td>Roma</td>
+                        <td>10</td>
+                        <td>7</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>22</b></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><img src="images/SerieA.jpeg"></td>
+                        <td>Lazio</td>
+                        <td>10</td>
+                        <td>7</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>21</b></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><img src="images/SerieA.jpeg"></td>
+                        <td>Fiorentina</td>
+                        <td>10</td>
+                        <td>6</td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>19</b></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><img src="images/SerieA.jpeg"></td>
+                        <td>Torino</td>
+                        <td>10</td>
+                        <td>6</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>18</b></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td><img src="images/SerieA.jpeg"></td>
+                        <td>Atalanta</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>16</b></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><img src="images/SerieA.jpeg"></td>
+                        <td>Sampdoria</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>0</td>
+                        <td>5</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>15</b></td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td><img src="images/SerieA.jpeg"></td>
+                        <td>Genoa</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>13</b></td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td><img src="images/SerieA.jpeg"></td>
+                        <td>Udinese</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td>6</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>12</b></td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td><img src="images/SerieA.jpeg"></td>
+                        <td>Bologna</td>
+                        <td>10</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>6</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>10</b></td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td><img src="images/SerieA.jpeg"></td>
+                        <td>Sassuolo</td>
+                        <td>10</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>7</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>9</b></td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td><img src="images/SerieA.jpeg"></td>
+                        <td>Cagliari</td>
+                        <td>10</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>7</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>7</b></td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td><img src="images/SerieA.jpeg"></td>
+                        <td>Chievo</td>
+                        <td>10</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>8</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>6</b></td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td><img src="images/SerieA.jpeg"></td>
+                        <td>Empoli</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>7</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>5</b></td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td><img src="images/SerieA.jpeg"></td>
+                        <td>Frosinone</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td>6</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>4</b></td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td><img src="images/SerieA.jpeg"></td>
+                        <td>Parma</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>9</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>3</b></td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td><img src="images/SerieA.jpeg"></td>
+                        <td>SPAL</td>
+                        <td>10</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td><b>1</b></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

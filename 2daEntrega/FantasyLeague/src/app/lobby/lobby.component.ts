@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Equipo } from '../mi-equipo/Equipo';
+import { EquiposService } from '../mi-equipo/equipos.service';
 
 @Component({
   selector: 'app-lobby',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lobby.component.css']
 })
 export class LobbyComponent implements OnInit {
-
-  constructor() { }
+  equipos: Equipo[];
+  constructor(private equiposService: EquiposService) { }
 
   ngOnInit() {
+    this.equipos = this.equiposService.getEquipo();
   }
 
 }

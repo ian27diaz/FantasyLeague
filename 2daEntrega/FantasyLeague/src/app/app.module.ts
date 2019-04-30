@@ -15,6 +15,7 @@ import { TablaPosicionesComponent } from './Liga/tabla-posiciones/tabla-posicion
 import { ReglamentoComponent } from './reglamento/reglamento.component';
 import { HeaderComponent } from './header/header.component';
 import { MiEquipoComponent } from './mi-equipo/mi-equipo.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [

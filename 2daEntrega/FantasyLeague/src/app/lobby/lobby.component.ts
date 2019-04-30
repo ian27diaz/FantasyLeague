@@ -27,7 +27,7 @@ export class LobbyComponent implements OnInit {
 
   cambiarInfoRubro(rubroSel) {
     this.infoRubro = rubroSel;
-    switch(rubroSel) {
+    switch (rubroSel) {
       case 1:
         this.activeTabla = 'nav-item active';
         this.activeEnfrentamientos = 'nav-item';

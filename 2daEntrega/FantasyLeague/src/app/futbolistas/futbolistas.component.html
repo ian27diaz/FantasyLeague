@@ -1,106 +1,162 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-primary" id="filtros">
-
+    
+    <form #logForm1="ngForm" (ngSubmit)="submit(logForm1)">
       <div class="navbar-collapse w-100">
-          <div class="dropdown">
-              <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Competición
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Serie A</a>
-                  <a class="dropdown-item" href="#">Bundesliga</a>
-                  <a class="dropdown-item" href="#">Ligue 1</a>
-                  <a class="dropdown-item" href="#">Premier League</a>
-                  <a class="dropdown-item" href="#">LaLiga</a>
-              </div>
-          </div>
-      </div>
-
-
-
-      <div class="navbar-collapse w-100">
-          <div class="dropdown">
-              <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Equipo
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Atalanta</a>
-                  <a class="dropdown-item" href="#">Bologna</a>
-                  <a class="dropdown-item" href="#">Cagliari</a>
-                  <a class="dropdown-item" href="#">Chievo</a>
-                  <a class="dropdown-item" href="#">Empoli</a>
-                  <a class="dropdown-item" href="#">Fiorentina</a>
-                  <a class="dropdown-item" href="#">Frosinone</a>
-                  <a class="dropdown-item" href="#">Genoa</a>
-                  <a class="dropdown-item" href="#">Inter</a>
-                  <a class="dropdown-item" href="#">Juventus</a>
-                  <a class="dropdown-item" href="#">Lazio</a>
-                  <a class="dropdown-item" href="#">Milan</a>
-                  <a class="dropdown-item" href="#">Napoli</a>
-                  <a class="dropdown-item" href="#">Parma</a>
-                  <a class="dropdown-item" href="#">Roma</a>
-                  <a class="dropdown-item" href="#">Sampdoria</a>
-                  <a class="dropdown-item" href="#">Sassuolo</a>
-                  <a class="dropdown-item" href="#">Spal</a>
-                  <a class="dropdown-item" href="#">Torino</a>
-                  <a class="dropdown-item" href="#">Udinese</a>
-              </div>
-          </div>
-      </div>
-
-
-
-      <div class="navbar-collapse w-100">
-          <div class="dropdown">
-              <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Posicion
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">PO</a>
-                  <a class="dropdown-item" href="#">LD</a>
-                  <a class="dropdown-item" href="#">DFD</a>
-                  <a class="dropdown-item" href="#">DFC</a>
-                  <a class="dropdown-item" href="#">DFI</a>
-                  <a class="dropdown-item" href="#">LI</a>
-                  <a class="dropdown-item" href="#">MCD</a>
-                  <a class="dropdown-item" href="#">MC</a>
-                  <a class="dropdown-item" href="#">MCO</a>
-                  <a class="dropdown-item" href="#">MD</a>
-                  <a class="dropdown-item" href="#">MI</a>
-                  <a class="dropdown-item" href="#">ED</a>
-                  <a class="dropdown-item" href="#">EI</a>
-                  <a class="dropdown-item" href="#">MP</a>
-                  <a class="dropdown-item" href="#">DC</a>
-              </div>
-          </div>
-      </div>
-
-
-
-      <div class="navbar-collapse w-100">
-          <p>Edad Min:</p>
-          15<input type="range" name="points" min="15" max="50">50
-
-          <p>Edad Max:</p>
-          15<input type="range" name="points" min="15" max="50">50 <br>
+              <select name="selectCompeticion" ngModel #selectCompeticion="ngModel" (change)="cambiarCompeticion(selectCompeticion.value)">
+                    <option value="">Cualquiera</option>
+                    <option value="Serie A">Serie A</option>
+                    <option value="Bundesliga">Bundesliga</option>
+                    <option value="Ligue 1">Ligue 1</option>
+                    <option value="Premier League">Premier League</option>
+                    <option value="LaLiga">LaLiga</option>
+              </select>
       </div>
 
       <div class="navbar-collapse w-100">
-          <p>Precio Min:</p>
-          0<input type="range" name="points" min="0" max="500">500
-
-          <p>Precio Max:</p>
-          0<input type="range" name="points" min="0" max="500">500 <br>
+            <select name="selectClub" ngModel #selectClub="ngModel" (change)="cambiarClub(selectClub.value)">
+                  <option value="">Cualquiera</option>
+                  <option value="Atalanta" *ngIf="selectorCompeticion == 'Serie A'">Atalanta</option>
+                  <option value="Bologna" *ngIf="selectorCompeticion == 'Serie A'">Bologna</option>
+                  <option value="Cagliari" *ngIf="selectorCompeticion == 'Serie A'">Cagliari</option>
+                  <option value="Chievo" *ngIf="selectorCompeticion == 'Serie A'">Chievo</option>
+                  <option value="Empoli" *ngIf="selectorCompeticion == 'Serie A'">Empoli</option>
+                  <option value="Fiorentina" *ngIf="selectorCompeticion == 'Serie A'">Fiorentina</option>
+                  <option value="Frosinone" *ngIf="selectorCompeticion == 'Serie A'">Frosinone</option>
+                  <option value="Genoa" *ngIf="selectorCompeticion == 'Serie A'">Genoa</option>
+                  <option value="Inter" *ngIf="selectorCompeticion == 'Serie A'">Inter</option>
+                  <option value="Juventus" *ngIf="selectorCompeticion == 'Serie A'">Juventus</option>
+                  <option value="Lazio" *ngIf="selectorCompeticion == 'Serie A'">Lazio</option>
+                  <option value="Milan" *ngIf="selectorCompeticion == 'Serie A'">Milan</option>
+                  <option value="Napoli" *ngIf="selectorCompeticion == 'Serie A'">Napoli</option>
+                  <option value="Parma" *ngIf="selectorCompeticion == 'Serie A'">Parma</option>
+                  <option value="Roma" *ngIf="selectorCompeticion == 'Serie A'" (click)="cambiarClub('Roma')">Roma</option>
+                  <option value="Sampdoria" *ngIf="selectorCompeticion == 'Serie A'">Sampdoria</option>
+                  <option value="Sassuolo" *ngIf="selectorCompeticion == 'Serie A'">Sassuolo</option>
+                  <option value="Spal" *ngIf="selectorCompeticion == 'Serie A'">Spal</option>
+                  <option value="Torino" *ngIf="selectorCompeticion == 'Serie A'">Torino</option>
+                  <option value="Udinese" *ngIf="selectorCompeticion == 'Serie A'">Udinese</option>
+                  <option value="Bayern Munchen" *ngIf="selectorCompeticion == 'Bundesliga'">Bayern Munchen</option>
+                  <option value="Borussia Dortmund" *ngIf="selectorCompeticion == 'Bundesliga'">Borussia Dortmund</option>
+                  <option value="Schalke 04" *ngIf="selectorCompeticion == 'Bundesliga'">Schalke 04</option>
+                  <option value="Frankfurt" *ngIf="selectorCompeticion == 'Bundesliga'">Frankfurt</option>
+                  <option value="Wender Bremen" *ngIf="selectorCompeticion == 'Bundesliga'">Wender Bremen</option>
+                  <option value="Stuttgart" *ngIf="selectorCompeticion == 'Bundesliga'">Stuttgart</option>
+                  <option value="Leipzig" *ngIf="selectorCompeticion == 'Bundesliga'">Leipzig</option>
+                  <option value="Nuremberg" *ngIf="selectorCompeticion == 'Bundesliga'">Nuremberg</option>
+                  <option value="Borussia Mgladbach" *ngIf="selectorCompeticion == 'Bundesliga'">Borussia Mgladbach</option>
+                  <option value="Bayer Leverkusen" *ngIf="selectorCompeticion == 'Bundesliga'">Bayer Leverkusen</option>
+                  <option value="Wolfburgo" *ngIf="selectorCompeticion == 'Bundesliga'">Wolfburgo</option>
+                  <option value="Hoffenheim" *ngIf="selectorCompeticion == 'Bundesliga'">Hoffenheim</option>
+                  <option value="Hertha Berlin" *ngIf="selectorCompeticion == 'Bundesliga'">Hertha Berlin</option>
+                  <option value="Hannover 96" *ngIf="selectorCompeticion == 'Bundesliga'">Hannover 96</option>
+                  <option value="Augsburgo" *ngIf="selectorCompeticion == 'Bundesliga'">Augsburgo</option>
+                  <option value="Fortuna Dusseldorf" *ngIf="selectorCompeticion == 'Bundesliga'">Fortuna Dusseldorf</option>
+                  <option value="Friburgo" *ngIf="selectorCompeticion == 'Bundesliga'">Friburgo</option>
+                  <option value="Mainz 05" *ngIf="selectorCompeticion == 'Bundesliga'">Mainz 05</option>
+                  <option value="PSG" *ngIf="selectorCompeticion == 'Ligue 1'">PSG</option>
+                  <option value="Burdeos" *ngIf="selectorCompeticion == 'Ligue 1'">Burdeos</option>
+                  <option value="Lyon" *ngIf="selectorCompeticion == 'Ligue 1'">Lyon</option>
+                  <option value="Monaco" *ngIf="selectorCompeticion == 'Ligue 1'">Monaco</option>
+                  <option value="Saint Etienne" *ngIf="selectorCompeticion == 'Ligue 1'">Saint Etienne</option>
+                  <option value="Lille" *ngIf="selectorCompeticion == 'Ligue 1'">Lille</option>
+                  <option value="Reims" *ngIf="selectorCompeticion == 'Ligue 1'">Reims</option>
+                  <option value="Marsella" *ngIf="selectorCompeticion == 'Ligue 1'">Marsella</option>
+                  <option value="Rennais" *ngIf="selectorCompeticion == 'Ligue 1'">Rennais</option>
+                  <option value="Toulouse" *ngIf="selectorCompeticion == 'Ligue 1'">Toulouse</option>
+                  <option value="Nantes" *ngIf="selectorCompeticion == 'Ligue 1'">Nantes</option>
+                  <option value="Guingamp" *ngIf="selectorCompeticion == 'Ligue 1'">Guingamp</option>
+                  <option value="Caen" *ngIf="selectorCompeticion == 'Ligue 1'">Caen</option>
+                  <option value="Dijon" *ngIf="selectorCompeticion == 'Ligue 1'">Dijon</option>
+                  <option value="Montpellier" *ngIf="selectorCompeticion == 'Ligue 1'">Montpellier</option>
+                  <option value="Angers" *ngIf="selectorCompeticion == 'Ligue 1'">Angers</option>
+                  <option value="Amiens" *ngIf="selectorCompeticion == 'Ligue 1'">Amiens</option>
+                  <option value="Niza" *ngIf="selectorCompeticion == 'Ligue 1'">Niza</option>
+                  <option value="Racing" *ngIf="selectorCompeticion == 'Ligue 1'">Racing</option>
+                  <option value="Nimes" *ngIf="selectorCompeticion == 'Ligue 1'">Nimes</option>
+                  <option value="Arsenal" *ngIf="selectorCompeticion == 'Premier League'">Arsenal</option>
+                  <option value="Bournemouth" *ngIf="selectorCompeticion == 'Premier League'">Bournemouth</option>
+                  <option value="Chelsea" *ngIf="selectorCompeticion == 'Premier League'">Chelsea</option>
+                  <option value="Everton" *ngIf="selectorCompeticion == 'Premier League'">Everton</option>
+                  <option value="Leicester" *ngIf="selectorCompeticion == 'Premier League'">Leicester</option>
+                  <option value="Fulham" *ngIf="selectorCompeticion == 'Premier League'">Fulham</option>
+                  <option value="Brighton" *ngIf="selectorCompeticion == 'Premier League'">Brighton</option>
+                  <option value="Huddersfield" *ngIf="selectorCompeticion == 'Premier League'">Huddersfield</option>
+                  <option value="Crystal Palace" *ngIf="selectorCompeticion == 'Premier League'">Crystal Palace</option>
+                  <option value="Watford" *ngIf="selectorCompeticion == 'Premier League'">Watford</option>
+                  <option value="Cardiff City" *ngIf="selectorCompeticion == 'Premier League'">Cardiff City</option>
+                  <option value="Manchester United" *ngIf="selectorCompeticion == 'Premier League'">Manchester United</option>
+                  <option value="Manchester City" *ngIf="selectorCompeticion == 'Premier League'">Manchester City</option>
+                  <option value="Newcastle" *ngIf="selectorCompeticion == 'Premier League'">Newcastle</option>
+                  <option value="West Ham" *ngIf="selectorCompeticion == 'Premier League'">West Ham</option>
+                  <option value="Burnley" *ngIf="selectorCompeticion == 'Premier League'">Burnley</option>
+                  <option value="Southamptom" *ngIf="selectorCompeticion == 'Premier League'">Southamptom</option>
+                  <option value="Tottenham" *ngIf="selectorCompeticion == 'Premier League'" >Tottenham</option>
+                  <option value="Liverpool" *ngIf="selectorCompeticion == 'Premier League'">Liverpool</option>
+                  <option value="Wolves" *ngIf="selectorCompeticion == 'Premier League'">Wolves</option>
+                  <option value="Real Madrid" *ngIf="selectorCompeticion=='LaLiga'">Real Madrid</option>
+                  <option value="Barcelona" *ngIf="selectorCompeticion=='LaLiga'">Barcelona</option>
+                  <option value="Atletico Madrid" *ngIf="selectorCompeticion=='LaLiga'">Atletico Madrid</option>
+                  <option value="Valencia" *ngIf="selectorCompeticion=='LaLiga'">Valencia</option>
+                  <option value="Sevilla" *ngIf="selectorCompeticion=='LaLiga'">Sevilla</option>
+                  <option value="Villareal" *ngIf="selectorCompeticion=='LaLiga'">Villareal</option>
+                  <option value="Athletic Bilbao" *ngIf="selectorCompeticion=='LaLiga'">Athletic Bilbao</option>
+                  <option value="Celta de Vigo" *ngIf="selectorCompeticion=='LaLiga'">Celta de Vigo</option>
+                  <option value="Real Sociedad" *ngIf="selectorCompeticion=='LaLiga'">Real Sociedad</option>
+                  <option value="Real Betis" *ngIf="selectorCompeticion=='LaLiga'">Real Betis</option>
+                  <option value="Leganes" *ngIf="selectorCompeticion=='LaLiga'">Leganes</option>
+                  <option value="Alaves" *ngIf="selectorCompeticion=='LaLiga'">Alaves</option>
+                  <option value="Levante" *ngIf="selectorCompeticion=='LaLiga'">Levante</option>
+                  <option value="Getafe" *ngIf="selectorCompeticion=='LaLiga'">Getafe</option>
+                  <option value="Rayo Vallecano" *ngIf="selectorCompeticion=='LaLiga'">Rayo Vallecano</option>
+                  <option value="Girona" *ngIf="selectorCompeticion=='LaLiga'">Girona</option>
+                  <option value="Eibar" *ngIf="selectorCompeticion=='LaLiga'">Eibar</option>
+                  <option value="Real Valladolid" *ngIf="selectorCompeticion=='LaLiga'">Real Valladolid</option>
+                  <option value="Huesca" *ngIf="selectorCompeticion=='LaLiga'">Huesca</option>
+                  <option value="Espanyol" *ngIf="selectorCompeticion=='LaLiga'">Espanyol</option>
+            </select>
+        </div>
+      
+      <div class="navbar-collapse w-100">
+           <select ngModel name="selectPosicion" #selectPosicion="ngModel" (change)="cambiarPosicion(selectPosicion.value)">
+                <option value="">Cualquiera</option>
+                <option value="PO">PO</option>
+                <option value="LD">LD</option>
+                <option value="DFD">DFD</option>
+                <option value="DFC">DFC</option>
+                <option value="DFI">DFI</option>
+                <option value="LI">LI</option>
+                <option value="MCD">MCD</option>
+                <option value="MD">MD</option>
+                <option value="MC">MC</option>
+                <option value="MI">MI</option>
+                <option value="MCO">MCO</option>
+                <option value="ED">ED</option>
+                <option value="MP">MP</option>
+                <option value="DC">DC</option>
+                <option value="EI">EI</option>
+            </select>
       </div>
+  
+        <div class="navbar-collapse w-100">
+          <p>Edad:</p>
+          {{edadMin}}<input type="range" ngModel name="EdadMin" #EdadMin="ngModel" min=15 max={{edadMax}} (change)="EstablecerEdadMinima(EdadMin.value)">
 
-      <form class="form-inline">
-          <div class="md-form my-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-light btn-block">Buscar</button>
-          </div>
-      </form>
+          <input type="range" ngModel name="EdadMax" #EdadMax="ngModel" min={{edadMin}} max="50" (change)="EstablecerEdadMaxima(EdadMax.value)">{{edadMax}}
+        </div>
+
+        <div class="navbar-collapse w-100">
+          <p>Precio:</p>
+          {{precioMin}}<input type="range" ngModel name="PrecioMin" #PrecioMin="ngModel" min="0" max={{precioMax}} (change)="EstablecerPrecioMinimo(PrecioMin.value)">
+
+          <input type="range" ngModel name="PrecioMax" #PrecioMax="ngModel" min={{precioMin}} max="500" (change)="EstablecerPrecioMaximo(PrecioMax.value)">{{precioMax}}
+        </div>
+      
+
+        <div class="md-form my-0">
+              <input type="text" ngModel name="buscarNombre" #buscarNombre="ngModel" class="form-control mr-sm-2"  placeholder="Search" aria-label="Search" (change)="CambiarNombre(buscarNombre.value)">
+              <button type="submit" class="btn btn-outline-light btn-block">Buscar</button>
+        </div>
+    </form>
   </nav>
 
   <div id="listaJugadores">

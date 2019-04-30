@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Usuario } from './Usuario';
 import { UsuarioService } from '../usuario.service';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-log',
@@ -9,29 +11,57 @@ import { UsuarioService } from '../usuario.service';
   styleUrls: ['./log.component.css']
 })
 export class LogComponent implements OnInit {
-  usuario: Usuario;
   clossingSession = false;
   modoIniciarSesion: boolean;
-  constructor(private usuarioService: UsuarioService) { }
+  invalidForm: boolean;
+  invalidFormR: boolean;
+  constructor(private usuarioService: UsuarioService,
+              private router: Router,
+              private location: Location) { }
 
   ngOnInit() {
     this.modoIniciarSesion = true;
-    //Redireccionar a lobby si ya está loggeado através del servicio
+    this.invalidForm = false;
+    this.invalidFormR = false;
+    // if (this.usuarioService.isUserLogged()) {
+    //   console.log("que pez")
+    //   this.location.back();
+    // }
+  }
+
+  register(user: NgForm) {
+    if(user.valid && user.value.PassR === user.value.Pass2R) {
+      this.invalidFormR = false;
+      const usuario = new Usuario(2, user.value.UsuarioR, '', user.value.PassR, user.value.emailR);
+      this.usuarioService.addUser(usuario);
+      console.log(JSON.stringify(usuario));
+      this.router.navigate(['/lobby']);
+    } else {
+      this.invalidFormR = true;
+    }
   }
 
   login(user: NgForm) {
+    // console.log(user.value.Usuario, );
     if(user.valid) {
-      console.log(user.value);
-      this.usuarioService.loginvalidate(user.value.usuario, user.value.password);
+      this.invalidForm = false;
+      const validLogin = this.usuarioService.loginvalidate(user.value.Usuario, user.value.Password);
+      if (validLogin) {
+        this.router.navigate(['/lobby']);
+      } else {
+        this.invalidForm = true;
+      }
       //redireccionar a Lobby
     } else {
       console.log('invalid');
+      this.invalidForm = true;
       //resetear el form y mandar mensaje que diga: Usuario y/o contraseña incorrectoss
     }
   }
 
   changeMode(mode: boolean){
     this.modoIniciarSesion = mode;
+
     console.log(this.modoIniciarSesion);
   }
 }

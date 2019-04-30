@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Usuario } from './log/Usuario';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
-  currentUser: Usuario;
+
   userLogged = false;
   private lastID = 1;
 
@@ -27,15 +28,43 @@ export class UsuarioService {
     new Usuario(this.lastID++, 'Villalove', 'usuario-' + this.lastID, 'love', 'villalon@iteso.mx'),
     new Usuario(this.lastID++, 'Luthe', 'usuario-' + this.lastID, 'oracle', 'rluthe@iteso.mx')
   ];
+
+  currentUser: Usuario;
+  currentUserName = new Subject<string>();
   constructor() { }
 
   loginvalidate(userV, pass): boolean {
+    console.log(userV + " " + pass);
     const userIndex = this.usuarios.findIndex(user => user.nombre == userV && user.password == pass);
-    if(userIndex >= 0){
-      console.log(JSON.stringify(this.usuarios[userIndex]));
+    if(userIndex >= 0) {
+      console.log(JSON.stringify(this.usuarios[userIndex]) + " holis");
       this.currentUser = Object.assign({}, this.usuarios[userIndex]);
+      this.currentUserName.next(this.currentUser.nombre);
+      this.userLogged = true;
       return true;
     }
     return false;
+  }
+
+  closeSession(){
+    this.currentUser = undefined;
+    this.currentUserName.next('');
+    this.userLogged = false;
+  }
+
+  isUserLogged(){
+    return this.userLogged;
+  }
+
+  addUser(usuario: Usuario) {
+    usuario.id = this.lastID;
+    const userIndex = this.usuarios.findIndex(user => user.nombre == usuario.nombre);
+    if (userIndex >= 0) { return; }
+
+    this.usuarios.push(Object.assign({}, usuario));
+    this.currentUser = Object.assign({}, this.usuarios[this.usuarios.length - 1]);
+    this.currentUserName.next(this.currentUser.nombre);
+    this.userLogged = true;
+    this.lastID++;
   }
 }

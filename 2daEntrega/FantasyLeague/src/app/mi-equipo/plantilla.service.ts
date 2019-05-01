@@ -23,6 +23,8 @@ export class PlantillaService {
           new Plantilla(5, 1, false, '4-4-2', 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 11),
           new Plantilla(6, 2, false, '4-3-3', 1, 2, 5, 6, 7, 11, 12, 13, 14, 19, 20, 21, 30, 23, 19)
         ];
-
+        buscarPlantillaMiEquipo(idEquipo: number){
+          return this.plantillas.find(pl => pl.equipo == idEquipo && pl.activa == true);
+        }
   constructor() { }
 }

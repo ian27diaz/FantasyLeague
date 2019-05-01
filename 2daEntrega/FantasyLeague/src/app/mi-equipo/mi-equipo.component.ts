@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { EquiposService } from './equipos.service';
 import { Equipo } from './Equipo';
 import { PlantillaService } from './plantilla.service';
+import { Plantilla } from './Plantilla';
 
 
 @Component({
@@ -19,13 +20,15 @@ export class MiEquipoComponent implements OnInit {
               private equiposService: EquiposService,
               private router: Router) { }
 
-  currentFormation: string;
+  currentFormation: Plantilla;
 
   ngOnInit() {
     if (!this.usuarioService.isUserLogged()) {
       this.router.navigate(['/authentication']);
     }
-    this.currentEquipo = this.equiposService.getCurrentEquipo();
+    this.currentEquipo = this.equipoService.getCurrentEquipo();
+    this.currentFormation = this.plantillaService.buscarPlantillaMiEquipo(this.currentEquipo.id);
+    console.log(this.currentFormation.formacion);
   }
 
 }

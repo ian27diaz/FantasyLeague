@@ -16,7 +16,7 @@ export class MiEquipoComponent implements OnInit {
   constructor(private usuarioService: UsuarioService,
 
               private plantillaService: PlantillaService,
-              private equipoService: EquiposService,
+              private equiposService: EquiposService,
               private router: Router) { }
 
   currentFormation: string;

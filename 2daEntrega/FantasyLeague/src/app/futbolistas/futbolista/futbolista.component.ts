@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Futbolista } from './Futbolista';
 
 @Component({
   selector: 'app-futbolista',
@@ -8,7 +7,6 @@ import { Futbolista } from './Futbolista';
 })
 
 export class FutbolistaComponent implements OnInit {
-  @Input() futbolista: Futbolista;
 
   constructor() {}
 

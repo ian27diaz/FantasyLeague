@@ -57,6 +57,7 @@ export class LobbyComponent implements OnInit {
 
   getID(equipo) {
     this.equiposService.actualizarEquipo(equipo);
+    this.router.navigate(['/miequipo']);
   }
 
 }

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Equipo } from './Equipo';
-import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +14,7 @@ import { Subject } from 'rxjs';
         //public presupuesto: number
 
 export class EquiposService {
-  currentEquipo = new Subject<Equipo>();
+  currentEquipo: Equipo;
   equipos: Equipo[] = [
     new Equipo(1, 'Luis Fernando`s Team', 'assets/images/EscudosEquipos/EscudoEquipo-1.jpg', 1, 1, 20, 5000),
     new Equipo(2, 'Pallacracks', 'assets/images/EscudosEquipos/EscudoEquipo-2.jpg', 1, 2, 20, 5000),
@@ -60,11 +59,15 @@ export class EquiposService {
   ];
   constructor() { }
 
-  getEquipo(id): Equipo[] {
-    return this.equipos.filter(equipo => (equipo.propietario == id));
+  getEquipo(idPropietario): Equipo[] {
+    return this.equipos.filter(equipo => (equipo.propietario == idPropietario));
   }
 
-  actualizarEquipo(equipo) {
-    this.currentEquipo.next(equipo);
+  getCurrentEquipo(): Equipo {
+    return this.currentEquipo;
+  }
+
+  actualizarEquipo(equipo: Equipo) {
+    this.currentEquipo = equipo;
   }
 }

@@ -2,9 +2,10 @@
     <div class="col-sm-4" id="ListaEquipos">
         <h1 id="title1">Mis Equipos</h1>
         <div *ngFor="let equ of equipos"  class="elementoEquipo">
-            <div class="escudo"> <img src={{equ.escudo}}></div>
-            <button class="btn btn-primary">{{equ.nombre}}</button>
-            <br>
+
+                <div class="escudo"> <img src={{equ.escudo}}></div>
+                <button class="btn btn-primary" >{{equ.nombre}}</button>
+                <br>
         </div>
 
         <button type="button" class="btn btn-success">+</button>

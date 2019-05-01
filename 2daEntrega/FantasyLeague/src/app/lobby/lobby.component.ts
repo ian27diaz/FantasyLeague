@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Equipo } from '../mi-equipo/Equipo';
 import { EquiposService } from '../mi-equipo/equipos.service';
+import { UsuarioService } from '../usuario.service';
 
 @Component({
   selector: 'app-lobby',
@@ -15,10 +16,10 @@ export class LobbyComponent implements OnInit {
   activeEnfrentamientos = 'nav-item';
   activeEstadisticas = 'nav-item';
 
-  constructor(private equiposService: EquiposService) { }
+  constructor(private equiposService: EquiposService, private usuarioService: UsuarioService) { }
 
   ngOnInit() {
-    this.equipos = this.equiposService.getEquipo();
+    this.equipos = this.equiposService.getEquipo(this.usuarioService.getCurrentUserID());
   }
 
   cambiarInfoLiga(ligaSel) {
@@ -44,6 +45,10 @@ export class LobbyComponent implements OnInit {
         this.activeEstadisticas = 'nav-item active';
         break;
     }
+  }
+
+  imprimirID(id){
+    console.log(id);
   }
 
 }

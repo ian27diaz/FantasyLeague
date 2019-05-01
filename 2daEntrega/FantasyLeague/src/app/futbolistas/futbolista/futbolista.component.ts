@@ -10,7 +10,7 @@ import { Futbolista } from './Futbolista';
 export class FutbolistaComponent implements OnInit {
   @Input() futbolista: Futbolista;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }

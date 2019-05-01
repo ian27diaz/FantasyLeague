@@ -7,7 +7,6 @@ export class Equipo {
         public propietario: number,
         public liga: number,
         public puntos: number,
-        public plantilla: number,
         public presupuesto: number
         ) {}
 }

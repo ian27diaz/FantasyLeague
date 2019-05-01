@@ -52,7 +52,7 @@ export class UsuarioService {
     this.userLogged = false;
   }
 
-  isUserLogged(){
+  isUserLogged() {
     return this.userLogged;
   }
 
@@ -66,5 +66,9 @@ export class UsuarioService {
     this.currentUserName.next(this.currentUser.nombre);
     this.userLogged = true;
     this.lastID++;
+  }
+
+  getCurrentUserID() {
+    return this.currentUser.id;
   }
 }

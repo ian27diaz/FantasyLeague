@@ -13,6 +13,7 @@ export class FutbolistaComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+
   }
 
 }

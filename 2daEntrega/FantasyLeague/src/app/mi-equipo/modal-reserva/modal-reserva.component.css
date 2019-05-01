@@ -1,0 +1,35 @@
+.container {
+    background-color: white;
+    padding: 0px;
+    text-align: center;
+}
+
+img {
+    max-height: 90px;
+    max-width: 90px;
+}
+
+h2 {
+    padding: 25px 0px;
+    background-color: lightgray;
+}
+
+span {
+    font-size: 24px;
+    font-weight: bold;
+
+    height: 100%;
+}
+
+.col-4, .col-8{
+    border-bottom: 2px solid black;
+    padding: 0px;
+}
+
+.col-8{
+    border-left: 2px dashed black;
+}
+
+.row{
+    margin: 0px;
+}

@@ -15,6 +15,9 @@ import { ReglamentoComponent } from './reglamento/reglamento.component';
 import { HeaderComponent } from './header/header.component';
 import { MiEquipoComponent } from './mi-equipo/mi-equipo.component';
 import {FormsModule} from '@angular/forms';
+import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
+import { ModalCambiosComponent } from './mi-equipo/modal-cambios/modal-cambios.component';
+import { ModalReservaComponent } from './mi-equipo/modal-reserva/modal-reserva.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +32,15 @@ import {FormsModule} from '@angular/forms';
     TablaPosicionesComponent,
     ReglamentoComponent,
     HeaderComponent,
-    MiEquipoComponent
+    MiEquipoComponent,
+    ModalCambiosComponent,
+    ModalReservaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

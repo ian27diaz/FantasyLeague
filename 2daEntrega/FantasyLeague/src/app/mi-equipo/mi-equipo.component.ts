@@ -3,6 +3,8 @@ import { UsuarioService } from '../usuario.service';
 import { Router } from '@angular/router';
 import { EquiposService } from './equipos.service';
 import { Equipo } from './Equipo';
+import { PlantillaService } from './plantilla.service';
+
 
 @Component({
   selector: 'app-mi-equipo',
@@ -12,7 +14,12 @@ import { Equipo } from './Equipo';
 export class MiEquipoComponent implements OnInit {
   currentEquipo: Equipo;
   constructor(private usuarioService: UsuarioService,
-    private router: Router, private equiposService: EquiposService) { }
+
+              private plantillaService: PlantillaService,
+              private equipoService: EquiposService,
+              private router: Router) { }
+
+  currentFormation: string;
 
   ngOnInit() {
     if (!this.usuarioService.isUserLogged()) {
@@ -20,4 +27,5 @@ export class MiEquipoComponent implements OnInit {
     }
     this.currentEquipo = this.equiposService.getCurrentEquipo();
   }
+
 }

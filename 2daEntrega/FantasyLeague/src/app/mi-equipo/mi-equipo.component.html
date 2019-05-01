@@ -14,22 +14,18 @@
                   3-4-3
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">3-4-3</a>
-                  <a class="dropdown-item" href="#">3-5-2</a>
-                  <a class="dropdown-item" href="#">4-3-3</a>
-                  <a class="dropdown-item" href="#">4-4-2</a>
-                  <a class="dropdown-item" href="#">4-5-1</a>
-                  <a class="dropdown-item" href="#">5-3-2</a>
-                  <a class="dropdown-item" href="#">5-4-1</a>
+                  <a class="dropdown-item">3-4-3</a>
+                  <a class="dropdown-item">3-5-2</a>
+                  <a class="dropdown-item">4-3-3</a>
+                  <a class="dropdown-item">4-4-2</a>
+                  <a class="dropdown-item">4-5-1</a>
+                  <a class="dropdown-item">5-3-2</a>
+                  <a class="dropdown-item">5-4-1</a>
               </div>
           </div>
       </div>
       <div class="col-md-2 botonesDeControl">
-          <button class="btn btn-light">
-              <i class="fas fa-arrows-alt-h"></i>
-              <p>Cambios</p>
-          </button>
-          
+            <app-modal-cambios></app-modal-cambios>
       </div>
   </div>
   <div class="row">
@@ -125,9 +121,8 @@
               </div>
 
           </div>
-          <div class="row">
-              <button type="button" class="btn btn-info btn-block btn-lg">Reservas</button>
-          </div>
+          <app-modal-reserva></app-modal-reserva>
       </div>
   </div>
 </div>
+

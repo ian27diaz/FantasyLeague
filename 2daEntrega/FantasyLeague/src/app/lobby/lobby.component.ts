@@ -55,8 +55,8 @@ export class LobbyComponent implements OnInit {
     }
   }
 
-  imprimirID(id){
-    console.log(id);
+  getID(equipo) {
+    this.equiposService.actualizarEquipo(equipo);
   }
 
 }

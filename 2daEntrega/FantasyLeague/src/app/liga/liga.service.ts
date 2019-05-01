@@ -12,9 +12,8 @@ export class LigaService {
 
   constructor() { }
 
-
-  
-  getEquipo(): Liga[] {
+  getLigas(): Liga[] {
     return this.ligas;
   }
+
 }

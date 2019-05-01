@@ -4,7 +4,7 @@
         <div *ngFor="let equ of equipos"  class="elementoEquipo">
 
                 <div class="escudo"> <img src={{equ.escudo}}></div>
-                <button class="btn btn-primary" (click)="getID(equ)" >{{equ.nombre}}</button>
+                <button class="btn btn-primary" (click)="actualizarCurrentEquipo(equ)" >{{equ.nombre}}</button>
                 <br>
         </div>
 

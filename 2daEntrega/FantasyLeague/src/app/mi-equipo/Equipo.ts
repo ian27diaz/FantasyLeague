@@ -6,7 +6,11 @@ export class Equipo {
         public escudo: string,
         public propietario: number,
         public liga: number,
-        public puntos: number,
+        public partidosGanados: number,
+        public partidosEmpatados: number,
+        public partidosPerdidos: number,
+        public puntosFavor: number,
+        public puntosContra: number,
         public presupuesto: number
         ) {}
 }

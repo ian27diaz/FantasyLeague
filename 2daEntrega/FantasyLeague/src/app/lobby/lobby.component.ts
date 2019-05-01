@@ -26,7 +26,7 @@ export class LobbyComponent implements OnInit {
     if (!this.usuarioService.isUserLogged()) {
       this.router.navigate(['/authentication']);
     }
-    this.equipos = this.equiposService.getEquipo(this.usuarioService.getCurrentUserID());
+    this.equipos = this.equiposService.getEquipoPropietario(this.usuarioService.getCurrentUserID());
 
   }
 
@@ -55,7 +55,7 @@ export class LobbyComponent implements OnInit {
     }
   }
 
-  getID(equipo) {
+  actualizarCurrentEquipo(equipo) {
     this.equiposService.actualizarEquipo(equipo);
     this.router.navigate(['/miequipo']);
   }

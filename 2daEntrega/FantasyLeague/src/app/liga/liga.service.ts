@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Liga } from './Liga';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -13,6 +12,8 @@ export class LigaService {
 
   constructor() { }
 
+
+  
   getEquipo(): Liga[] {
     return this.ligas;
   }

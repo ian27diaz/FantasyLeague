@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Futbolista } from './futbolista/Futbolista';
 import { FutbolistasService } from './futbolistas.service';
+import { UsuarioService } from '../usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-futbolistas',
@@ -18,9 +20,14 @@ export class FutbolistasComponent implements OnInit {
   precioMin = 0;
   precioMax = 500;
 
-  constructor(private futbolistasService: FutbolistasService) { }
+  constructor(private futbolistasService: FutbolistasService,
+              private usuarioService: UsuarioService,
+              private router: Router) { }
 
   ngOnInit() {
+    if(!this.usuarioService.isUserLogged()){
+      this.router.navigate(['/authentication']);
+    }
     this.futbolistas = this.futbolistasService.getFutbolista();
   }
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Equipo } from '../mi-equipo/Equipo';
 import { EquiposService } from '../mi-equipo/equipos.service';
 import { UsuarioService } from '../usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lobby',
@@ -16,10 +17,17 @@ export class LobbyComponent implements OnInit {
   activeEnfrentamientos = 'nav-item';
   activeEstadisticas = 'nav-item';
 
-  constructor(private equiposService: EquiposService, private usuarioService: UsuarioService) { }
+
+  constructor(private equiposService: EquiposService,
+              private usuarioService: UsuarioService,
+              private router: Router) { }
 
   ngOnInit() {
+    if (!this.usuarioService.isUserLogged()) {
+      this.router.navigate(['/authentication']);
+    }
     this.equipos = this.equiposService.getEquipo(this.usuarioService.getCurrentUserID());
+
   }
 
   cambiarInfoLiga(ligaSel) {

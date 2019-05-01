@@ -3,7 +3,6 @@ import { NgForm } from '@angular/forms';
 import { Usuario } from './Usuario';
 import { UsuarioService } from '../usuario.service';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-log',
@@ -16,17 +15,12 @@ export class LogComponent implements OnInit {
   invalidForm: boolean;
   invalidFormR: boolean;
   constructor(private usuarioService: UsuarioService,
-              private router: Router,
-              private location: Location) { }
+              private router: Router) { }
 
   ngOnInit() {
     this.modoIniciarSesion = true;
     this.invalidForm = false;
     this.invalidFormR = false;
-    // if (this.usuarioService.isUserLogged()) {
-    //   console.log("que pez")
-    //   this.location.back();
-    // }
   }
 
   register(user: NgForm) {

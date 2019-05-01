@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from '../usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mi-equipo',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MiEquipoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private usuarioService: UsuarioService,
+    private router: Router) { }
 
   ngOnInit() {
+    if(!this.usuarioService.isUserLogged()){
+      this.router.navigate(['/authentication']);
+    }
   }
 
 }

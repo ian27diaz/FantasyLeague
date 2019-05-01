@@ -58,6 +58,10 @@ export class FutbolistasService {
     return this.futbolistas.slice();
   }
 
+  getFutbolistaByID(id: number) {
+    return Object.assign({}, this.futbolistas.find(f => f.id == id));
+  }
+
   filterFutbolista(nombre, competicion, club, pos, edadmin, edadmax, preciomin, preciomax): Futbolista[] {
     let filtroFutbolistas = this.futbolistas.slice();
     if(nombre != ''){

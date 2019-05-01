@@ -11,16 +11,16 @@
           <div class="dropdown">
               <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  3-4-3
+                  {{currentFormation.formacion}}
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item">3-4-3</a>
-                  <a class="dropdown-item">3-5-2</a>
-                  <a class="dropdown-item">4-3-3</a>
-                  <a class="dropdown-item">4-4-2</a>
-                  <a class="dropdown-item">4-5-1</a>
-                  <a class="dropdown-item">5-3-2</a>
-                  <a class="dropdown-item">5-4-1</a>
+                  <a class="dropdown-item" (click)="changeFormation('3-4-3')">3-4-3</a>
+                  <a class="dropdown-item" (click)="changeFormation('3-5-2')">3-5-2</a>
+                  <a class="dropdown-item" (click)="changeFormation('4-3-3')">4-3-3</a>
+                  <a class="dropdown-item" (click)="changeFormation('4-4-2')">4-4-2</a>
+                  <a class="dropdown-item" (click)="changeFormation('4-5-1')">4-5-1</a>
+                  <a class="dropdown-item" (click)="changeFormation('5-3-2')">5-3-2</a>
+                  <a class="dropdown-item" (click)="changeFormation('5-4-1')">5-4-1</a>
               </div>
           </div>
       </div>
@@ -30,52 +30,52 @@
   </div>
   <div class="row">
       <div class="col-md-10 canchaContainer">
-          <div class="container-fluid">
+          <div class="container-fluid" *ngIf="is3_4_3"> <!--***************** 3-4-3 *****************-->
               <div class="row">
                   <div class="player">
                       <img src="assets/images/camisaEjemplo.png" alt="" id="player1">
-                      <p>Mauri</p>
+                      <p>{{this.titular11.nombre}}</p>
                   </div>
                   <div class="player">
                       <img src="assets/images/camisaEjemplo.png" alt="" id="player2">
-                      <p>Pallaro Jr.</p>
+                      <p>{{this.titular10.nombre}}</p>
                   </div>
                   <div class="player">
                       <img src="assets/images/camisaEjemplo.png" alt="" id="player3">
-                      <p>Pallaro</p>
+                      <p>{{this.titular9.nombre}}</p>
                   </div>
               </div>
               <div class="row">
                   <div class="player">
                       <img src="assets/images/camisaEjemplo.png" alt="" id="player4">
-                      <p>Salgado A.</p>
+                      <p>{{this.titular8.nombre}}</p>
                   </div>
                   <div class="player">
                       <img src="assets/images/camisaEjemplo.png" alt="" id="player5">
                       <i class="far fa-copyright"></i>
-                      <p>Avalos J.</p>
+                      <p>{{this.titular7.nombre}}</p>
                   </div>
                   <div class="player">
                       <img src="assets/images/camisaEjemplo.png" alt="" id="player6">
-                      <p>Tanque</p>
+                      <p>{{this.titular6.nombre}}</p>
                   </div>
                   <div class="player">
                       <img src="assets/images/camisaEjemplo.png" alt="" id="player7">
-                      <p>Kennedy</p>
+                      <p>{{this.titular5.nombre}}</p>
                   </div>
               </div>
               <div class="row">
                   <div class="player">
                       <img src="assets/images/camisaEjemplo.png" alt="" id="player8">
-                      <p>Diaz I.</p>
+                      <p>{{this.titular4.nombre}}</p>
                   </div>
                   <div class="player">
                       <img src="assets/images/camisaEjemplo.png" alt="" id="player9">
-                      <p>Valderrama M.</p>
+                      <p>{{this.titular3.nombre}}</p>
                   </div>
                   <div class="player">
                       <img src="assets/images/camisaEjemplo.png" alt="" id="player10">
-                      <p>Ortiz J.C.</p>
+                      <p>{{this.titular2.nombre}}</p>
                   </div>
 
 
@@ -84,12 +84,396 @@
               <div class="row">
                   <div class="player">
                       <img src="assets/images/camisaEjemplo.png" alt="" id="portero">
-                      <p>Valderrama D.</p>
+                      <p>{{this.titular1.nombre}}</p>
                   </div>
 
               </div>
           </div>
+          <!-- ********************************************************************** -->
+          <div class="container-fluid" *ngIf="is3_5_2"> <!--***************** 3-5-2 *****************-->
+            <div class="row">
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player1">
+                    <p>{{this.titular11.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player2">
+                    <p>{{this.titular10.nombre}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player3">
+                    <p>{{this.titular9.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player4">
+                    <p>{{this.titular8.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player5">
+                    <i class="far fa-copyright"></i>
+                    <p>{{this.titular7.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player6">
+                    <p>{{this.titular6.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player7">
+                    <p>{{this.titular5.nombre}}</p>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="player">
+                            <img src="assets/images/camisaEjemplo.png" alt="" id="player8">
+                            <p>{{this.titular4.nombre}}</p>
+                        </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player9">
+                    <p>{{this.titular3.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player10">
+                    <p>{{this.titular2.nombre}}</p>
+                </div>
 
+
+
+            </div>
+            <div class="row">
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="portero">
+                    <p>{{this.titular1.nombre}}</p>
+                </div>
+
+            </div>
+        </div>
+         <!-- ********************************************************************** -->
+         <div class="container-fluid" *ngIf="is4_3_3"> <!--***************** 4-3-3 *****************-->
+            <div class="row">
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player1">
+                    <p>{{this.titular11.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player2">
+                    <p>{{this.titular10.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player3">
+                    <p>{{this.titular9.nombre}}</p>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player4">
+                    <p>{{this.titular8.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player5">
+                    <i class="far fa-copyright"></i>
+                    <p>{{this.titular7.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player6">
+                    <p>{{this.titular6.nombre}}</p>
+                </div>
+                
+                
+            </div>
+            <div class="row">
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player7">
+                    <p>{{this.titular5.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player8">
+                    <p>{{this.titular4.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player9">
+                    <p>{{this.titular3.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player10">
+                    <p>{{this.titular2.nombre}}</p>
+                </div>
+
+
+
+            </div>
+            <div class="row">
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="portero">
+                    <p>{{this.titular1.nombre}}</p>
+                </div>
+
+            </div>
+        </div>
+        <!-- ********************************************************************** -->
+        <div class="container-fluid" *ngIf="is4_4_2"> <!--***************** 4-4-2 *****************-->
+            <div class="row">
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player1">
+                    <p>{{this.titular11.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player2">
+                    <p>{{this.titular10.nombre}}</p>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player3">
+                    <p>{{this.titular9.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player4">
+                    <p>{{this.titular8.nombre}}</p>
+                </div>
+                
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player5">
+                    <i class="far fa-copyright"></i>
+                    <p>{{this.titular7.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player6">
+                    <p>{{this.titular6.nombre}}</p>
+                </div>
+                
+                
+            </div>
+            <div class="row">
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player7">
+                    <p>{{this.titular5.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player8">
+                    <p>{{this.titular4.nombre}}</p>
+                </div>
+                
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player9">
+                    <p>{{this.titular3.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player10">
+                    <p>{{this.titular2.nombre}}</p>
+                </div>
+
+
+
+            </div>
+            <div class="row">
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="portero">
+                    <p>{{this.titular1.nombre}}</p>
+                </div>
+
+            </div>
+        </div>
+        <!-- ********************************************************************** -->
+        <div class="container-fluid" *ngIf="is4_5_1"> <!--***************** 4-5-1 *****************-->
+            <div class="row">
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player1">
+                    <p>{{this.titular11.nombre}}</p>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player2">
+                    <p>{{this.titular10.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player3">
+                    <p>{{this.titular9.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player4">
+                    <p>{{this.titular8.nombre}}</p>
+                </div>
+                
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player5">
+                    <i class="far fa-copyright"></i>
+                    <p>{{this.titular7.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player6">
+                    <p>{{this.titular6.nombre}}</p>
+                </div>
+                
+                
+            </div>
+            <div class="row">
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player7">
+                    <p>{{this.titular5.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player8">
+                    <p>{{this.titular4.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player9">
+                    <p>{{this.titular3.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player10">
+                    <p>{{this.titular2.nombre}}</p>
+                </div>
+
+
+
+            </div>
+            <div class="row">
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="portero">
+                    <p>{{this.titular1.nombre}}</p>
+                </div>
+
+            </div>
+        </div>
+        <!-- ********************************************************************** -->
+        <div class="container-fluid" *ngIf="is5_3_2"> <!--***************** 5_3_2 *****************-->
+            <div class="row">
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player1">
+                    <p>{{this.titular11.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player2">
+                    <p>{{this.titular10.nombre}}</p>
+                </div>
+            </div>
+            <div class="row">
+                
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player3">
+                    <p>{{this.titular9.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player4">
+                    <p>{{this.titular8.nombre}}</p>
+                </div>
+                
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player5">
+                    <i class="far fa-copyright"></i>
+                    <p>{{this.titular7.nombre}}</p>
+                </div>
+                
+                
+                
+            </div>
+            <div class="row">
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player6">
+                    <p>{{this.titular6.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player7">
+                    <p>{{this.titular5.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player8">
+                    <p>{{this.titular4.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player9">
+                    <p>{{this.titular3.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player10">
+                    <p>{{this.titular2.nombre}}</p>
+                </div>
+
+
+
+            </div>
+            <div class="row">
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="portero">
+                    <p>{{this.titular1.nombre}}</p>
+                </div>
+            </div>
+        </div>
+        <!-- ********************************************************************** -->
+
+        <div class="container-fluid" *ngIf="is5_4_1"> <!--***************** 5_4_1 *****************-->
+            <div class="row">
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player1">
+                    <p>{{this.titular11.nombre}}</p>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player2">
+                    <p>{{this.titular10.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player3">
+                    <p>{{this.titular9.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player4">
+                    <p>{{this.titular8.nombre}}</p>
+                </div>
+                
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player5">
+                    <i class="far fa-copyright"></i>
+                    <p>{{this.titular7.nombre}}</p>
+                </div>
+                
+                
+                
+            </div>
+            <div class="row">
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player6">
+                    <p>{{this.titular6.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player7">
+                    <p>{{this.titular5.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player8">
+                    <p>{{this.titular4.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player9">
+                    <p>{{this.titular3.nombre}}</p>
+                </div>
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="player10">
+                    <p>{{this.titular2.nombre}}</p>
+                </div>
+
+
+
+            </div>
+            <div class="row">
+                <div class="player">
+                    <img src="assets/images/camisaEjemplo.png" alt="" id="portero">
+                    <p>{{this.titular1.nombre}}</p>
+                </div>
+            </div>
+        </div>
+        <!-- ********************************************************************** -->
+          <!-- 
+          ****************************************************************
+           -->
       </div>
       <div class="col-md-2" id="banca">
           <div class="row">
@@ -102,7 +486,7 @@
           <div class="row">
               <div class="player">
                   <img src="assets/images/camisaEjemplo.png" alt="">
-                  <p>Chavez H.</p>
+                  <p>{{banca1.nombre}}</p>
               </div>
 
           </div>
@@ -110,14 +494,14 @@
           <div class="row">
               <div class="player">
                   <img src="assets/images/camisaEjemplo.png" alt="">
-                  <p>Victor Hugo Ortega</p>
+                  <p>{{banca2.nombre}}</p>
               </div>
 
           </div>
           <div class="row">
               <div class="player">
                   <img src="assets/images/camisaEjemplo.png" alt="">
-                  <p>Galindo D.</p>
+                  <p>{{banca3.nombre}}</p>
               </div>
 
           </div>

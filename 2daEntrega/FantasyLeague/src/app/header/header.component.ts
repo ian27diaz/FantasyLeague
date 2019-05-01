@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
   show: boolean;
+  inLobby: boolean;
   userName: string;
   private usernameSubscript: Subscription;
   constructor(private activatedRoute: ActivatedRoute,
@@ -20,6 +21,7 @@ export class HeaderComponent implements OnInit {
     
     this.router.events.subscribe((val) => {
       this.show = !this.router.url.includes('authentication');
+      this.inLobby = !this.router.url.includes('lobby');
       console.log('Cambio en la ruta ' + this.show + '\n' + this.router.url);
     });
     this.usernameSubscript = this.usuarioService.currentUserName

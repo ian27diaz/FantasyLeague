@@ -1,5 +1,5 @@
 <nav *ngIf="show" class="navbar navbar-expand-md navbar-dark bg-primary sticky-top">
-  <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+  <div *ngIf="inLobby" class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a routerLink="/lobby" class="nav-link" routerLinkActive="active">Inicio</a>
@@ -19,7 +19,7 @@
     </ul>
   </div>
   <div class="mx-auto order-0">
-    <a class="navbar-brand mx-auto" href="#">Fantasy League <i class="fas fa-futbol"></i></a>
+    <a class="navbar-brand mx-auto" style="color: white;">Fantasy League <i class="fas fa-futbol"></i></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -31,7 +31,7 @@
           aria-expanded="false">
           <i class="fas fa-user"></i> {{userName}} </a>
         <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
-          <a class="dropdown-item" href="#">Mi cuenta</a>
+          <a class="dropdown-item">Mi cuenta</a>
           <a class="dropdown-item" (click)="cerrarsesion()">Cerrar sesión</a>
         </div>
       </li>

@@ -8,6 +8,7 @@ export class Futbolista {
         public precio: number,
         public club: string,
         public competicion: string,
-        public nacionalidad: string
+        public nacionalidad: string,
+        public uniforme: string
         ) {}
 }

@@ -1,35 +1,81 @@
-
-
-
 <ng-template #content let-modal>
-    <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title">Cambios</h4>
-      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-        <div class="container">
-            <div class="row">
-                <div class="col-4" id="firstcol">
-                    <div class="player" id="out">
-                        <img src="assets/images/LoginIcon.png" alt="" id="player1">
-                        <p>Jugador 1</p>
-                    </div>
+    <form #logForm1="ngForm" (ngSubmit)="submit(logForm1)">
+
+        <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Cambios</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+
+        <div class="modal-body">
+            <div class="container">
+                <div class="row">
+                    <select name="selectFutbolistaSale" ngModel #selectFutbolistaSale="ngModel" (change)="actualizarFutbolistaSale(selectFutbolistaSale.value)">
+                        <option value="{{titular1.id}}">{{titular1.nombre}}</option>
+                        <option value="{{titular2.id}}">{{titular2.nombre}}</option>
+                        <option value="{{titular3.id}}">{{titular3.nombre}}</option>
+                        <option value="{{titular4.id}}">{{titular4.nombre}}</option>
+                        <option value="{{titular5.id}}">{{titular5.nombre}}</option>
+                        <option value="{{titular6.id}}">{{titular6.nombre}}</option>
+                        <option value="{{titular7.id}}">{{titular7.nombre}}</option>
+                        <option value="{{titular8.id}}">{{titular8.nombre}}</option>
+                        <option value="{{titular9.id}}">{{titular9.nombre}}</option>
+                        <option value="{{titular10.id}}">{{titular10.nombre}}</option>
+                        <option value="{{titular11.id}}">{{titular11.nombre}}</option>
+                        <option value="{{banca1.id}}">{{banca1.nombre}}</option>
+                        <option value="{{banca2.id}}">{{banca2.nombre}}</option>
+                        <option value="{{banca3.id}}">{{banca3.nombre}}</option>
+                        <option value="{{reserva1.id}}">{{reserva1.nombre}}</option>
+                        <option value="{{reserva2.id}}">{{reserva2.nombre}}</option>
+                        <option value="{{reserva3.id}}">{{reserva3.nombre}}</option>
+                        <option value="{{reserva4.id}}">{{reserva4.nombre}}</option>
+                        <option value="{{reserva5.id}}">{{reserva5.nombre}}</option>
+                    </select>
+                    <select name="selectFutbolistaEntra" ngModel #selectFutbolistaEntra="ngModel" (change)="actualizarFutbolistaEntra(selectFutbolistaEntra.value)">
+                        <option value="{{titular1.id}}">{{titular1.nombre}}</option>
+                        <option value="{{titular2.id}}">{{titular2.nombre}}</option>
+                        <option value="{{titular3.id}}">{{titular3.nombre}}</option>
+                        <option value="{{titular4.id}}">{{titular4.nombre}}</option>
+                        <option value="{{titular5.id}}">{{titular5.nombre}}</option>
+                        <option value="{{titular6.id}}">{{titular6.nombre}}</option>
+                        <option value="{{titular7.id}}">{{titular7.nombre}}</option>
+                        <option value="{{titular8.id}}">{{titular8.nombre}}</option>
+                        <option value="{{titular9.id}}">{{titular9.nombre}}</option>
+                        <option value="{{titular10.id}}">{{titular10.nombre}}</option>
+                        <option value="{{titular11.id}}">{{titular11.nombre}}</option>
+                        <option value="{{banca1.id}}">{{banca1.nombre}}</option>
+                        <option value="{{banca2.id}}">{{banca2.nombre}}</option>
+                        <option value="{{banca3.id}}">{{banca3.nombre}}</option>
+                        <option value="{{reserva1.id}}">{{reserva1.nombre}}</option>
+                        <option value="{{reserva2.id}}">{{reserva2.nombre}}</option>
+                        <option value="{{reserva3.id}}">{{reserva3.nombre}}</option>
+                        <option value="{{reserva4.id}}">{{reserva4.nombre}}</option>
+                        <option value="{{reserva5.id}}">{{reserva5.nombre}}</option>
+                    </select>
                 </div>
-                <div class="col-4">
-                    <div class="player" id="in">
-                        <img src="assets/images/LoginIcon.png" alt="" id="player1">
-                        <p>Jugador 2</p>
+                <div class="row">
+                    <div class="col-4" id="firstcol">
+                        <div class="player" id="out">
+                            <img src={{futbolistaSale.foto}} alt="" id="player1">
+                            <p>{{futbolistaSale.nombre}}</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="player" id="in">
+                            <img src={{futbolistaEntra.foto}} alt="" id="player1">
+                            <p>{{futbolistaEntra.nombre}}</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
-    </div>
+        <div class="modal-footer">
+        <button type="submit" class="btn btn-outline-dark" >Guardar</button>
+        </div>
+    </form>
   </ng-template>
+
 
   <button class="btn btn-light" id="cambiosBtn" (click)="open(content)">
       <i class="fas fa-arrows-alt-h"></i>

@@ -34,13 +34,30 @@ export class PlantillaService {
           new Plantilla(6, 2, false, '4-3-3', 16, 41, 71, 94, 123, 136, 160, 175, 207, 234, 244, 1, 26, 51, 160, 0, 0, 0, 0, 0),
           new Plantilla(2, 33, false, '3-5-3', 7, 36, 53, 90, 116, 133, 157, 167, 191, 223, 238, 11, 37, 55, 90, 0, 0, 0, 0, 0),
           new Plantilla(3, 32, false, '4-4-2', 11, 37, 55, 91, 121, 135, 159, 171, 201, 228, 242, 7, 36, 53, 121, 0, 0 , 0, 0, 0)
+
         ];
-        buscarPlantillaMiEquipo(idEquipo: number){
+        buscarPlantillaMiEquipo(idEquipo: number) {
           return Object.assign({}, this.plantillas.find(pl => pl.equipo == idEquipo && pl.activa == true));
         }
 
-        actualizarFormacionMiEquipo(idPlantilla: number, formacion: string){
+
+        actualizarFormacionMiEquipo(idPlantilla: number, formacion: string) {
           this.plantillas[idPlantilla].formacion = formacion;
           console.log(idPlantilla + ' En Plantilla Service: \n' + JSON.stringify(this.plantillas[idPlantilla]));
         }
+
+        actualizarPlantilla(plantilla) {
+          console.log('ian');
+          console.log(JSON.stringify( this.plantillas[0]));
+          for(let i = 0; i<this.plantillas.length; i++){
+            console.log(i);
+            if(this.plantillas[i].id==plantilla.id){
+              console.log('gibson');
+              this.plantillas[i] = plantilla;
+              console.log(JSON.stringify( this.plantillas[0]));
+              break;
+            }
+          }
+        }
+
 }

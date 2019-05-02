@@ -20,6 +20,8 @@ import { ModalCambiosComponent } from './mi-equipo/modal-cambios/modal-cambios.c
 import { ModalReservaComponent } from './mi-equipo/modal-reserva/modal-reserva.component';
 import { ModalJugadorComponent } from './modal-jugador/modal-jugador.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { PruebaComponent } from './prueba/prueba.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     MiEquipoComponent,
     ModalCambiosComponent,
     ModalReservaComponent,
-    ModalJugadorComponent
+    ModalJugadorComponent,
+    PruebaComponent
   ],
   imports: [
     BrowserModule,

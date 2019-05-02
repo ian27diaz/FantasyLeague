@@ -845,7 +845,7 @@ export class ModalCambiosComponent implements OnInit {
                       }
     }
     this.plantillaService.actualizarPlantilla(this.plantilla);
-
+    this.modalService.dismissAll();
     this.router.navigate(['/pruebita']);
 
 

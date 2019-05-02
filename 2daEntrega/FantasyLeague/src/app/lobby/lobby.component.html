@@ -8,7 +8,44 @@
                 <br>
         </div>
 
-        <button type="button" class="btn btn-success">+</button>
+        <ng-template #content let-modal>   
+          
+                <div class="modal-header">
+                  <h4 class="modal-title" id="modal-basic-title">Agregar equipo</h4>
+                  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="jumbotron col-12">
+                      
+                              <form #logForm="ngForm" (ngSubmit)="agregarEquipo(logForm)">
+                                <div class="form-group row col-12">
+                                  <label for="inputUsuario" class="col-form-label">Nombre del Equipo:</label>
+                                  <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    placeholder="Equipo" 
+                                    name="nombreEquipo" 
+                                    (change)="invalidForm = false;"
+                                    ngModel required>
+                                </div>
+                                <div class="form-group row col-12 botones">
+                                  <button type="submit" class="btn btn-primary">Registrar</button>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-dark" (click)="agregarEquipo()">Close</button>
+                </div>
+              </ng-template>
+
+        <button type="button" class="btn btn-success" (click)="open(content)">+</button>
         <button type="button" class="btn btn-info">Ajustes</button>
 
     </div>

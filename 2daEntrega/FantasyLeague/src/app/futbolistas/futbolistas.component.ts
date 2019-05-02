@@ -41,7 +41,7 @@ export class FutbolistasComponent implements OnInit {
     this.propietarios = [];
     this.futbolistas = this.futbolistasService.getFutbolista();
 
-    this.futbolistas.forEach(futbolista => {
+    this.futbolistas.forEach((futbolista, index) => {
       let propietariosAux = '[';
       for(let i = 0; i < this.plantillaService.plantillas.length; i++){
         if (!this.plantillaService.plantillas[i].activa) {
@@ -72,7 +72,7 @@ export class FutbolistasComponent implements OnInit {
           if (!propietariosAux.includes(equipo.nombre) && this.equipoService.getCurrentEquipo() !== undefined
               && this.equipoService.getCurrentEquipo().liga == equipo.liga) {
             propietariosAux += equipo.nombre + ', ';
-
+                if(futbolista.nombre == 'Reus') console.log("indeX: " + index);
           }
         }
       }
@@ -87,6 +87,7 @@ export class FutbolistasComponent implements OnInit {
   }
 
   getPropietarios(indice: number){
+    console.log('EnPropi: ' + indice + ' ' + this.propietarios[indice]);
     return this.propietarios[indice];
   }
 

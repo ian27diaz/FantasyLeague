@@ -22,7 +22,6 @@ export class HeaderComponent implements OnInit {
     this.router.events.subscribe((val) => {
       this.show = !this.router.url.includes('authentication');
       this.inLobby = !this.router.url.includes('lobby');
-      console.log('Cambio en la ruta ' + this.show + '\n' + this.router.url);
     });
     this.usernameSubscript = this.usuarioService.currentUserName
     .subscribe((dato: string) => {

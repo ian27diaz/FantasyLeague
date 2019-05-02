@@ -3,6 +3,8 @@ import { Equipo } from '../mi-equipo/Equipo';
 import { EquiposService } from '../mi-equipo/equipos.service';
 import { UsuarioService } from '../usuario.service';
 import { Router } from '@angular/router';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-lobby',
@@ -11,6 +13,7 @@ import { Router } from '@angular/router';
 })
 export class LobbyComponent implements OnInit {
   equipos: Equipo[];
+  closeResult: string;
   infoLiga = 1;
   infoRubro = 1;
   activeTabla = 'nav-item active';
@@ -20,7 +23,8 @@ export class LobbyComponent implements OnInit {
 
   constructor(private equiposService: EquiposService,
               private usuarioService: UsuarioService,
-              private router: Router) { }
+              private router: Router,
+              private modalService: NgbModal) { }
 
   ngOnInit() {
     if (!this.usuarioService.isUserLogged()) {
@@ -60,4 +64,29 @@ export class LobbyComponent implements OnInit {
     this.router.navigate(['/miequipo']);
   }
 
+  agregarEquipo(form: NgForm){
+    console.log(form.value);
+    this.equiposService.crearEquipoNuevo(form.value.nombreEquipo, this.usuarioService.getCurrentUserID());
+    this.modalService.dismissAll();
+    this.router.navigate(['/miequipo']);
+
+  }
+
+  open(content: any) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
+  }
 }

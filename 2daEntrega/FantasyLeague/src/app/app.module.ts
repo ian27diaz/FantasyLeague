@@ -18,7 +18,8 @@ import {FormsModule} from '@angular/forms';
 import {NgbModalModule} from '@ng-bootstrap/ng-bootstrap';
 import { ModalCambiosComponent } from './mi-equipo/modal-cambios/modal-cambios.component';
 import { ModalReservaComponent } from './mi-equipo/modal-reserva/modal-reserva.component';
-
+import { ModalJugadorComponent } from './modal-jugador/modal-jugador.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,13 +35,15 @@ import { ModalReservaComponent } from './mi-equipo/modal-reserva/modal-reserva.c
     HeaderComponent,
     MiEquipoComponent,
     ModalCambiosComponent,
-    ModalReservaComponent
+    ModalReservaComponent,
+    ModalJugadorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgbModalModule
+    NgbModalModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

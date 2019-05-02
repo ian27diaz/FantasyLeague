@@ -23,7 +23,7 @@ export class MiEquipoComponent implements OnInit {
     private equipoService: EquiposService,
     private futbolistaService: FutbolistasService,
     private router: Router) { }
-    
+
   currentFormation: Plantilla;
   is3_4_3 = false;
   is3_5_2 = false;

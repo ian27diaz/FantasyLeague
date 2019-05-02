@@ -166,15 +166,116 @@
             </tr>
         </thead>
         <tbody>
-
-            <tr *ngFor="let fut of futbolistas">
+            <ng-template #content let-modal>
+                <div class="modal-header">
+                  <h4 class="modal-title" id="modal-basic-title">Futbolista</h4>
+                  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-4" id="imagenJugador">
+                                <img src="{{futbolistaInModal.foto}}">
+                            </div>
+                
+                            <div class="col-8" id="infoJugador">
+                                <h1>{{futbolistaInModal.nombre}}</h1>
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td><b>Puntos:</b></td>
+                                            <td>35</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>POS:</b></td>
+                                            <td>{{futbolistaInModal.posiciones}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Propietario:</b></td>
+                                            <td>Pallacracks</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Edad:</b></td>
+                                            <td>{{futbolistaInModal.edad}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Club:</b></td>
+                                            <td>{{futbolistaInModal.club}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Nacionalidad:</b></td>
+                                            <td>{{futbolistaInModal.nacionalidad}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                
+                        <div class="row">
+                            <h3>Jornada 1</h3>
+                            <div id="estadisticas">
+                
+                            
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <td><b>Rubro:</b></td>
+                                        <td><b>Cantidad</b></td>
+                                        <td><b>Puntos</b></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Asistencias:</td>
+                                        <td>1</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Goles:</td>
+                                        <td>1</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>%Pases:</td>
+                                        <td>10%</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>%Poseción:</td>
+                                        <td>10%</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Balones Recuperados</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Puntos Totales:</b></td>
+                                        <td><b>10</b></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+                </div>
+              </ng-template>
+            <tr *ngFor="let fut of futbolistas | paginate: {itemsPerPage: 7, currentPage: p}; let i = index" (click)="open(content, fut)">
                 <td><img src={{fut.foto}}></td>
                 <td>{{fut.nombre}}</td>
                 <td>{{fut.edad}}</td>
-                <td>{{fut.nombre}}</td>
+                <td>{{getPropietarios(i)}}</td>
                 <td>{{fut.posiciones}}</td>
-                <td>{{fut.precio}},000,000</td>
+                <td>${{fut.precio}},000,000</td>
                 <td>65</td>
               </tr>
         </tbody>
       </table>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+<router-outlet></router-outlet>

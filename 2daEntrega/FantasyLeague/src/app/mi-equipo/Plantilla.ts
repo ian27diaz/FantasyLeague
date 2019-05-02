@@ -19,6 +19,11 @@ export class Plantilla {
         public banca1: number,
         public banca2: number,
         public banca3: number,
+        public reserva1: number,
+        public reserva2: number,
+        public reserva3: number,
+        public reserva4: number,
+        public reserva5: number,
         public capitan: number
         ) {}
 }

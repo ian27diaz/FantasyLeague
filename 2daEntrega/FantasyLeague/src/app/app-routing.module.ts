@@ -11,6 +11,7 @@ import { TablaPosicionesComponent } from './Liga/tabla-posiciones/tabla-posicion
 import { LobbyComponent } from './lobby/lobby.component';
 
 import { EnfrentamientoComponent } from './Liga/Enfrentamientos/enfrentamiento/enfrentamiento.component';
+import { FutbolistaComponent } from './Futbolistas/futbolista/futbolista.component';
 
 
 const routes: Routes = [

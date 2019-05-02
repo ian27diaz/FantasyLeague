@@ -14,6 +14,14 @@ img {
     background-color: darkgray;
 }
 
+b{
+    color: white;
+}
+table table td{
+    color: white !important;
+}
+
+
 td {
     opacity: .7;
 }
@@ -25,4 +33,35 @@ td:hover {
 body {
     font-family: 'Open Sans', sans-serif;
     text-align: center;
+}
+
+
+#imagenJugador {
+    float: left;
+    background-color: black;
+}
+
+#imagenJugador img {
+    height: 300px;
+    border-radius: 50%;
+
+}
+
+#infoJugador {
+    float: left;
+    background-color: black;
+    color: white;
+}
+
+#estadisticas{
+    overflow-y: scroll;
+    width: 100%;
+    height: 300px;
+
+}
+
+
+::ng-deep .my-class .modal-dialog { 
+    max-width: 80%;
+    width: 80%;
 }

@@ -86,4 +86,8 @@ export class EquiposService {
   actualizarEquipo(equipo: Equipo) {
     this.currentEquipo = equipo;
   }
+
+  getEquipoByID(id: number) {
+    return this.equipos.find(equ => equ.id === id);
+  }
 }

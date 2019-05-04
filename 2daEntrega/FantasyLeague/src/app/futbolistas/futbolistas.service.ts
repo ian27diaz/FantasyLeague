@@ -23,7 +23,7 @@ export class FutbolistasService {
     new Futbolista(82, 'Van Dijk', 'assets/images/Futbolistas/Futbolista-82.png', 27, 'DFC', 100, 'Liverpool', 'Premier League', 'Holanda', 'assets/images/Uniformes/Uniforme-60.png'),
     new Futbolista(90, 'David Luiz', 'assets/images/Futbolistas/Futbolista-90.png', 30, 'DFC-MCD', 30, 'PSG', 'Premier League', 'Brasil', 'assets/images/Uniformes/Uniforme-39.png'),
     new Futbolista(91, 'Sergio Ramos', 'assets/images/Futbolistas/Futbolista-91.png', 31, 'DFD-DFC', 60, 'Real Madrid', 'LaLiga', 'España', 'assets/images/Uniformes/Uniforme-80.png'),
-    new Futbolista(94, 'Pique', 'assets/images/Futbolistas/Futbolista-94.png', 32, 'DFC', 35, 'Barcelona', 'LaLiga', 'España', '79'),
+    new Futbolista(94, 'Pique', 'assets/images/Futbolistas/Futbolista-94.png', 32, 'DFC', 35, 'Barcelona', 'LaLiga', 'España', 'assets/images/Uniformes/Uniforme-79.png'),
     new Futbolista(106, 'Alaba', 'assets/images/Futbolistas/Futbolista-106.png', 28, 'DFC-DFI-MCD', 50, 'Bayern Munchen', 'Bundesliga', 'Austria', 'assets/images/Uniformes/Uniforme-21.png'),
     new Futbolista(116, 'Marcos Alonso', 'assets/images/Futbolistas/Futbolista-116.png', 27, 'DFI-LI-MD-MI', 50, 'Chelsea', 'Premier League', 'España', 'assets/images/Uniformes/Uniforme-63.png'),
     new Futbolista(121, 'Marcelo', 'assets/images/Futbolistas/Futbolista-121.png', 33, 'DFI', 20, 'Real Madrid', 'LaLiga', 'Brasil', 'assets/images/Uniformes/Uniforme-80.png'),

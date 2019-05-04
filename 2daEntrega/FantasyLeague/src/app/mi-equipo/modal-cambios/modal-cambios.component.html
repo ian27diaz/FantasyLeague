@@ -11,7 +11,8 @@
         <div class="modal-body">
             <div class="container">
                 <div class="row">
-                    <select name="selectFutbolistaSale" ngModel #selectFutbolistaSale="ngModel" (change)="actualizarFutbolistaSale(selectFutbolistaSale.value)">
+                    <label for="selectFutbolistaSale" style="margin-left: 75px; margin-right: 5px; margin-bottom: 10px;">Sale</label>
+                    <select name="selectFutbolistaSale"  ngModel #selectFutbolistaSale="ngModel" (change)="actualizarFutbolistaSale(selectFutbolistaSale.value)">
                         <option value="{{titular1.id}}">{{titular1.nombre}}</option>
                         <option value="{{titular2.id}}">{{titular2.nombre}}</option>
                         <option value="{{titular3.id}}">{{titular3.nombre}}</option>
@@ -32,6 +33,8 @@
                         <option value="{{reserva4.id}}">{{reserva4.nombre}}</option>
                         <option value="{{reserva5.id}}">{{reserva5.nombre}}</option>
                     </select>
+
+                    <label for="selectFutbolistaEntra"  style="margin-left: 10px; margin-right: 5px;">Entra</label>
                     <select name="selectFutbolistaEntra" ngModel #selectFutbolistaEntra="ngModel" (change)="actualizarFutbolistaEntra(selectFutbolistaEntra.value)">
                         <option value="{{titular1.id}}">{{titular1.nombre}}</option>
                         <option value="{{titular2.id}}">{{titular2.nombre}}</option>
@@ -54,16 +57,16 @@
                         <option value="{{reserva5.id}}">{{reserva5.nombre}}</option>
                     </select>
                 </div>
-                <div class="row">
+                <div class="row" style="padding-top: 5px">
                     <div class="col-4" id="firstcol">
                         <div class="player" id="out">
-                            <img src={{futbolistaSale.foto}} alt="" id="player1">
+                            <img src={{futbolistaSale.foto}} alt="" id="player1" style="padding-top: 3px;">
                             <p>{{futbolistaSale.nombre}}</p>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="player" id="in">
-                            <img src={{futbolistaEntra.foto}} alt="" id="player1">
+                            <img src={{futbolistaEntra.foto}} alt="" id="player1" style="padding-top: 3px;">
                             <p>{{futbolistaEntra.nombre}}</p>
                         </div>
                     </div>
@@ -71,7 +74,22 @@
             </div>
         </div>
         <div class="modal-footer">
-        <button type="submit" class="btn btn-outline-dark" >Guardar</button>
+            <label for="selectCapitan">Capitan</label>
+            <select name="selectCapitan" ngModel #selectCapitan="ngModel" (change)="actualizarCapitan(selectCapitan.value)">
+                    <option value="{{capitan.id}}" selected>{{this.capitan.nombre}}</option>
+                    <option value="{{titular1.id}}">{{titular1.nombre}}</option>
+                    <option value="{{titular2.id}}">{{titular2.nombre}}</option>
+                    <option value="{{titular3.id}}">{{titular3.nombre}}</option>
+                    <option value="{{titular4.id}}">{{titular4.nombre}}</option>
+                    <option value="{{titular5.id}}">{{titular5.nombre}}</option>
+                    <option value="{{titular6.id}}">{{titular6.nombre}}</option>
+                    <option value="{{titular7.id}}">{{titular7.nombre}}</option>
+                    <option value="{{titular8.id}}">{{titular8.nombre}}</option>
+                    <option value="{{titular9.id}}">{{titular9.nombre}}</option>
+                    <option value="{{titular10.id}}">{{titular10.nombre}}</option>
+                    <option value="{{titular11.id}}">{{titular11.nombre}}</option>
+                </select>
+            <button type="submit" class="btn btn-outline-dark" >Guardar</button>
         </div>
     </form>
   </ng-template>

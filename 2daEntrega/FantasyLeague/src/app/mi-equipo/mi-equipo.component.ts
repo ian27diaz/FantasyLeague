@@ -50,7 +50,7 @@ export class MiEquipoComponent implements OnInit {
     if (!this.usuarioService.isUserLogged()) {
       this.router.navigate(['/authentication']);
     }
-    
+
     this.currentEquipo = this.equipoService.getCurrentEquipo();
     this.currentFormation = this.plantillaService.buscarPlantillaMiEquipo(this.currentEquipo.id);
     this.titular1 = this.futbolistaService.getFutbolistaByID(this.currentFormation.titular1);

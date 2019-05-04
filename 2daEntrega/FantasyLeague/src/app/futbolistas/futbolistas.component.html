@@ -133,16 +133,15 @@
                         <option value="DC">DC</option>
                         <option value="EI">EI</option>
                     </select>
-              
-                  <p>Edad:</p>
-                  {{edadMin}}<input type="range" ngModel name="EdadMin" #EdadMin="ngModel" min=15 max={{edadMax}} (change)="EstablecerEdadMinima(EdadMin.value)">
+              <label for="EdadMin" style="margin-left: 5px; margin-right: 5px;">Edad:</label>
+                 <p style="margin-left: 5px; margin-right: 5px;">{{edadMin}}</p><input type="range" ngModel name="EdadMin" #EdadMin="ngModel" min=15 max={{edadMax}} (change)="EstablecerEdadMinima(EdadMin.value)">
 
-                  <input type="range" ngModel name="EdadMax" #EdadMax="ngModel" min={{edadMin}} max="50" (change)="EstablecerEdadMaxima(EdadMax.value)">{{edadMax}}
+                  <input type="range" ngModel name="EdadMax" #EdadMax="ngModel" min={{edadMin}} max="50" (change)="EstablecerEdadMaxima(EdadMax.value)"><p style="margin-left: 5px; margin-right: 5px;">{{edadMax}}</p>
                 
-                  <p>Precio:</p>
-                  {{precioMin}}<input type="range" ngModel name="PrecioMin" #PrecioMin="ngModel" min="0" max={{precioMax}} (change)="EstablecerPrecioMinimo(PrecioMin.value)">
+                  <label for="PrecioMin" style="margin-left: 5px; margin-right: 5px;">Precio:</label>
+                  <p style="margin-left: 5px; margin-right: 5px;">{{precioMin}}</p><input type="range" ngModel name="PrecioMin" #PrecioMin="ngModel" min="0" max={{precioMax}} (change)="EstablecerPrecioMinimo(PrecioMin.value)">
 
-                  <input type="range" ngModel name="PrecioMax" #PrecioMax="ngModel" min={{precioMin}} max="500" (change)="EstablecerPrecioMaximo(PrecioMax.value)">{{precioMax}}
+                  <input type="range" ngModel name="PrecioMax" #PrecioMax="ngModel" min={{precioMin}} max="500" (change)="EstablecerPrecioMaximo(PrecioMax.value)"><p style="margin-left: 5px; margin-right: 5px;">{{precioMax}}</p>
                 
                   <input type="text" ngModel name="buscarNombre" #buscarNombre="ngModel" class="form-control mr-sm-2"  placeholder="Search" aria-label="Search" (change)="CambiarNombre(buscarNombre.value)">
                   <button type="submit" class="btn btn-outline-light btn-block">Buscar</button>
@@ -186,7 +185,7 @@
                                     <tbody>
                                         <tr>
                                             <td><b>Puntos:</b></td>
-                                            <td>35</td>
+                                            <td>380</td>
                                         </tr>
                                         <tr>
                                             <td><b>POS:</b></td>
@@ -194,7 +193,7 @@
                                         </tr>
                                         <tr>
                                             <td><b>Propietario:</b></td>
-                                            <td>Pallacracks</td>
+                                            <td>{{this.pallaros.get(futbolistaInModal.id).nombre}}</td>
                                         </tr>
                                         <tr>
                                             <td><b>Edad:</b></td>
@@ -263,17 +262,18 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+                    <button type="button" *ngIf="this.pallaros.get(futbolistaInModal.id).id == 0" class="btn btn-success" (click)="comprarFutbolista(futbolistaInModal.id)">Comprar</button>
+                    <button type="button" *ngIf="equipo.nombre == this.pallaros.get(futbolistaInModal.id).nombre" class="btn btn-danger" (click)="venderFutbolista(futbolistaInModal.id)">Vender</button>
                 </div>
               </ng-template>
             <tr *ngFor="let fut of futbolistas | paginate: {itemsPerPage: 7, currentPage: p}; let i = index" (click)="open(content, fut)">
                 <td><img src={{fut.foto}}></td>
                 <td>{{fut.nombre}}</td>
                 <td>{{fut.edad}}</td>
-                <td>{{getPropietarios(i)}}</td>
+                <td>{{this.pallaros.get(fut.id).nombre}}</td>
                 <td>{{fut.posiciones}}</td>
                 <td>${{fut.precio}},000,000</td>
-                <td>65</td>
+                <td>0</td>
               </tr>
         </tbody>
       </table>

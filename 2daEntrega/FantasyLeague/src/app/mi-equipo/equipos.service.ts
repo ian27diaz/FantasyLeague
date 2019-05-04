@@ -20,6 +20,8 @@ import { Equipo } from './Equipo';
 export class EquiposService {
   currentEquipo: Equipo;
   lastID: number = 1;
+  sinEquipo =     new Equipo(0, 'Sin Propietario', 'assets/images/EscudosEquipos/EscudoEquipo-1.jpg', 0, 0, 0, 0, 0, 0, 0, 0);
+
   equipos: Equipo[] = [
     new Equipo(this.lastID++, 'Luis Fernando`s Team', 'assets/images/EscudosEquipos/EscudoEquipo-1.jpg', 1, 1, 10, 0, 0, 2000, 1000, 5000),
     new Equipo(this.lastID++, 'Pallacracks', 'assets/images/EscudosEquipos/EscudoEquipo-2.jpg', 1, 2, 10, 0, 0, 2000, 1000, 5000),

@@ -39,9 +39,10 @@ export class ModalCambiosComponent implements OnInit {
   reserva3: Futbolista;
   reserva4: Futbolista;
   reserva5: Futbolista;
+  capitan: Futbolista;
 
 
-  constructor(private modalService: NgbModal, private plantillaService: PlantillaService, 
+  constructor(private modalService: NgbModal, private plantillaService: PlantillaService,
     private equipoService: EquiposService, private futbolistaService: FutbolistasService, private router: Router) { }
 
   ngOnInit() {
@@ -49,6 +50,7 @@ export class ModalCambiosComponent implements OnInit {
     this.futbolistaSale = this.futbolistaService.getFutbolistaByID(0);
     this.equipo = this.equipoService.getCurrentEquipo();
     this.plantilla = this.plantillaService.buscarPlantillaMiEquipo(this.equipo.id);
+    this.capitan = this.futbolistaService.getFutbolistaByID(this.plantilla.capitan);
     this.titular1 = this.futbolistaService.getFutbolistaByID(this.plantilla.titular1);
     this.titular2 = this.futbolistaService.getFutbolistaByID(this.plantilla.titular2);
     this.titular3 = this.futbolistaService.getFutbolistaByID(this.plantilla.titular3);
@@ -97,11 +99,18 @@ export class ModalCambiosComponent implements OnInit {
     this.futbolistaEntra = this.futbolistaService.getFutbolistaByID(id);
   }
 
+  actualizarCapitan(id) {
+    this.capitan = this.futbolistaService.getFutbolistaByID(id);
+  }
+
   submit() {
-    console.log(JSON.stringify( this.plantilla));
-    console.log(this.plantilla.titular2);
-    console.log(this.futbolistaEntra.id);
-    console.log(this.futbolistaSale.id);
+    this.plantilla = this.plantillaService.buscarPlantillaMiEquipo(this.equipo.id);
+    this.plantilla.capitan = this.capitan.id;
+    if(this.plantilla.capitan == this.futbolistaEntra.id){
+      this.plantilla.capitan = this.futbolistaSale.id;
+    }else if(this.plantilla.capitan == this.futbolistaSale.id){
+      this.plantilla.capitan = this.futbolistaEntra.id;
+    }
     if (this.plantilla.titular1 == this.futbolistaSale.id){
       this.plantilla.titular1 = this.futbolistaEntra.id;
                       if (this.plantilla.titular2 == this.futbolistaEntra.id){
@@ -844,7 +853,7 @@ export class ModalCambiosComponent implements OnInit {
                         this.plantilla.titular1 = this.futbolistaSale.id;
                       }
     }
-    this.plantillaService.actualizarPlantilla(this.plantilla);
+    this.plantillaService.actualizarPlantillaJugador(this.plantilla);
     this.modalService.dismissAll();
     this.router.navigate(['/pruebita']);
 

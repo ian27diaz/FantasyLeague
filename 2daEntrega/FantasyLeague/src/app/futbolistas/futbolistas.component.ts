@@ -6,6 +6,9 @@ import { Router} from '@angular/router';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { PlantillaService } from '../mi-equipo/plantilla.service';
 import { EquiposService } from '../mi-equipo/equipos.service';
+import { LigaService } from '../liga/liga.service';
+import { Plantilla } from '../mi-equipo/Plantilla';
+import { Equipo } from '../mi-equipo/Equipo';
 
 @Component({
   selector: 'app-futbolistas',
@@ -14,6 +17,9 @@ import { EquiposService } from '../mi-equipo/equipos.service';
 })
 export class FutbolistasComponent implements OnInit {
   closeResult: string;
+  pallaros = this.ligaService.pallaros;
+  plantilla: Plantilla;
+  equipo: Equipo;
 
   futbolistas: Futbolista[];
   propietarios: string[];
@@ -27,19 +33,25 @@ export class FutbolistasComponent implements OnInit {
   precioMin = 0;
   precioMax = 500;
   futbolistaInModal: Futbolista;
+
   constructor(private futbolistasService: FutbolistasService,
               private usuarioService: UsuarioService,
               private plantillaService: PlantillaService,
               private equipoService: EquiposService,
               private router: Router,
-              private modalService: NgbModal) { }
+              private modalService: NgbModal,
+              private ligaService: LigaService) { }
 
   ngOnInit() {
     if(!this.usuarioService.isUserLogged()){
       this.router.navigate(['/authentication']);
     }
     this.propietarios = [];
-    this.futbolistas = this.futbolistasService.getFutbolista();
+    this.futbolistas = this.futbolistasService.filterFutbolista('', '', '', '', 15, 50, 0, 500);
+
+    this.equipo = this.equipoService.getCurrentEquipo();
+    this.plantilla = this.plantillaService.buscarPlantillaMiEquipo(this.equipo.id);
+    this.ligaService.setPallaro();
 
     this.futbolistas.forEach((futbolista, index) => {
       let propietariosAux = '[';
@@ -106,7 +118,6 @@ export class FutbolistasComponent implements OnInit {
 
   EstablecerEdadMinima(edad) {
     this.edadMin = edad;
-    console.log(this.edadMin);
   }
   EstablecerEdadMaxima(edad) {
     this.edadMax = edad;
@@ -120,11 +131,17 @@ export class FutbolistasComponent implements OnInit {
 
   CambiarNombre(nombre) {
     this.selectorNombre = nombre;
-    console.log(this.selectorNombre);
   }
 
   submit() {
-    this.futbolistas = this.futbolistasService.filterFutbolista(this.selectorNombre, this.selectorCompeticion, this.selectorClub, this.selectorPosicion, this.edadMin, this.edadMax, this.precioMin, this.precioMax);
+    this.futbolistas = this.futbolistasService.filterFutbolista(this.selectorNombre,
+                                                                this.selectorCompeticion,
+                                                                this.selectorClub,
+                                                                this.selectorPosicion,
+                                                                this.edadMin,
+                                                                this.edadMax,
+                                                                this.precioMin,
+                                                                this.precioMax);
     }
 
 
@@ -147,4 +164,98 @@ export class FutbolistasComponent implements OnInit {
       }
     }
 
+    venderFutbolista(id) {
+      if (this.plantilla.capitan == id) {
+        this.plantilla.capitan = -1;
+      }
+      if (this.plantilla.titular1 == id) {
+        this.plantilla.titular1 = 0;
+      } else if (this.plantilla.titular2 == id) {
+        this.plantilla.titular2 = 0;
+      } else if (this.plantilla.titular3 == id) {
+        this.plantilla.titular3 = 0;
+      } else if (this.plantilla.titular4 == id) {
+        this.plantilla.titular4 = 0;
+      } else if (this.plantilla.titular5 == id) {
+        this.plantilla.titular5 = 0;
+      } else if (this.plantilla.titular6 == id) {
+        this.plantilla.titular6 = 0;
+      } else if (this.plantilla.titular7 == id) {
+        this.plantilla.titular7 = 0;
+      } else if (this.plantilla.titular8 == id) {
+        this.plantilla.titular8 = 0;
+      } else if (this.plantilla.titular9 == id) {
+        this.plantilla.titular9 = 0;
+      } else if (this.plantilla.titular10 == id) {
+        this.plantilla.titular10 = 0;
+      } else if (this.plantilla.titular11 == id) {
+        this.plantilla.titular11 = 0;
+      } else if (this.plantilla.banca1 == id) {
+        this.plantilla.banca1 = 0;
+      } else if (this.plantilla.banca2 == id) {
+        this.plantilla.banca2 = 0;
+      } else if (this.plantilla.banca3 == id) {
+        this.plantilla.banca3 = 0;
+      } else if (this.plantilla.reserva1 == id) {
+        this.plantilla.reserva1 = 0;
+      } else if (this.plantilla.reserva2 == id) {
+        this.plantilla.reserva2 = 0;
+      } else if (this.plantilla.reserva3 == id) {
+        this.plantilla.reserva3 = 0;
+      } else if (this.plantilla.reserva4 == id) {
+        this.plantilla.reserva4 = 0;
+      } else if (this.plantilla.reserva5 == id) {
+        this.plantilla.reserva5 = 0;
+      }
+      this.plantillaService.actualizarPlantillaJugador(this.plantilla);
+      this.ligaService.setPallaro();
+    }
+
+    comprarFutbolista(id) {
+      if (this.plantilla.titular1 == 0) {
+        this.plantilla.titular1 = id;
+      } else if (this.plantilla.titular2 == 0) {
+        this.plantilla.titular2 = id;
+      } else if (this.plantilla.titular3 == 0) {
+        this.plantilla.titular3 = id;
+      } else if (this.plantilla.titular4 == 0) {
+        this.plantilla.titular4 = id;
+      } else if (this.plantilla.titular5 == 0) {
+        this.plantilla.titular5 = id;
+      } else if (this.plantilla.titular6 == 0) {
+        this.plantilla.titular6 = id;
+      } else if (this.plantilla.titular7 == 0) {
+        this.plantilla.titular7 = id;
+      } else if (this.plantilla.titular8 == 0) {
+        this.plantilla.titular8 = id;
+      } else if (this.plantilla.titular9 == 0) {
+        this.plantilla.titular9 = id;
+      } else if (this.plantilla.titular10 == 0) {
+        this.plantilla.titular10 = id;
+      } else if (this.plantilla.titular11 == 0) {
+        this.plantilla.titular11 = id;
+      } else if (this.plantilla.banca1 == 0) {
+        this.plantilla.banca1 = id;
+      } else if (this.plantilla.banca2 == 0) {
+        this.plantilla.banca2 = id;
+      } else if (this.plantilla.banca3 == 0) {
+        this.plantilla.banca3 = id;
+      } else if (this.plantilla.reserva1 == 0) {
+        this.plantilla.reserva1 = id;
+      } else if (this.plantilla.reserva2 == 0) {
+        this.plantilla.reserva2 = id;
+      } else if (this.plantilla.reserva3 == 0) {
+        this.plantilla.reserva3 = id;
+      } else if (this.plantilla.reserva4 == 0) {
+        this.plantilla.reserva4 = id;
+      } else if (this.plantilla.reserva5 == 0) {
+        this.plantilla.reserva5 = id;
+      }
+      this.plantillaService.actualizarPlantillaJugador(this.plantilla);
+      this.ligaService.setPallaro();
+    }
+
+    getRandomNumber() {
+      return Math.floor((Math.random() * 100));
+    }
 }

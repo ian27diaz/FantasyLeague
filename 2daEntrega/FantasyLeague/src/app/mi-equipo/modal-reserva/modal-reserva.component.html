@@ -8,81 +8,57 @@
     <div class="modal-body">
         <div class="container">
             <h2>Reservas</h2>
-            <div class="player container">
+            <div class="player container" *ngIf="reserva1.id!=0">
                 <div class="row">
                     <div class="col-4">
-                        <img src="assets/images/LoginIcon.png" alt="" id="player1">
+                        <img src="{{reserva1.foto}}" alt="" id="player1">
                     </div>
                     <div class="col-8">
-                        <span>Drake</span>
+                        <span>{{reserva1.nombre}}</span>
                     </div>
                 </div>
             </div>
-            <div class="player container">
-                    <div class="row">
-                        <div class="col-4">
-                            <img src="assets/images/LoginIcon.png" alt="" id="player1">
-                        </div>
-                        <div class="col-8">
-                            <span>Aguayo R.</span>
-                        </div>
-                    </div>
-                </div>
-            <div class="player container">
+            <div class="player container" *ngIf="reserva2.id!=0">
                 <div class="row">
                     <div class="col-4">
-                        <img src="assets/images/LoginIcon.png" alt="" id="player1">
+                        <img src="{{reserva2.foto}}" alt="" id="player2">
                     </div>
                     <div class="col-8">
-                        <span>Elias C.</span>
+                        <span>{{reserva2.nombre}}</span>
                     </div>
                 </div>
             </div>
-            <div class="player container">
+            <div class="player container" *ngIf="reserva3.id!=0">
                 <div class="row">
                     <div class="col-4">
-                        <img src="assets/images/LoginIcon.png" alt="" id="player1">
+                        <img src="{{reserva3.foto}}" alt="" id="player3">
                     </div>
                     <div class="col-8">
-                        <span>Rios A.</span>
+                        <span>{{reserva3.nombre}}</span>
                     </div>
                 </div>
-            </div>
-            <div class="player container">
+            </div> 
+            <div class="player container" *ngIf="reserva4.id!=0">
                 <div class="row">
                     <div class="col-4">
-                        <img src="assets/images/LoginIcon.png" alt="" id="player1">
+                        <img src="{{reserva4.foto}}" alt="" id="player4">
                     </div>
                     <div class="col-8">
-                        <span>Alfredo</span>
+                        <span>{{reserva4.nombre}}</span>
                     </div>
                 </div>
-            </div>
-            <div class="player container">
+            </div>    
+            <div class="player container" *ngIf="reserva5.id!=0">
                 <div class="row">
                     <div class="col-4">
-                        <img src="assets/images/LoginIcon.png" alt="" id="player1">
+                        <img src="{{reserva5.foto}}" alt="" id="player5">
                     </div>
                     <div class="col-8">
-                        <span>Dario</span>
+                        <span>{{reserva5.nombre}}</span>
                     </div>
                 </div>
-            </div>
-            <div class="player container">
-                <div class="row">
-                    <div class="col-4">
-                        <img src="assets/images/LoginIcon.png" alt="" id="player1">
-                    </div>
-                    <div class="col-8">
-                        <span>Cabrera I.</span>
-                    </div>
-                </div>
-            </div>
-    
+            </div>               
         </div>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
     </div>
   </ng-template>
 

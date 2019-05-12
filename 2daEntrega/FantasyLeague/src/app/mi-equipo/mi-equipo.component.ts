@@ -7,6 +7,7 @@ import { PlantillaService } from './plantilla.service';
 import { Plantilla } from './Plantilla';
 import { Futbolista } from '../futbolistas/futbolista/Futbolista';
 import { FutbolistasService } from '../futbolistas/futbolistas.service';
+import { EnfrentamientosService } from '../Liga/enfrentamientos/enfrentamientos.service';
 
 @Component({
   selector: 'app-mi-equipo',
@@ -15,10 +16,11 @@ import { FutbolistasService } from '../futbolistas/futbolistas.service';
 })
 
 export class MiEquipoComponent implements OnInit {
+  equiposLiga: Equipo[];
   currentEquipo: Equipo;
   constructor(private usuarioService: UsuarioService,
 
-
+    private enfrentamientosService: EnfrentamientosService,
     private plantillaService: PlantillaService,
     private equipoService: EquiposService,
     private futbolistaService: FutbolistasService,

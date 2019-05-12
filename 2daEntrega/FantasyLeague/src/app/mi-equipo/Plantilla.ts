@@ -3,6 +3,7 @@ export class Plantilla {
     constructor(
         public id: number,
         public equipo: number,
+        public jornada: number,
         public activa: boolean,
         public formacion: string,
         public titular1: number,

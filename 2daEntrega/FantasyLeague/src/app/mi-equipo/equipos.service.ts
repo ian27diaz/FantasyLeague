@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Equipo } from './Equipo';
+import { PlantillaService } from './plantilla.service';
 
 @Injectable({
   providedIn: 'root'
@@ -64,16 +65,17 @@ export class EquiposService {
     new Equipo(this.lastID++, 'Green Car', 'assets/images/EscudosEquipos/EscudoEquipo-39.jpg', 10, 1, 0, 0, 10, 1000, 2000, 5000),
     new Equipo(this.lastID++, 'Kabin United', 'assets/images/EscudosEquipos/EscudoEquipo-40.jpg', 9, 2, 1, 0, 9, 1000, 2000, 5000),
   ];
-  constructor() { }
+  constructor(private plantillaService: PlantillaService) { }
 
   crearEquipoNuevo(nombre: string, currentUser: number){
     let newTeam = new Equipo(this.lastID++,
-      nombre,
-      'assets/images/EscudosEquipos/EscudoEquipo-default.jpg', 
-      currentUser,
-      0,0,0,0,0,0,1_000_000);
+                              nombre,
+                              'assets/images/EscudosEquipos/EscudoEquipo-default.jpg', 
+                               currentUser,
+                              0,0,0,0,0,0,1_000_000);
     this.equipos.push(newTeam);
     this.currentEquipo = newTeam;
+    this.plantillaService.crearPlantillasNuevas(newTeam.id);
   }
 
   getEquipoPropietario(idPropietario): Equipo[] {

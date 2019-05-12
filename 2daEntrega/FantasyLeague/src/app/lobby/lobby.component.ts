@@ -69,7 +69,6 @@ export class LobbyComponent implements OnInit {
     this.equiposService.crearEquipoNuevo(form.value.nombreEquipo, this.usuarioService.getCurrentUserID());
     this.modalService.dismissAll();
     this.router.navigate(['/miequipo']);
-
   }
 
   open(content: any) {

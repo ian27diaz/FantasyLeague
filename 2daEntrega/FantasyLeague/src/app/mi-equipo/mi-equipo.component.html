@@ -1,580 +1,584 @@
 <div class="container-fluid">
 
-  <div class="row" id="barraCambios">
-      <div class="col-md-3">
-           <img src='{{currentEquipo.escudo}}' alt="" id="logoImg">
-      </div>
-      <div class="col-md-4">
-           <h2>{{currentEquipo.nombre}}</h2>
-      </div>
-      <div class="col-md-3 botonesDeControl">
-          <div class="dropdown">
-              <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  {{currentFormation.formacion}}
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" (click)="changeFormation('3-4-3')">3-4-3</a>
-                  <a class="dropdown-item" (click)="changeFormation('3-5-2')">3-5-2</a>
-                  <a class="dropdown-item" (click)="changeFormation('4-3-3')">4-3-3</a>
-                  <a class="dropdown-item" (click)="changeFormation('4-4-2')">4-4-2</a>
-                  <a class="dropdown-item" (click)="changeFormation('4-5-1')">4-5-1</a>
-                  <a class="dropdown-item" (click)="changeFormation('5-3-2')">5-3-2</a>
-                  <a class="dropdown-item" (click)="changeFormation('5-4-1')">5-4-1</a>
-              </div>
-          </div>
-      </div>
-      <div class="col-md-2 botonesDeControl">
+    <div class="row" id="barraCambios">
+        <div class="col-md-3">
+            <img src='{{currentEquipo.escudo}}' alt="" id="logoImg">
+        </div>
+        <div class="col-md-4">
+            <h2>{{currentEquipo.nombre}}</h2>
+        </div>
+        <div class="col-md-3 botonesDeControl">
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{currentFormation.formacion}}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" (click)="changeFormation('3-4-3')">3-4-3</a>
+                    <a class="dropdown-item" (click)="changeFormation('3-5-2')">3-5-2</a>
+                    <a class="dropdown-item" (click)="changeFormation('4-3-3')">4-3-3</a>
+                    <a class="dropdown-item" (click)="changeFormation('4-4-2')">4-4-2</a>
+                    <a class="dropdown-item" (click)="changeFormation('4-5-1')">4-5-1</a>
+                    <a class="dropdown-item" (click)="changeFormation('5-3-2')">5-3-2</a>
+                    <a class="dropdown-item" (click)="changeFormation('5-4-1')">5-4-1</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 botonesDeControl">
             <app-modal-cambios></app-modal-cambios>
-      </div>
-  </div>
-  <div class="row">
-      <div class="col-md-10 canchaContainer">
-          <div class="container-fluid" *ngIf="is3_4_3"> <!--***************** 3-4-3 *****************-->
-              <div class="row">
-                  <div class="player">
-                      <img src="{{this.titular11.uniforme}}" alt="" id="player1">
-                      <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular11.id"></i>
-                      <p>{{this.titular11.nombre}}</p>
-                  </div>
-                  <div class="player">
-                      <img src="{{this.titular10.uniforme}}" alt="" id="player2">
-                      <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular10.id"></i>
-                      <p>{{this.titular10.nombre}}</p>
-                  </div>
-                  <div class="player">
-                      <img src="{{this.titular9.uniforme}}" alt="" id="player3">
-                      <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular9.id"></i>
-                      <p>{{this.titular9.nombre}}</p>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="player">
-                      <img src="{{this.titular8.uniforme}}" alt="" id="player4">
-                      <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular8.id"></i>
-                      <p>{{this.titular8.nombre}}</p>
-                  </div>
-                  <div class="player">
-                      <img src="{{this.titular7.uniforme}}" alt="" id="player5">
-                      <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular7.id"></i>
-                      <p>{{this.titular7.nombre}}</p>
-                  </div>
-                  <div class="player">
-                      <img src="{{this.titular6.uniforme}}" alt="" id="player6">
-                      <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular6.id"></i>
-                      <p>{{this.titular6.nombre}}</p>
-                  </div>
-                  <div class="player">
-                      <img src="{{this.titular5.uniforme}}" alt="" id="player7">
-                      <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular5.id"></i>
-                      <p>{{this.titular5.nombre}}</p>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="player">
-                      <img src="{{this.titular4.uniforme}}" alt="" id="player8">
-                      <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular4.id"></i>
-                      <p>{{this.titular4.nombre}}</p>
-                  </div>
-                  <div class="player">
-                      <img src="{{this.titular3.uniforme}}" alt="" id="player9">
-                      <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular3.id"></i>
-                      <p>{{this.titular3.nombre}}</p>
-                  </div>
-                  <div class="player">
-                      <img src="{{this.titular2.uniforme}}" alt="" id="player10">
-                      <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular2.id"></i>
-                      <p>{{this.titular2.nombre}}</p>
-                  </div>
-
-              </div>
-              <div class="row">
-                  <div class="player">
-                      <img src="{{this.titular1.uniforme}}" alt="" id="portero">
-                      <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular1.id"></i>
-                      <p>{{this.titular1.nombre}}</p>
-                  </div>
-
-              </div>
-          </div>
-          <!-- ********************************************************************** -->
-          <div class="container-fluid" *ngIf="is3_5_2"> <!--***************** 3-5-2 *****************-->
-            <div class="row">
-                <div class="player">
-                    <img src="{{this.titular11.uniforme}}" alt="" id="player1">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular11.id"></i>
-                    <p>{{this.titular11.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular10.uniforme}}" alt="" id="player2">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular10.id"></i>
-                    <p>{{this.titular10.nombre}}</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="player">
-                    <img src="{{this.titular9.uniforme}}" alt="" id="player3">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular9.id"></i>
-                    <p>{{this.titular9.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular8.uniforme}}" alt="" id="player4">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular8.id"></i>
-                    <p>{{this.titular8.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular7.uniforme}}" alt="" id="player5">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular7.id"></i>
-                    <p>{{this.titular7.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular6.uniforme}}" alt="" id="player6">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular6.id"></i>
-                    <p>{{this.titular6.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular5.uniforme}}" alt="" id="player7">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular5.id"></i>
-                    <p>{{this.titular5.nombre}}</p>
-                </div>
-            </div>
-            <div class="row">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 canchaContainer">
+            <div class="container-fluid" *ngIf="is3_4_3">
+                <!--***************** 3-4-3 *****************-->
+                <div class="row">
                     <div class="player">
-                            <img src="{{this.titular4.uniforme}}" alt="" id="player8">
-                            <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular4.id"></i>
-                            <p>{{this.titular4.nombre}}</p>
-                        </div>
-                <div class="player">
-                    <img src="{{this.titular3.uniforme}}" alt="" id="player9">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular3.id"></i>
-                    <p>{{this.titular3.nombre}}</p>
+                        <img src="{{this.titular11.uniforme}}" alt="" id="player1">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular11.id"></i>
+                        <p>{{this.titular11.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular10.uniforme}}" alt="" id="player2">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular10.id"></i>
+                        <p>{{this.titular10.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular9.uniforme}}" alt="" id="player3">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular9.id"></i>
+                        <p>{{this.titular9.nombre}}</p>
+                    </div>
                 </div>
-                <div class="player">
-                    <img src="{{this.titular2.uniforme}}" alt="" id="player10">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular2.id"></i>
-                    <p>{{this.titular2.nombre}}</p>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular8.uniforme}}" alt="" id="player4">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular8.id"></i>
+                        <p>{{this.titular8.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular7.uniforme}}" alt="" id="player5">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular7.id"></i>
+                        <p>{{this.titular7.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular6.uniforme}}" alt="" id="player6">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular6.id"></i>
+                        <p>{{this.titular6.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular5.uniforme}}" alt="" id="player7">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular5.id"></i>
+                        <p>{{this.titular5.nombre}}</p>
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular4.uniforme}}" alt="" id="player8">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular4.id"></i>
+                        <p>{{this.titular4.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular3.uniforme}}" alt="" id="player9">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular3.id"></i>
+                        <p>{{this.titular3.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular2.uniforme}}" alt="" id="player10">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular2.id"></i>
+                        <p>{{this.titular2.nombre}}</p>
+                    </div>
 
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular1.uniforme}}" alt="" id="portero">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular1.id"></i>
+                        <p>{{this.titular1.nombre}}</p>
+                    </div>
 
-
+                </div>
             </div>
-            <div class="row">
-                <div class="player">
-                    <img src="{{this.titular1.uniforme}}" alt="" id="portero">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular1.id"></i>
-                    <p>{{this.titular1.nombre}}</p>
+            <!-- ********************************************************************** -->
+            <div class="container-fluid" *ngIf="is3_5_2">
+                <!--***************** 3-5-2 *****************-->
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular11.uniforme}}" alt="" id="player1">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular11.id"></i>
+                        <p>{{this.titular11.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular10.uniforme}}" alt="" id="player2">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular10.id"></i>
+                        <p>{{this.titular10.nombre}}</p>
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular9.uniforme}}" alt="" id="player3">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular9.id"></i>
+                        <p>{{this.titular9.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular8.uniforme}}" alt="" id="player4">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular8.id"></i>
+                        <p>{{this.titular8.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular7.uniforme}}" alt="" id="player5">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular7.id"></i>
+                        <p>{{this.titular7.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular6.uniforme}}" alt="" id="player6">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular6.id"></i>
+                        <p>{{this.titular6.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular5.uniforme}}" alt="" id="player7">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular5.id"></i>
+                        <p>{{this.titular5.nombre}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular4.uniforme}}" alt="" id="player8">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular4.id"></i>
+                        <p>{{this.titular4.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular3.uniforme}}" alt="" id="player9">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular3.id"></i>
+                        <p>{{this.titular3.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular2.uniforme}}" alt="" id="player10">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular2.id"></i>
+                        <p>{{this.titular2.nombre}}</p>
+                    </div>
 
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular1.uniforme}}" alt="" id="portero">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular1.id"></i>
+                        <p>{{this.titular1.nombre}}</p>
+                    </div>
+
+                </div>
             </div>
+            <!-- ********************************************************************** -->
+            <div class="container-fluid" *ngIf="is4_3_3">
+                <!--***************** 4-3-3 *****************-->
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular11.uniforme}}" alt="" id="player1">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular11.id"></i>
+                        <p>{{this.titular11.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular10.uniforme}}" alt="" id="player2">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular10.id"></i>
+                        <p>{{this.titular10.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular9.uniforme}}" alt="" id="player3">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular9.id"></i>
+                        <p>{{this.titular9.nombre}}</p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular8.uniforme}}" alt="" id="player4">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular8.id"></i>
+                        <p>{{this.titular8.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular7.uniforme}}" alt="" id="player5">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular7.id"></i>
+                        <p>{{this.titular7.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular6.uniforme}}" alt="" id="player6">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular6.id"></i>
+                        <p>{{this.titular6.nombre}}</p>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular5.uniforme}}" alt="" id="player7">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular5.id"></i>
+                        <p>{{this.titular5.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular4.uniforme}}" alt="" id="player8">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular4.id"></i>
+                        <p>{{this.titular4.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular3.uniforme}}" alt="" id="player9">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular3.id"></i>
+                        <p>{{this.titular3.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular2.uniforme}}" alt="" id="player10">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular2.id"></i>
+                        <p>{{this.titular2.nombre}}</p>
+                    </div>
+
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular1.uniforme}}" alt="" id="portero">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular1.id"></i>
+                        <p>{{this.titular1.nombre}}</p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ********************************************************************** -->
+            <div class="container-fluid" *ngIf="is4_4_2">
+                <!--***************** 4-4-2 *****************-->
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular11.uniforme}}" alt="" id="player1">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular11.id"></i>
+                        <p>{{this.titular11.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular10.uniforme}}" alt="" id="player2">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular10.id"></i>
+                        <p>{{this.titular10.nombre}}</p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular9.uniforme}}" alt="" id="player3">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular9.id"></i>
+                        <p>{{this.titular9.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular8.uniforme}}" alt="" id="player4">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular8.id"></i>
+                        <p>{{this.titular8.nombre}}</p>
+                    </div>
+
+                    <div class="player">
+                        <img src="{{this.titular7.uniforme}}" alt="" id="player5">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular7.id"></i>
+                        <p>{{this.titular7.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular6.uniforme}}" alt="" id="player6">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular6.id"></i>
+                        <p>{{this.titular6.nombre}}</p>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular5.uniforme}}" alt="" id="player7">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular5.id"></i>
+                        <p>{{this.titular5.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular4.uniforme}}" alt="" id="player8">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular4.id"></i>
+                        <p>{{this.titular4.nombre}}</p>
+                    </div>
+
+                    <div class="player">
+                        <img src="{{this.titular3.uniforme}}" alt="" id="player9">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular3.id"></i>
+                        <p>{{this.titular3.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular2.uniforme}}" alt="" id="player10">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular2.id"></i>
+                        <p>{{this.titular2.nombre}}</p>
+                    </div>
+
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular1.uniforme}}" alt="" id="portero">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular1.id"></i>
+                        <p>{{this.titular1.nombre}}</p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ********************************************************************** -->
+            <div class="container-fluid" *ngIf="is4_5_1">
+                <!--***************** 4-5-1 *****************-->
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular11.uniforme}}" alt="" id="player1">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular11.id"></i>
+                        <p>{{this.titular11.nombre}}</p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular10.uniforme}}" alt="" id="player2">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular10.id"></i>
+                        <p>{{this.titular10.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular9.uniforme}}" alt="" id="player3">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular9.id"></i>
+                        <p>{{this.titular9.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular8.uniforme}}" alt="" id="player4">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular8.id"></i>
+                        <p>{{this.titular8.nombre}}</p>
+                    </div>
+
+                    <div class="player">
+                        <img src="{{this.titular7.uniforme}}" alt="" id="player5">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular7.id"></i>
+                        <p>{{this.titular7.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular6.uniforme}}" alt="" id="player6">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular6.id"></i>
+                        <p>{{this.titular6.nombre}}</p>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular5.uniforme}}" alt="" id="player7">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular5.id"></i>
+                        <p>{{this.titular5.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular4.uniforme}}" alt="" id="player8">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular4.id"></i>
+                        <p>{{this.titular4.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular3.uniforme}}" alt="" id="player9">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular3.id"></i>
+                        <p>{{this.titular3.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular2.uniforme}}" alt="" id="player10">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular2.id"></i>
+                        <p>{{this.titular2.nombre}}</p>
+                    </div>
+
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular1.uniforme}}" alt="" id="portero">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular1.id"></i>
+                        <p>{{this.titular1.nombre}}</p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ********************************************************************** -->
+            <div class="container-fluid" *ngIf="is5_3_2">
+                <!--***************** 5_3_2 *****************-->
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular11.uniforme}}" alt="" id="player1">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular11.id"></i>
+                        <p>{{this.titular11.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular10.uniforme}}" alt="" id="player2">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular10.id"></i>
+                        <p>{{this.titular10.nombre}}</p>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="player">
+                        <img src="{{this.titular9.uniforme}}" alt="" id="player3">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular9.id"></i>
+                        <p>{{this.titular9.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular8.uniforme}}" alt="" id="player4">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular8.id"></i>
+                        <p>{{this.titular8.nombre}}</p>
+                    </div>
+
+                    <div class="player">
+                        <img src="{{this.titular7.uniforme}}" alt="" id="player5">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular7.id"></i>
+                        <p>{{this.titular7.nombre}}</p>
+                    </div>
+
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular6.uniforme}}" alt="" id="player6">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular6.id"></i>
+                        <p>{{this.titular6.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular5.uniforme}}" alt="" id="player7">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular5.id"></i>
+                        <p>{{this.titular5.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular4.uniforme}}" alt="" id="player8">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular4.id"></i>
+                        <p>{{this.titular4.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular3.uniforme}}" alt="" id="player9">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular3.id"></i>
+                        <p>{{this.titular3.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular2.uniforme}}" alt="" id="player10">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular2.id"></i>
+                        <p>{{this.titular2.nombre}}</p>
+                    </div>
+
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular1.uniforme}}" alt="" id="portero">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular1.id"></i>
+                        <p>{{this.titular1.nombre}}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ********************************************************************** -->
+
+            <div class="container-fluid" *ngIf="is5_4_1">
+                <!--***************** 5_4_1 *****************-->
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular11.uniforme}}" alt="" id="player1">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular11.id"></i>
+                        <p>{{this.titular11.nombre}}</p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular10.uniforme}}" alt="" id="player2">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular10.id"></i>
+                        <p>{{this.titular10.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular9.uniforme}}" alt="" id="player3">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular9.id"></i>
+                        <p>{{this.titular9.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular8.uniforme}}" alt="" id="player4">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular8.id"></i>
+                        <p>{{this.titular8.nombre}}</p>
+                    </div>
+
+                    <div class="player">
+                        <img src="{{this.titular7.uniforme}}" alt="" id="player5">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular7.id"></i>
+                        <p>{{this.titular7.nombre}}</p>
+                    </div>
+
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular6.uniforme}}" alt="" id="player6">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular6.id"></i>
+                        <p>{{this.titular6.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular5.uniforme}}" alt="" id="player7">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular5.id"></i>
+                        <p>{{this.titular5.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular4.uniforme}}" alt="" id="player8">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular4.id"></i>
+                        <p>{{this.titular4.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular3.uniforme}}" alt="" id="player9">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular3.id"></i>
+                        <p>{{this.titular3.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.titular2.uniforme}}" alt="" id="player10">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular2.id"></i>
+                        <p>{{this.titular2.nombre}}</p>
+                    </div>
+
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.titular1.uniforme}}" alt="" id="portero">
+                        <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular1.id"></i>
+                        <p>{{this.titular1.nombre}}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ********************************************************************** -->
+            <!-- *************************************************************** -->
         </div>
-         <!-- ********************************************************************** -->
-         <div class="container-fluid" *ngIf="is4_3_3"> <!--***************** 4-3-3 *****************-->
+        <div class="col-md-2" id="banca">
             <div class="row">
-                <div class="player">
-                    <img src="{{this.titular11.uniforme}}" alt="" id="player1">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular11.id"></i>
-                    <p>{{this.titular11.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular10.uniforme}}" alt="" id="player2">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular10.id"></i>
-                    <p>{{this.titular10.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular9.uniforme}}" alt="" id="player3">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular9.id"></i>
-                    <p>{{this.titular9.nombre}}</p>
-                </div>
-                
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">Banca</li>
+                    </ol>
+                </nav>
             </div>
             <div class="row">
                 <div class="player">
-                    <img src="{{this.titular8.uniforme}}" alt="" id="player4">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular8.id"></i>
-                    <p>{{this.titular8.nombre}}</p>
+                    <img src="{{this.banca1.uniforme}}" alt="">
+                    <p>{{banca1.nombre}}</p>
                 </div>
-                <div class="player">
-                    <img src="{{this.titular7.uniforme}}" alt="" id="player5">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular7.id"></i>
-                    <p>{{this.titular7.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular6.uniforme}}" alt="" id="player6">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular6.id"></i>
-                    <p>{{this.titular6.nombre}}</p>
-                </div>
-                
-                
+
             </div>
+
             <div class="row">
                 <div class="player">
-                    <img src="{{this.titular5.uniforme}}" alt="" id="player7">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular5.id"></i>
-                    <p>{{this.titular5.nombre}}</p>
+                    <img src="{{this.banca2.uniforme}}" alt="">
+                    <p>{{banca2.nombre}}</p>
                 </div>
-                <div class="player">
-                    <img src="{{this.titular4.uniforme}}" alt="" id="player8">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular4.id"></i>
-                    <p>{{this.titular4.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular3.uniforme}}" alt="" id="player9">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular3.id"></i>
-                    <p>{{this.titular3.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular2.uniforme}}" alt="" id="player10">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular2.id"></i>
-                    <p>{{this.titular2.nombre}}</p>
-                </div>
-
-
 
             </div>
             <div class="row">
                 <div class="player">
-                    <img src="{{this.titular1.uniforme}}" alt="" id="portero">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular1.id"></i>
-                    <p>{{this.titular1.nombre}}</p>
+                    <img src="{{this.banca3.uniforme}}" alt="">
+                    <p>{{banca3.nombre}}</p>
                 </div>
 
             </div>
+            <app-modal-reserva></app-modal-reserva>
         </div>
-        <!-- ********************************************************************** -->
-        <div class="container-fluid" *ngIf="is4_4_2"> <!--***************** 4-4-2 *****************-->
-            <div class="row">
-                <div class="player">
-                    <img src="{{this.titular11.uniforme}}" alt="" id="player1">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular11.id"></i>
-                    <p>{{this.titular11.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular10.uniforme}}" alt="" id="player2">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular10.id"></i>
-                    <p>{{this.titular10.nombre}}</p>
-                </div>
-                
-            </div>
-            <div class="row">
-                <div class="player">
-                    <img src="{{this.titular9.uniforme}}" alt="" id="player3">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular9.id"></i>
-                    <p>{{this.titular9.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular8.uniforme}}" alt="" id="player4">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular8.id"></i>
-                    <p>{{this.titular8.nombre}}</p>
-                </div>
-                
-                <div class="player">
-                    <img src="{{this.titular7.uniforme}}" alt="" id="player5">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular7.id"></i>
-                    <p>{{this.titular7.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular6.uniforme}}" alt="" id="player6">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular6.id"></i>
-                    <p>{{this.titular6.nombre}}</p>
-                </div>
-                
-                
-            </div>
-            <div class="row">
-                <div class="player">
-                    <img src="{{this.titular5.uniforme}}" alt="" id="player7">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular5.id"></i>
-                    <p>{{this.titular5.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular4.uniforme}}" alt="" id="player8">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular4.id"></i>
-                    <p>{{this.titular4.nombre}}</p>
-                </div>
-                
-                <div class="player">
-                    <img src="{{this.titular3.uniforme}}" alt="" id="player9">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular3.id"></i>
-                    <p>{{this.titular3.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular2.uniforme}}" alt="" id="player10">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular2.id"></i>
-                    <p>{{this.titular2.nombre}}</p>
-                </div>
-
-
-
-            </div>
-            <div class="row">
-                <div class="player">
-                    <img src="{{this.titular1.uniforme}}" alt="" id="portero">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular1.id"></i>
-                    <p>{{this.titular1.nombre}}</p>
-                </div>
-
-            </div>
-        </div>
-        <!-- ********************************************************************** -->
-        <div class="container-fluid" *ngIf="is4_5_1"> <!--***************** 4-5-1 *****************-->
-            <div class="row">
-                <div class="player">
-                    <img src="{{this.titular11.uniforme}}" alt="" id="player1">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular11.id"></i>
-                    <p>{{this.titular11.nombre}}</p>
-                </div>
-                
-            </div>
-            <div class="row">
-                <div class="player">
-                    <img src="{{this.titular10.uniforme}}" alt="" id="player2">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular10.id"></i>
-                    <p>{{this.titular10.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular9.uniforme}}" alt="" id="player3">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular9.id"></i>
-                    <p>{{this.titular9.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular8.uniforme}}" alt="" id="player4">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular8.id"></i>
-                    <p>{{this.titular8.nombre}}</p>
-                </div>
-                
-                <div class="player">
-                    <img src="{{this.titular7.uniforme}}" alt="" id="player5">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular7.id"></i>
-                    <p>{{this.titular7.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular6.uniforme}}" alt="" id="player6">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular6.id"></i>
-                    <p>{{this.titular6.nombre}}</p>
-                </div>
-                
-                
-            </div>
-            <div class="row">
-                <div class="player">
-                    <img src="{{this.titular5.uniforme}}" alt="" id="player7">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular5.id"></i>
-                    <p>{{this.titular5.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular4.uniforme}}" alt="" id="player8">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular4.id"></i>
-                    <p>{{this.titular4.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular3.uniforme}}" alt="" id="player9">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular3.id"></i>
-                    <p>{{this.titular3.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular2.uniforme}}" alt="" id="player10">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular2.id"></i>
-                    <p>{{this.titular2.nombre}}</p>
-                </div>
-
-
-
-            </div>
-            <div class="row">
-                <div class="player">
-                    <img src="{{this.titular1.uniforme}}" alt="" id="portero">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular1.id"></i>
-                    <p>{{this.titular1.nombre}}</p>
-                </div>
-
-            </div>
-        </div>
-        <!-- ********************************************************************** -->
-        <div class="container-fluid" *ngIf="is5_3_2"> <!--***************** 5_3_2 *****************-->
-            <div class="row">
-                <div class="player">
-                    <img src="{{this.titular11.uniforme}}" alt="" id="player1">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular11.id"></i>
-                    <p>{{this.titular11.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular10.uniforme}}" alt="" id="player2">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular10.id"></i>
-                    <p>{{this.titular10.nombre}}</p>
-                </div>
-            </div>
-            <div class="row">
-                
-                <div class="player">
-                    <img src="{{this.titular9.uniforme}}" alt="" id="player3">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular9.id"></i>
-                    <p>{{this.titular9.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular8.uniforme}}" alt="" id="player4">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular8.id"></i>
-                    <p>{{this.titular8.nombre}}</p>
-                </div>
-                
-                <div class="player">
-                    <img src="{{this.titular7.uniforme}}" alt="" id="player5">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular7.id"></i>
-                    <p>{{this.titular7.nombre}}</p>
-                </div>
-                
-                
-                
-            </div>
-            <div class="row">
-                <div class="player">
-                    <img src="{{this.titular6.uniforme}}" alt="" id="player6">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular6.id"></i>
-                    <p>{{this.titular6.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular5.uniforme}}" alt="" id="player7">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular5.id"></i>
-                    <p>{{this.titular5.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular4.uniforme}}" alt="" id="player8">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular4.id"></i>
-                    <p>{{this.titular4.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular3.uniforme}}" alt="" id="player9">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular3.id"></i>
-                    <p>{{this.titular3.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular2.uniforme}}" alt="" id="player10">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular2.id"></i>
-                    <p>{{this.titular2.nombre}}</p>
-                </div>
-
-
-
-            </div>
-            <div class="row">
-                <div class="player">
-                    <img src="{{this.titular1.uniforme}}" alt="" id="portero">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular1.id"></i>
-                    <p>{{this.titular1.nombre}}</p>
-                </div>
-            </div>
-        </div>
-        <!-- ********************************************************************** -->
-
-        <div class="container-fluid" *ngIf="is5_4_1"> <!--***************** 5_4_1 *****************-->
-            <div class="row">
-                <div class="player">
-                    <img src="{{this.titular11.uniforme}}" alt="" id="player1">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular11.id"></i>
-                    <p>{{this.titular11.nombre}}</p>
-                </div>
-                
-            </div>
-            <div class="row">
-                <div class="player">
-                    <img src="{{this.titular10.uniforme}}" alt="" id="player2">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular10.id"></i>
-                    <p>{{this.titular10.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular9.uniforme}}" alt="" id="player3">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular9.id"></i>
-                    <p>{{this.titular9.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular8.uniforme}}" alt="" id="player4">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular8.id"></i>
-                    <p>{{this.titular8.nombre}}</p>
-                </div>
-                
-                <div class="player">
-                    <img src="{{this.titular7.uniforme}}" alt="" id="player5">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular7.id"></i>
-                    <p>{{this.titular7.nombre}}</p>
-                </div>
-                
-                
-                
-            </div>
-            <div class="row">
-                <div class="player">
-                    <img src="{{this.titular6.uniforme}}" alt="" id="player6">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular6.id"></i>
-                    <p>{{this.titular6.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular5.uniforme}}" alt="" id="player7">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular5.id"></i>
-                    <p>{{this.titular5.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular4.uniforme}}" alt="" id="player8">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular4.id"></i>
-                    <p>{{this.titular4.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular3.uniforme}}" alt="" id="player9">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular3.id"></i>
-                    <p>{{this.titular3.nombre}}</p>
-                </div>
-                <div class="player">
-                    <img src="{{this.titular2.uniforme}}" alt="" id="player10">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular2.id"></i>
-                    <p>{{this.titular2.nombre}}</p>
-                </div>
-
-
-
-            </div>
-            <div class="row">
-                <div class="player">
-                    <img src="{{this.titular1.uniforme}}" alt="" id="portero">
-                    <i class="far fa-copyright" *ngIf="this.currentFormation.capitan == this.titular1.id"></i>
-                    <p>{{this.titular1.nombre}}</p>
-                </div>
-            </div>
-        </div>
-        <!-- ********************************************************************** -->
-          <!-- 
-          ****************************************************************
-           -->
-      </div>
-      <div class="col-md-2" id="banca">
-          <div class="row">
-                  <nav aria-label="breadcrumb">
-                          <ol class="breadcrumb">
-                              <li class="breadcrumb-item active" aria-current="page">Banca</li>
-                          </ol>
-                      </nav>
-          </div>
-          <div class="row">
-              <div class="player">
-                  <img src="{{this.banca1.uniforme}}" alt="">
-                  <p>{{banca1.nombre}}</p>
-              </div>
-
-          </div>
-
-          <div class="row">
-              <div class="player">
-                  <img src="{{this.banca2.uniforme}}" alt="">
-                  <p>{{banca2.nombre}}</p>
-              </div>
-
-          </div>
-          <div class="row">
-              <div class="player">
-                  <img src="{{this.banca3.uniforme}}" alt="">
-                  <p>{{banca3.nombre}}</p>
-              </div>
-
-          </div>
-          <app-modal-reserva></app-modal-reserva>
-      </div>
-  </div>
+    </div>
 </div>
-

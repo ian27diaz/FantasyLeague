@@ -1,33 +1,34 @@
-<div id="tablaPosiciones">
-  <table class="table">
-      <thead class="thead-dark">
-          <tr>
-              <th>Posicion</th>
-              <th>Escudo</th>
-              <th>Nombre</th>
-              <th>Partidos Jugados</th>
-              <th>Ganados</th>
-              <th>Empatados</th>
-              <th>Perdidos</th>
-              <th>Puntos a Favor</th>
-              <th>Puntos en Contra</th>
-              <th>Diferencia de Puntos</th>
-              <th>Puntos</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr *ngFor="let equ of equiposLiga; let i = index">
-              <td>{{i+1}}</td>
-              <td><img src={{equ.escudo}}></td>
-              <td>{{equ.nombre}}</td>
-              <td>{{equ.partidosGanados + equ.partidosEmpatados + equ.partidosPerdidos}}</td>
-              <td>{{equ.partidosGanados}}</td>
-              <td>{{equ.partidosEmpatados}}</td>
-              <td>{{equ.partidosPerdidos}}</td>
-              <td>{{equ.puntosFavor}}</td>
-              <td>{{equ.puntosContra}}</td>
-              <td>{{equ.puntosFavor - equ.puntosContra}}</td>
-              <td><b>{{equ.partidosGanados*3 + equ.partidosEmpatados}}</b></td>
-          </tr>
-      </tbody>
-  </table>
+<div id="tablaPosiciones" class="table-responsive">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Posicion</th>
+                <th>Escudo</th>
+                <th>Nombre</th>
+                <th>Partidos Jugados</th>
+                <th>Ganados</th>
+                <th>Empatados</th>
+                <th>Perdidos</th>
+                <th>Puntos a Favor</th>
+                <th>Puntos en Contra</th>
+                <th>Diferencia de Puntos</th>
+                <th>Puntos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let equ of equiposLiga; let i = index">
+                <td>{{i+1}}</td>
+                <td><img src={{equ.escudo}}></td>
+                <td>{{equ.nombre}}</td>
+                <td>{{equ.partidosGanados + equ.partidosEmpatados + equ.partidosPerdidos}}</td>
+                <td>{{equ.partidosGanados}}</td>
+                <td>{{equ.partidosEmpatados}}</td>
+                <td>{{equ.partidosPerdidos}}</td>
+                <td>{{equ.puntosFavor}}</td>
+                <td>{{equ.puntosContra}}</td>
+                <td>{{equ.puntosFavor - equ.puntosContra}}</td>
+                <td><b>{{equ.partidosGanados*3 + equ.partidosEmpatados}}</b></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

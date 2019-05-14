@@ -16,3 +16,5 @@ export class TablaPosicionesComponent implements OnInit {
     console.log(this.equiposLiga);  
   }
 }
+
+{{{}}}

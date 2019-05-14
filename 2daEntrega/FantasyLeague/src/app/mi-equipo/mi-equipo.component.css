@@ -56,6 +56,21 @@ nav img{
     opacity: 0.7; 
 }
 
+@media screen and (max-width: 500px){
+    .canchaContainer img{
+        max-height: 45px;
+        max-width: 45px;
+        opacity: 0.7; 
+    }
+
+    #banca img{
+        max-height: 50px;
+        max-width: 50px;
+        margin: auto;
+        opacity: 0.7; 
+    }
+}
+
 .canchaContainer img:hover{
     opacity: 1; 
 }

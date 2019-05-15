@@ -22,6 +22,7 @@ import { ModalJugadorComponent } from './modal-jugador/modal-jugador.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { PruebaComponent } from './prueba/prueba.component';
 import { SinLigaComponent } from './sin-liga/sin-liga.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { SinLigaComponent } from './sin-liga/sin-liga.component';
     AppRoutingModule,
     FormsModule,
     NgbModalModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

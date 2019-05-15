@@ -5,6 +5,7 @@ import { UsuarioService } from '../usuario.service';
 import { Router } from '@angular/router';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-lobby',
@@ -19,8 +20,8 @@ export class LobbyComponent implements OnInit {
   activeTabla = 'nav-item active';
   activeEnfrentamientos = 'nav-item';
   activeEstadisticas = 'nav-item';
-
-
+  private subscript: Subscription;
+  idUser: number;
   constructor(private equiposService: EquiposService,
               private usuarioService: UsuarioService,
               private router: Router,
@@ -29,9 +30,26 @@ export class LobbyComponent implements OnInit {
   ngOnInit() {
     if (!this.usuarioService.isUserLogged()) {
       this.router.navigate(['/authentication']);
-    }
-    this.equipos = this.equiposService.getEquipoPropietario(this.usuarioService.getCurrentUserID());
-
+    } 
+    this.usuarioService.getCurrentUserID();
+    this.usuarioService.currentUserID.subscribe((dato: number) => {
+      this.idUser = dato;
+      console.log('On NGInit in lobbyC');
+      console.log(this.idUser);
+      this.equiposService.getEquipoPropietario(this.idUser).then((equipos_) => {
+        this.equipos = equipos_;
+        console.log('En lobbyComponent');
+        console.log(this.equipos);
+      }).catch(err => {
+        console.log(err);
+      });
+      console.log('EQUIPOS: ' + this.equipos + '\n FINEQUIPOS');
+      console.log(dato);
+    }, (error: any) => {
+      console.log(error);
+    })
+    // let id = this.usuarioService.getCurrentUserID();
+    // console.log(id + ' in lobbyComponent.');
   }
 
   cambiarInfoLiga(ligaSel) {
@@ -66,9 +84,13 @@ export class LobbyComponent implements OnInit {
 
   agregarEquipo(form: NgForm){
     console.log(form.value);
-    this.equiposService.crearEquipoNuevo(form.value.nombreEquipo, this.usuarioService.getCurrentUserID());
-    this.modalService.dismissAll();
-    this.router.navigate(['/sinliga']);
+
+    this.equiposService.crearEquipoNuevo(form.value.nombreEquipo, this.idUser).then(() => {
+      this.modalService.dismissAll();
+      this.router.navigate(['/miequipo']);
+    }).catch(err => {
+        console.log(err);
+      });
   }
 
   open(content: any) {

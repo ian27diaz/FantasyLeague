@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Usuario } from './log/Usuario';
 import { Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
-
+  constructor(private http: HttpClient) { }
   userLogged = false;
-  private lastID = 1;
+  currentToken: string = "";
+  currentUserName = new Subject<string>();
+  currentUserID = new Subject<number>();
+  lastID = 1;
 
   usuarios: Usuario[] = [
     new Usuario(this.lastID++, 'LuisFernando', 'usuario-' + this.lastID, 'DASW', 'lgutierrez@iteso.mx'),
@@ -29,25 +33,47 @@ export class UsuarioService {
     new Usuario(this.lastID++, 'Luthe', 'usuario-' + this.lastID, 'oracle', 'rluthe@iteso.mx')
   ];
 
-  currentUser: Usuario;
-  currentUserName = new Subject<string>();
-  constructor() { }
 
-  loginvalidate(userV, pass): boolean {
-    console.log(userV + " " + pass);
-    const userIndex = this.usuarios.findIndex(user => user.nombre == userV && user.password == pass);
-    if(userIndex >= 0) {
-      console.log(JSON.stringify(this.usuarios[userIndex]) + " holis");
-      this.currentUser = Object.assign({}, this.usuarios[userIndex]);
-      this.currentUserName.next(this.currentUser.nombre);
-      this.userLogged = true;
-      return true;
-    }
-    return false;
+  addUser(user: Usuario): Promise<boolean> {
+    return new Promise((resolve, reject) => {
+      this.http.post('http://127.0.0.1:3000/api/usuario/register', {
+        usuario: user.nombre,
+        password: user.password,
+        email: user.email,
+        foto: user.foto
+      }).subscribe(token => {
+        this.currentToken = token['token'];
+        this.currentUserName.next(user.nombre);
+        this.userLogged = true;
+        resolve(true);
+      });
+      
+    });
+    
   }
 
-  closeSession(){
-    this.currentUser = undefined;
+  loginvalidate(userV, pass): Promise<boolean> {
+    return new Promise((resolve, reject) => {
+      this.http.post('http://127.0.0.1:3000/api/usuario/login', {
+        usuario: userV,
+        password: pass
+      }).subscribe(token => {
+
+        this.currentToken = token['token'];
+        console.log('current Token: ' + this.currentToken.toString());
+        this.currentUserName.next(userV);
+        this.userLogged = true;
+        console.log(userV + ' - ' + pass);
+        resolve(true);
+
+      });
+    });
+
+  }
+
+
+  closeSession() {
+    this.currentToken = '';
     this.currentUserName.next('');
     this.userLogged = false;
   }
@@ -56,19 +82,22 @@ export class UsuarioService {
     return this.userLogged;
   }
 
-  addUser(usuario: Usuario) {
-    usuario.id = this.lastID;
-    const userIndex = this.usuarios.findIndex(user => user.nombre == usuario.nombre);
-    if (userIndex >= 0) { return; }
-
-    this.usuarios.push(Object.assign({}, usuario));
-    this.currentUser = Object.assign({}, this.usuarios[this.usuarios.length - 1]);
-    this.currentUserName.next(this.currentUser.nombre);
-    this.userLogged = true;
-    this.lastID++;
-  }
 
   getCurrentUserID() {
-    return this.currentUser.id;
+    console.log('From GetCurrentUserID');
+    console.log(this.currentToken);
+    this.http.get('http://127.0.0.1:3000/api/usuario/login', {
+      headers: { token: this.currentToken.toString() }
+    }).subscribe(data => {
+      console.log(data);
+      console.log(JSON.stringify(data));
+      this.currentUserID.next(Number(data['id']));
+      console.log(this.currentUserID + ' hi');
+      // return this.currentUserID;
+    });
+    // return this.currentUserID;
   }
+
+  
+
 }

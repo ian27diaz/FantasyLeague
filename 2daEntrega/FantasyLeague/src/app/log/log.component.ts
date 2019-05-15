@@ -27,9 +27,13 @@ export class LogComponent implements OnInit {
     if(user.valid && user.value.PassR === user.value.Pass2R) {
       this.invalidFormR = false;
       const usuario = new Usuario(2, user.value.UsuarioR, '', user.value.PassR, user.value.emailR);
-      this.usuarioService.addUser(usuario);
-      console.log(JSON.stringify(usuario));
-      this.router.navigate(['/lobby']);
+      this.usuarioService.addUser(usuario).then(() => {
+        this.router.navigate(['/lobby']);
+
+      }).catch((err) => {
+        this.invalidForm = true;
+      });
+
     } else {
       this.invalidFormR = true;
     }
@@ -39,12 +43,13 @@ export class LogComponent implements OnInit {
     // console.log(user.value.Usuario, );
     if(user.valid) {
       this.invalidForm = false;
-      const validLogin = this.usuarioService.loginvalidate(user.value.Usuario, user.value.Password);
-      if (validLogin) {
-        this.router.navigate(['/lobby']);
-      } else {
+      this.usuarioService.loginvalidate(user.value.Usuario, user.value.Password).then(() =>{
+          this.router.navigate(['/lobby']);
+      
+      }).catch((err) => {
         this.invalidForm = true;
-      }
+      });
+      
       //redireccionar a Lobby
     } else {
       console.log('invalid');

@@ -1,0 +1,42 @@
+<div class="fondo" >
+  <div class="container" id="logIn" *ngIf="noPertenece">
+    <div class="row">
+      <form #logFormUnirse="ngForm" (ngSubmit)="unirseLiga(logFormUnirse)">
+      <div class="jumbotron col-6">
+        <img src="assets/images/Otras/logounirse.png" alt="">
+          <h1>Unirse a una liga</h1>
+          <div class="form-group row col-12">
+            <label class="col-form-label">Codigo: </label>
+            <input type="text" class="form-control" id="inputUsuario" name="Codigo" ngModel required>
+          </div>
+          <div class="form-group row col-6 botones">
+            <button type="submit" class="btn btn-primary">Unirme</button>
+          </div>
+      </div>
+      </form>
+      <form #logFormCrear="ngForm" (ngSubmit)="crearLiga(logFormCrear)">
+      <div class="jumbotron col-6">
+          <img src="assets/images/Otras/logocrear.png" alt="">
+            <h1>Crear una liga</h1>
+            <div class="form-group row col-12">
+              <label class="col-form-label">Nombre:</label>
+              <input type="text" class="form-control" id="inputUsuario"  name="Nombre" ngModel required>
+            </div>
+            <div class="form-group row col-12 botones">
+              <button type="submit" class="btn btn-info">Crear</button>
+            </div>
+      </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="container" id="logIn" *ngIf="! noPertenece">
+    <div class="row">
+      <div class="jumbotron col-12">
+        <img src="assets/images/Otras/logoespera.png" alt="">
+          <h1>La liga aun no cuenta con 20 participantes, ¡Invita a tus amigos con el código: {{currentEquipo.liga}} !</h1>
+      </div>
+    </div>
+  </div>
+
+</div>

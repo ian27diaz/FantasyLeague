@@ -63,7 +63,7 @@ export class EquiposService {
     new Equipo(this.lastID++, 'Chapulines', 'assets/images/EscudosEquipos/EscudoEquipo-37.jpg', 12, 1, 1, 9, 0, 2000, 1000, 5000),
     new Equipo(this.lastID++, 'Chavo del 8', 'assets/images/EscudosEquipos/EscudoEquipo-38.jpg', 11, 2, 1, 9, 0, 2000, 1000, 5000),
     new Equipo(this.lastID++, 'Green Car', 'assets/images/EscudosEquipos/EscudoEquipo-39.jpg', 10, 1, 0, 0, 10, 1000, 2000, 5000),
-    new Equipo(this.lastID++, 'Kabin United', 'assets/images/EscudosEquipos/EscudoEquipo-40.jpg', 9, 2, 1, 0, 9, 1000, 2000, 5000),
+    //new Equipo(this.lastID++, 'Kabin United', 'assets/images/EscudosEquipos/EscudoEquipo-40.jpg', 9, 2, 1, 0, 9, 1000, 2000, 5000),
   ];
   constructor(private plantillaService: PlantillaService) { }
 
@@ -75,7 +75,7 @@ export class EquiposService {
                               0,0,0,0,0,0,1_000_000);
     this.equipos.push(newTeam);
     this.currentEquipo = newTeam;
-    this.plantillaService.crearPlantillasNuevas(newTeam.id);
+    //this.plantillaService.crearPlantillasNuevas(newTeam.id);
   }
 
   getEquipoPropietario(idPropietario): Equipo[] {
@@ -106,7 +106,7 @@ export class EquiposService {
     return this.equipos.find(equ => equ.id === id);
   }
 
-  agregarEquipo(){
-    
+  agregarEquipoALiga(IDliga) {
+    this.currentEquipo.liga = IDliga;
   }
 }

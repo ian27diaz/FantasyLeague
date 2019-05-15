@@ -21,6 +21,7 @@ import { ModalReservaComponent } from './mi-equipo/modal-reserva/modal-reserva.c
 import { ModalJugadorComponent } from './modal-jugador/modal-jugador.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { PruebaComponent } from './prueba/prueba.component';
+import { SinLigaComponent } from './sin-liga/sin-liga.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { PruebaComponent } from './prueba/prueba.component';
     ModalCambiosComponent,
     ModalReservaComponent,
     ModalJugadorComponent,
-    PruebaComponent
+    PruebaComponent,
+    SinLigaComponent
   ],
   imports: [
     BrowserModule,

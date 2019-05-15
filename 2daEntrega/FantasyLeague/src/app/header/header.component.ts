@@ -11,17 +11,18 @@ import { Subscription } from 'rxjs';
 export class HeaderComponent implements OnInit {
   show: boolean;
   inLobby: boolean;
+  inSinLiga: boolean;
   userName: string;
   private usernameSubscript: Subscription;
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
               private usuarioService: UsuarioService) { }
-  ngOnInit() {
-    console.log(this.router.url + '\nruta2: ' + JSON.stringify(this.activatedRoute.url));
-    
+  ngOnInit() {    
     this.router.events.subscribe((val) => {
       this.show = !this.router.url.includes('authentication');
       this.inLobby = !this.router.url.includes('lobby');
+      this.inSinLiga = !this.router.url.includes('sinliga');
+
     });
     this.usernameSubscript = this.usuarioService.currentUserName
     .subscribe((dato: string) => {

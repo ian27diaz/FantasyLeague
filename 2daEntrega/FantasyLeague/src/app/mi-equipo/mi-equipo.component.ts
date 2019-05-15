@@ -8,6 +8,7 @@ import { Plantilla } from './Plantilla';
 import { Futbolista } from '../futbolistas/futbolista/Futbolista';
 import { FutbolistasService } from '../futbolistas/futbolistas.service';
 import { EnfrentamientosService } from '../Liga/enfrentamientos/enfrentamientos.service';
+import { LigaService } from '../liga/liga.service';
 
 @Component({
   selector: 'app-mi-equipo',
@@ -16,7 +17,6 @@ import { EnfrentamientosService } from '../Liga/enfrentamientos/enfrentamientos.
 })
 
 export class MiEquipoComponent implements OnInit {
-  equiposLiga: Equipo[];
   currentEquipo: Equipo;
   constructor(private usuarioService: UsuarioService,
 
@@ -24,7 +24,8 @@ export class MiEquipoComponent implements OnInit {
     private plantillaService: PlantillaService,
     private equipoService: EquiposService,
     private futbolistaService: FutbolistasService,
-    private router: Router) { }
+    private router: Router,
+    private ligaService: LigaService) { }
 
   currentFormation: Plantilla;
   is3_4_3 = false;
@@ -54,6 +55,15 @@ export class MiEquipoComponent implements OnInit {
     }
 
     this.currentEquipo = this.equipoService.getCurrentEquipo();
+
+    if (this.currentEquipo.liga == 0) {
+      this.router.navigate(['/sinliga']);
+    }
+
+    if (this.ligaService.getLigaByID(this.currentEquipo.liga).integrantes < 20) {
+      this.router.navigate(['/sinliga']);
+    }
+
     this.currentFormation = this.plantillaService.buscarPlantillaMiEquipo(this.currentEquipo.id);
     this.titular1 = this.futbolistaService.getFutbolistaByID(this.currentFormation.titular1);
     this.titular2 = this.futbolistaService.getFutbolistaByID(this.currentFormation.titular2);

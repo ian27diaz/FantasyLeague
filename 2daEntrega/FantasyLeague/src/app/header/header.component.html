@@ -1,19 +1,19 @@
 <nav *ngIf="show" class="navbar navbar-expand-md navbar-dark bg-primary sticky-top">
-  <div *ngIf="inLobby" class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+  <div  class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="inLobby">
         <a routerLink="/lobby" class="nav-link" routerLinkActive="active">Inicio</a>
       </li>
-      <li class="nav-item">
-        <a routerLink="/miequipo" class="nav-link" routerLinkActive="active">Mi equipo</a>
+      <li class="nav-item" *ngIf="inLobby && inSinLiga">
+        <a routerLink="/miequipo" class="nav-link" routerLinkActive="active" >Mi equipo</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="inLobby && inSinLiga">
         <a routerLink="/liga" class="nav-link" routerLinkActive="active">Liga</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="inLobby && inSinLiga">
         <a routerLink="/futbolistas" class="nav-link" routerLinkActive="active">Futbolistas</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="inLobby && inSinLiga">
         <a routerLink="/reglamento" class="nav-link" routerLinkActive="active">Reglamento</a>
       </li>
     </ul>

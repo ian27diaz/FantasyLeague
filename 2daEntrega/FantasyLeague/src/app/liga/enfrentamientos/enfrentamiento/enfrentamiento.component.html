@@ -1,281 +1,1128 @@
 <div class="container-fluid">
-  <nav aria-label="breadcrumb">
-      <ol class="row breadcrumb">
-          <li class="breadcrumb-item active" aria-current="page">Enfrentamiento Jornada 1</li>
-      </ol>
-  </nav>
-  <div class="row" id="teamStats">
-      <div class="col-md-4 col-sm-10">
+    <nav aria-label="breadcrumb">
+        <ol class="row breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Enfrentamiento Jornada {{this.currentEnfrentamiento.jornada}}</li>
+        </ol>
+    </nav>
+    <div class="row" id="teamStats">
 
-          <h3><img src="assets/images/a.png" alt="" class="logoImg">  Mickey Mouse</h3>
+
+      <div class="col-md-4 col-sm-10"(click)="mostrarLocaloVisita(true)" *ngIf="this.selLocaloVisita" style="background-color: aqua">
+
+          <h3 ><img src={{this.equiposService.getEquipoByID(this.currentEnfrentamiento.local).escudo}} alt="" class="logoImg">{{this.equiposService.getEquipoByID(this.currentEnfrentamiento.local).nombre}}</h3>
       </div>
+      <div class="col-md-4 col-sm-10"(click)="mostrarLocaloVisita(true)" *ngIf="! this.selLocaloVisita">
+
+          <h3 ><img src={{this.equiposService.getEquipoByID(this.currentEnfrentamiento.local).escudo}} alt="" class="logoImg">{{this.equiposService.getEquipoByID(this.currentEnfrentamiento.local).nombre}}</h3>
+      </div>
+
+
       <div class="col-md-1 col-sm-2">
-          <h3>50</h3>
+          <h3>{{this.currentEnfrentamiento.puntosLocal}}</h3>
       </div>
       <div class="col-md-2 col-sm-12">
           <h3>VS</h3>
       </div>
       <div class="col-md-1 col-sm-2">
-          <h3>55</h3>
-      </div>
-      <div class="col-md-4 col-sm-10">
-          <h3><img src="assets/images/LogosDeEquipos/pallacracks.jpg" alt="" class="logoImg"> Pallacracks</h3>
-      </div>
-  </div>
-
-  <div class="row canchaContainer">
-      <div class="container-fluid">
-          <div class="row">
-              <div class="col-2">
-                  <p>
-                      <span class="nombreDeJugadorIzq">Donald</span>
-                      <img src="assets/images/CamisaIzquierda.png" alt="">
-                      <span>10</span>
-                  </p>
-              </div>
-              <div class="col-2">
-                  <p>
-                      <span class="nombreDeJugadorIzq">Goofy</span>
-                      <img src="assets/images/CamisaIzquierda.png" alt="">
-                      <span>10</span>
-                  </p>
-              </div>
-              <div class="col-2">
-                  <p>
-                      <span class="nombreDeJugadorIzq">Pluto</span>
-                      <img src="assets/images/CamisaIzquierda.png" alt="">
-                      <span>2</span>
-                  </p>
-              </div>
-              <div class="col-2">
-                  <p>
-                      <span>4</span>
-                      <img src="assets/images/CamisaDerecha.png" alt="">
-                      <span class="nombreDeJugadorDerecho">Pallaro</span>
-                  </p>
-              </div>
-              <div class="col-2">
-                  <p>
-                          <span>3</span>
-                      <img src="assets/images/CamisaDerecha.png" alt="">
-                      <span class="nombreDeJugadorDerecho">Kennedy</span>
-                  </p>
-              </div>
-              <div class="col-2">
-                  <p>
-                      <span>2</span>
-                      <img src="assets/images/CamisaDerecha.png" alt="">
-                      <span class="nombreDeJugadorDerecho">Ortiz J.C</span>
-                  </p>
-              </div>
-          </div>
-
-          <!-- -------------------------------------------------- -->
-
-          <div class="row">
-              <div class="col-2"></div>
-              <div class="col-2">
-                  <p>
-                      <span class="nombreDeJugadorIzq">Minnie</span>
-                      <img src="assets/images/CamisaIzquierda.png" alt="">
-                      <span>10</span>
-                  </p>
-              </div>
-              <div class="col-2"></div>
-              <div class="col-2"></div>
-              <div class="col-2">
-                  <p>
-                          <span>8</span>
-                      <img src="assets/images/CamisaDerecha.png" alt="">
-                      <span class="nombreDeJugadorDerecho">Tanque</span>
-                  </p>
-              </div>
-              <div class="col-2"></div>
-          </div>
-
-          <!-- -------------------------------------------------- -->
-
-          <div class="row">
-              <div class="col-2">
-                  <p>
-                      <span class="nombreDeJugadorIzq">Daisy</span>
-                      <img src="assets/images/CamisaIzquierda.png" alt="">
-                      <span>5</span>
-                  </p>
-              </div>
-              <div class="col-2">
-                  <p>
-                      <span class="nombreDeJugadorIzq">Chip</span>
-                      <img src="assets/images/CamisaIzquierda.png" alt="">
-                      <span>1</span>
-                  </p>
-              </div>
-              <div class="col-2">
-                  <p>
-                      <span class="nombreDeJugadorIzq">Ludwig</span>
-                      <img src="assets/images/CamisaIzquierda.png" alt="">
-                      <span>6</span>
-                  </p>
-              </div>
-              <div class="col-2">
-                  <p>
-                          <span>3</span>
-                      <img src="assets/images/CamisaDerecha.png" alt="">
-                      <span class="nombreDeJugadorDerecho">Pallaro Jr.</span>
-                  </p>
-              </div>
-              <div class="col-2">
-                  <p>
-                          <span>4</span>
-                      <img src="assets/images/CamisaDerecha.png" alt="">
-                      <span class="nombreDeJugadorDerecho">Valderrama M.</span>
-                  </p>
-              </div>
-              <div class="col-2">
-                  <p>
-                          <span>7</span>
-                      <img src="assets/images/CamisaDerecha.png" alt="">
-                      <span class="nombreDeJugadorDerecho">Valderrama D.</span>
-                  </p>
-              </div>
-          </div>
-
-          <!-- -------------------------------------------------- -->
-
-          <div class="row">
-              <div class="col-2"></div>
-              <div class="col-2">
-                  <p>
-                      <span class="nombreDeJugadorIzq">Toodles</span>
-                      <img src="assets/images/CamisaIzquierda.png" alt="">
-                      <span>10</span>
-                  </p>
-              </div>
-              <div class="col-2"></div>
-              <div class="col-2"></div>
-              <div class="col-2">
-                  <p>
-                      <span>8</span>
-                      <img src="assets/images/CamisaDerecha.png" alt="">
-                      <span class="nombreDeJugadorDerecho">Avalos J.</span>
-                  </p>
-              </div>
-              <div class="col-2"></div>
-          </div>
-          
-          <!-- -------------------------------------------------- -->
-
-          <div class="row">
-              <div class="col-2">
-                  <p>
-                      <span class="nombreDeJugadorIzq">Chip</span>
-                      <img src="assets/images/CamisaIzquierda.png" alt="">
-                      <span>2</span>
-                  </p>
-              </div>
-              <div class="col-2">
-                  <p>
-                      <span class="nombreDeJugadorIzq">Dale</span>
-                      <img src="assets/images/CamisaIzquierda.png" alt="">
-                      <span>4</span>
-                  </p>
-              </div>
-              <div class="col-2">
-                  <p>
-                      <span class="nombreDeJugadorIzq">Clarabella</span>
-                      <img src="assets/images/CamisaIzquierda.png" alt="">
-                      <span>3</span>
-                  </p>
-              </div>
-              <div class="col-2">
-                  <p>
-                      <span>3</span>
-                      <img src="assets/images/CamisaDerecha.png" alt="">
-                      <span class="nombreDeJugadorDerecho">Mauri</span>
-                  </p>
-              </div>
-              <div class="col-2">
-                  <p>
-                          <span>4</span>
-                      <img src="assets/images/CamisaDerecha.png" alt="">
-                      <span class="nombreDeJugadorDerecho">Salgado A.</span>
-                  </p>
-              </div>
-              <div class="col-2">
-                  <p>
-                      <span>7</span>
-                      <img src="assets/images/CamisaDerecha.png" alt="">
-                      <span class="nombreDeJugadorDerecho">Diaz I.</span>
-                  </p>
-              </div>
-          </div>
+          <h3>{{this.currentEnfrentamiento.puntosVisita}}</h3>
       </div>
 
-  </div>
 
-  <div class="row bancaContainer">
-      <div class="col-6">
-          <div class="container-fluid">
-              <div class="row">
-                  <div class="col-3">
-                      Banca
-                  </div>
-              <div class="col-3">
-                  <p>
-                      <img src="assets/images/camisaEjemplo.png" alt="">
-                      <span>4</span>
-                  </p>
-                  
-                  <p>Hugo</p>
-              </div>
-              <div class="col-3">
-                  <p>
-                      <img src="assets/images/camisaEjemplo.png" alt="">
-                      <span>6</span>
-                  </p>
-                  
-                  <p>Paco</p>
-              </div>
-              <div class="col-3">
-                  <p>
-                      <img src="assets/images/camisaEjemplo.png" alt="">
-                      <span>5</span>
-                  </p>
-                  
-                  <p>Luis</p>
-              </div>
-              </div>
-              
-          </div>
+      <div class="col-md-4 col-sm-10" (click)="mostrarLocaloVisita(false)" *ngIf="! this.selLocaloVisita"  style="background-color: aqua">
+          <h3 ><img src="{{this.equiposService.getEquipoByID(this.currentEnfrentamiento.visita).escudo}}" alt="" class="logoImg"> {{this.equiposService.getEquipoByID(this.currentEnfrentamiento.visita).nombre}}</h3>
       </div>
-      <div class="col-6">
-          <div class="container-fluid">
-              <div class="row">
-                  <div class="col-3">Banca</div>
-                  <div class="col-3">
-                      <p>
-                          <img src="assets/images/camisaEjemplo.png" alt="">
-                          <span>4</span>
-                      </p>
-                      <p>Chavez H.</p>
-                  </div>
-                  <div class="col-3">
-                      <p>
-                          <img src="assets/images/camisaEjemplo.png" alt="">
-                          <span>2</span>
-                      </p>
-                      <p>Victor Hugo Ortega</p>
-                  </div>
-                  <div class="col-3">
-                      <p>
-                          <img src="assets/images/camisaEjemplo.png" alt="">
-                          <span>3</span>
-                      </p>
-                      
-                      <p>Galindo D.</p>
-                  </div>
-              </div>
-              
-          </div>
+      <div class="col-md-4 col-sm-10" (click)="mostrarLocaloVisita(false)" *ngIf="this.selLocaloVisita">
+            <h3 ><img src="{{this.equiposService.getEquipoByID(this.currentEnfrentamiento.visita).escudo}}" alt="" class="logoImg"> {{this.equiposService.getEquipoByID(this.currentEnfrentamiento.visita).nombre}}</h3>
       </div>
-  </div>
+
+
+    </div>
+
+    <div class="row" *ngIf="this.selLocaloVisita">
+        <div class="col-md-10 canchaContainer">
+            <div class="container-fluid" *ngIf="Localis3_4_3">
+                <!--***************** 3-4-3 *****************-->
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular11.uniforme}}" alt="" id="player1">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular11.id"></i>
+                        <p>{{this.Localtitular11.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular10.uniforme}}" alt="" id="player2">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular10.id"></i>
+                        <p>{{this.Localtitular10.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular9.uniforme}}" alt="" id="player3">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular9.id"></i>
+                        <p>{{this.Localtitular9.nombre}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular8.uniforme}}" alt="" id="player4">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular8.id"></i>
+                        <p>{{this.Localtitular8.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular7.uniforme}}" alt="" id="player5">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular7.id"></i>
+                        <p>{{this.Localtitular7.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular6.uniforme}}" alt="" id="player6">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular6.id"></i>
+                        <p>{{this.Localtitular6.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular5.uniforme}}" alt="" id="player7">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular5.id"></i>
+                        <p>{{this.Localtitular5.nombre}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular4.uniforme}}" alt="" id="player8">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular4.id"></i>
+                        <p>{{this.Localtitular4.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular3.uniforme}}" alt="" id="player9">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular3.id"></i>
+                        <p>{{this.Localtitular3.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular2.uniforme}}" alt="" id="player10">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular2.id"></i>
+                        <p>{{this.Localtitular2.nombre}}</p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular1.uniforme}}" alt="" id="portero">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular1.id"></i>
+                        <p>{{this.Localtitular1.nombre}}</p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ********************************************************************** -->
+            <div class="container-fluid" *ngIf="Localis3_5_2">
+                <!--***************** 3-5-2 *****************-->
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular11.uniforme}}" alt="" id="player1">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular11.id"></i>
+                        <p>{{this.Localtitular11.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular10.uniforme}}" alt="" id="player2">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular10.id"></i>
+                        <p>{{this.Localtitular10.nombre}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular9.uniforme}}" alt="" id="player3">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular9.id"></i>
+                        <p>{{this.Localtitular9.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular8.uniforme}}" alt="" id="player4">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular8.id"></i>
+                        <p>{{this.Localtitular8.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular7.uniforme}}" alt="" id="player5">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular7.id"></i>
+                        <p>{{this.Localtitular7.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular6.uniforme}}" alt="" id="player6">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular6.id"></i>
+                        <p>{{this.Localtitular6.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular5.uniforme}}" alt="" id="player7">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular5.id"></i>
+                        <p>{{this.Localtitular5.nombre}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular4.uniforme}}" alt="" id="player8">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular4.id"></i>
+                        <p>{{this.Localtitular4.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular3.uniforme}}" alt="" id="player9">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular3.id"></i>
+                        <p>{{this.Localtitular3.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular2.uniforme}}" alt="" id="player10">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular2.id"></i>
+                        <p>{{this.Localtitular2.nombre}}</p>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular1.uniforme}}" alt="" id="portero">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular1.id"></i>
+                        <p>{{this.Localtitular1.nombre}}</p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ********************************************************************** -->
+            <div class="container-fluid" *ngIf="Localis4_3_3">
+                <!--***************** 4-3-3 *****************-->
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular11.uniforme}}" alt="" id="player1">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular11.id"></i>
+                        <p>{{this.Localtitular11.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular10.uniforme}}" alt="" id="player2">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular10.id"></i>
+                        <p>{{this.Localtitular10.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular9.uniforme}}" alt="" id="player3">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular9.id"></i>
+                        <p>{{this.Localtitular9.nombre}}</p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular8.uniforme}}" alt="" id="player4">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular8.id"></i>
+                        <p>{{this.Localtitular8.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular7.uniforme}}" alt="" id="player5">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular7.id"></i>
+                        <p>{{this.Localtitular7.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular6.uniforme}}" alt="" id="player6">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular6.id"></i>
+                        <p>{{this.Localtitular6.nombre}}</p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular5.uniforme}}" alt="" id="player7">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular5.id"></i>
+                        <p>{{this.Localtitular5.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular4.uniforme}}" alt="" id="player8">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular4.id"></i>
+                        <p>{{this.Localtitular4.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular3.uniforme}}" alt="" id="player9">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular3.id"></i>
+                        <p>{{this.Localtitular3.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular2.uniforme}}" alt="" id="player10">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular2.id"></i>
+                        <p>{{this.Localtitular2.nombre}}</p>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular1.uniforme}}" alt="" id="portero">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular1.id"></i>
+                        <p>{{this.Localtitular1.nombre}}</p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ********************************************************************** -->
+            <div class="container-fluid" *ngIf="Localis4_4_2">
+                <!--***************** 4-4-2 *****************-->
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular11.uniforme}}" alt="" id="player1">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular11.id"></i>
+                        <p>{{this.Localtitular11.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular10.uniforme}}" alt="" id="player2">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular10.id"></i>
+                        <p>{{this.Localtitular10.nombre}}</p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular9.uniforme}}" alt="" id="player3">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular9.id"></i>
+                        <p>{{this.Localtitular9.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular8.uniforme}}" alt="" id="player4">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular8.id"></i>
+                        <p>{{this.Localtitular8.nombre}}</p>
+                    </div>
+
+                    <div class="player">
+                        <img src="{{this.Localtitular7.uniforme}}" alt="" id="player5">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular7.id"></i>
+                        <p>{{this.Localtitular7.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular6.uniforme}}" alt="" id="player6">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular6.id"></i>
+                        <p>{{this.Localtitular6.nombre}}</p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular5.uniforme}}" alt="" id="player7">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular5.id"></i>
+                        <p>{{this.Localtitular5.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular4.uniforme}}" alt="" id="player8">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular4.id"></i>
+                        <p>{{this.Localtitular4.nombre}}</p>
+                    </div>
+
+                    <div class="player">
+                        <img src="{{this.Localtitular3.uniforme}}" alt="" id="player9">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular3.id"></i>
+                        <p>{{this.Localtitular3.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular2.uniforme}}" alt="" id="player10">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular2.id"></i>
+                        <p>{{this.Localtitular2.nombre}}</p>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular1.uniforme}}" alt="" id="portero">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular1.id"></i>
+                        <p>{{this.Localtitular1.nombre}}</p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ********************************************************************** -->
+            <div class="container-fluid" *ngIf="Localis4_5_1">
+                <!--***************** 4-5-1 *****************-->
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular11.uniforme}}" alt="" id="player1">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular11.id"></i>
+                        <p>{{this.Localtitular11.nombre}}</p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular10.uniforme}}" alt="" id="player2">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular10.id"></i>
+                        <p>{{this.Localtitular10.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular9.uniforme}}" alt="" id="player3">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular9.id"></i>
+                        <p>{{this.Localtitular9.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular8.uniforme}}" alt="" id="player4">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular8.id"></i>
+                        <p>{{this.Localtitular8.nombre}}</p>
+                    </div>
+
+                    <div class="player">
+                        <img src="{{this.Localtitular7.uniforme}}" alt="" id="player5">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular7.id"></i>
+                        <p>{{this.Localtitular7.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular6.uniforme}}" alt="" id="player6">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular6.id"></i>
+                        <p>{{this.Localtitular6.nombre}}</p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular5.uniforme}}" alt="" id="player7">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular5.id"></i>
+                        <p>{{this.Localtitular5.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular4.uniforme}}" alt="" id="player8">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular4.id"></i>
+                        <p>{{this.Localtitular4.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular3.uniforme}}" alt="" id="player9">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular3.id"></i>
+                        <p>{{this.Localtitular3.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular2.uniforme}}" alt="" id="player10">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular2.id"></i>
+                        <p>{{this.Localtitular2.nombre}}</p>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular1.uniforme}}" alt="" id="portero">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular1.id"></i>
+                        <p>{{this.Localtitular1.nombre}}</p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ********************************************************************** -->
+            <div class="container-fluid" *ngIf="Localis5_3_2">
+                <!--***************** 5_3_2 *****************-->
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular11.uniforme}}" alt="" id="player1">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular11.id"></i>
+                        <p>{{this.Localtitular11.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular10.uniforme}}" alt="" id="player2">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular10.id"></i>
+                        <p>{{this.Localtitular10.nombre}}</p>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="player">
+                        <img src="{{this.Localtitular9.uniforme}}" alt="" id="player3">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular9.id"></i>
+                        <p>{{this.Localtitular9.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular8.uniforme}}" alt="" id="player4">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular8.id"></i>
+                        <p>{{this.Localtitular8.nombre}}</p>
+                    </div>
+
+                    <div class="player">
+                        <img src="{{this.Localtitular7.uniforme}}" alt="" id="player5">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular7.id"></i>
+                        <p>{{this.Localtitular7.nombre}}</p>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular6.uniforme}}" alt="" id="player6">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular6.id"></i>
+                        <p>{{this.Localtitular6.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular5.uniforme}}" alt="" id="player7">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular5.id"></i>
+                        <p>{{this.Localtitular5.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular4.uniforme}}" alt="" id="player8">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular4.id"></i>
+                        <p>{{this.Localtitular4.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular3.uniforme}}" alt="" id="player9">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular3.id"></i>
+                        <p>{{this.Localtitular3.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular2.uniforme}}" alt="" id="player10">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular2.id"></i>
+                        <p>{{this.Localtitular2.nombre}}</p>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular1.uniforme}}" alt="" id="portero">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular1.id"></i>
+                        <p>{{this.Localtitular1.nombre}}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ********************************************************************** -->
+
+            <div class="container-fluid" *ngIf="Localis5_4_1">
+                <!--***************** 5_4_1 *****************-->
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular11.uniforme}}" alt="" id="player1">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular11.id"></i>
+                        <p>{{this.Localtitular11.nombre}}</p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular10.uniforme}}" alt="" id="player2">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular10.id"></i>
+                        <p>{{this.Localtitular10.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular9.uniforme}}" alt="" id="player3">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular9.id"></i>
+                        <p>{{this.Localtitular9.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular8.uniforme}}" alt="" id="player4">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular8.id"></i>
+                        <p>{{this.Localtitular8.nombre}}</p>
+                    </div>
+
+                    <div class="player">
+                        <img src="{{this.Localtitular7.uniforme}}" alt="" id="player5">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular7.id"></i>
+                        <p>{{this.Localtitular7.nombre}}</p>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular6.uniforme}}" alt="" id="player6">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular6.id"></i>
+                        <p>{{this.Localtitular6.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular5.uniforme}}" alt="" id="player7">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular5.id"></i>
+                        <p>{{this.Localtitular5.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular4.uniforme}}" alt="" id="player8">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular4.id"></i>
+                        <p>{{this.Localtitular4.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular3.uniforme}}" alt="" id="player9">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular3.id"></i>
+                        <p>{{this.Localtitular3.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Localtitular2.uniforme}}" alt="" id="player10">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular2.id"></i>
+                        <p>{{this.Localtitular2.nombre}}</p>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Localtitular1.uniforme}}" alt="" id="portero">
+                        <i class="far fa-copyright" *ngIf="this.LocalcurrentFormation.capitan  == this.Localtitular1.id"></i>
+                        <p>{{this.Localtitular1.nombre}}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ********************************************************************** -->
+            <!-- *************************************************************** -->
+        </div>
+        <div class="col-md-2" id="banca">
+            <div class="row">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">Banca</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="player">
+                    <img src="{{this.Localbanca1.uniforme}}" alt="">
+                    <p>{{Localbanca1.nombre}}</p>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="player">
+                    <img src="{{this.Localbanca2.uniforme}}" alt="">
+                    <p>{{Localbanca2.nombre}}</p>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="player">
+                    <img src="{{this.Localbanca3.uniforme}}" alt="">
+                    <p>{{Localbanca3.nombre}}</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="! this.selLocaloVisita">
+        <div class="col-md-10 canchaContainer">
+            <div class="container-fluid" *ngIf="Visitais3_4_3">
+                <!--***************** 3-4-3 *****************-->
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular11.uniforme}}" alt="" id="player1">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular11.id"></i>
+                        <p>{{this.Visitatitular11.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular10.uniforme}}" alt="" id="player2">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular10.id"></i>
+                        <p>{{this.Visitatitular10.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular9.uniforme}}" alt="" id="player3">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular9.id"></i>
+                        <p>{{this.Visitatitular9.nombre}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular8.uniforme}}" alt="" id="player4">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular8.id"></i>
+                        <p>{{this.Visitatitular8.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular7.uniforme}}" alt="" id="player5">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular7.id"></i>
+                        <p>{{this.Visitatitular7.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular6.uniforme}}" alt="" id="player6">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular6.id"></i>
+                        <p>{{this.Visitatitular6.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular5.uniforme}}" alt="" id="player7">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular5.id"></i>
+                        <p>{{this.Visitatitular5.nombre}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular4.uniforme}}" alt="" id="player8">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular4.id"></i>
+                        <p>{{this.Visitatitular4.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular3.uniforme}}" alt="" id="player9">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular3.id"></i>
+                        <p>{{this.Visitatitular3.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular2.uniforme}}" alt="" id="player10">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular2.id"></i>
+                        <p>{{this.Visitatitular2.nombre}}</p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular1.uniforme}}" alt="" id="portero">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular1.id"></i>
+                        <p>{{this.Visitatitular1.nombre}}</p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ********************************************************************** -->
+            <div class="container-fluid" *ngIf="Visitais3_5_2">
+                <!--***************** 3-5-2 *****************-->
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular11.uniforme}}" alt="" id="player1">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular11.id"></i>
+                        <p>{{this.Visitatitular11.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular10.uniforme}}" alt="" id="player2">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular10.id"></i>
+                        <p>{{this.Visitatitular10.nombre}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular9.uniforme}}" alt="" id="player3">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular9.id"></i>
+                        <p>{{this.Visitatitular9.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular8.uniforme}}" alt="" id="player4">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular8.id"></i>
+                        <p>{{this.Visitatitular8.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular7.uniforme}}" alt="" id="player5">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular7.id"></i>
+                        <p>{{this.Visitatitular7.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular6.uniforme}}" alt="" id="player6">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular6.id"></i>
+                        <p>{{this.Visitatitular6.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular5.uniforme}}" alt="" id="player7">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular5.id"></i>
+                        <p>{{this.Visitatitular5.nombre}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular4.uniforme}}" alt="" id="player8">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular4.id"></i>
+                        <p>{{this.Visitatitular4.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular3.uniforme}}" alt="" id="player9">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular3.id"></i>
+                        <p>{{this.Visitatitular3.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular2.uniforme}}" alt="" id="player10">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular2.id"></i>
+                        <p>{{this.Visitatitular2.nombre}}</p>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular1.uniforme}}" alt="" id="portero">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular1.id"></i>
+                        <p>{{this.Visitatitular1.nombre}}</p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ********************************************************************** -->
+            <div class="container-fluid" *ngIf="Visitais4_3_3">
+                <!--***************** 4-3-3 *****************-->
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular11.uniforme}}" alt="" id="player1">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular11.id"></i>
+                        <p>{{this.Visitatitular11.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular10.uniforme}}" alt="" id="player2">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular10.id"></i>
+                        <p>{{this.Visitatitular10.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular9.uniforme}}" alt="" id="player3">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular9.id"></i>
+                        <p>{{this.Visitatitular9.nombre}}</p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular8.uniforme}}" alt="" id="player4">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular8.id"></i>
+                        <p>{{this.Visitatitular8.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular7.uniforme}}" alt="" id="player5">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular7.id"></i>
+                        <p>{{this.Visitatitular7.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular6.uniforme}}" alt="" id="player6">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular6.id"></i>
+                        <p>{{this.Visitatitular6.nombre}}</p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular5.uniforme}}" alt="" id="player7">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular5.id"></i>
+                        <p>{{this.Visitatitular5.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular4.uniforme}}" alt="" id="player8">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular4.id"></i>
+                        <p>{{this.Visitatitular4.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular3.uniforme}}" alt="" id="player9">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular3.id"></i>
+                        <p>{{this.Visitatitular3.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular2.uniforme}}" alt="" id="player10">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular2.id"></i>
+                        <p>{{this.Visitatitular2.nombre}}</p>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular1.uniforme}}" alt="" id="portero">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular1.id"></i>
+                        <p>{{this.Visitatitular1.nombre}}</p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ********************************************************************** -->
+            <div class="container-fluid" *ngIf="Visitais4_4_2">
+                <!--***************** 4-4-2 *****************-->
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular11.uniforme}}" alt="" id="player1">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular11.id"></i>
+                        <p>{{this.Visitatitular11.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular10.uniforme}}" alt="" id="player2">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular10.id"></i>
+                        <p>{{this.Visitatitular10.nombre}}</p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular9.uniforme}}" alt="" id="player3">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular9.id"></i>
+                        <p>{{this.Visitatitular9.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular8.uniforme}}" alt="" id="player4">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular8.id"></i>
+                        <p>{{this.Visitatitular8.nombre}}</p>
+                    </div>
+
+                    <div class="player">
+                        <img src="{{this.Visitatitular7.uniforme}}" alt="" id="player5">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular7.id"></i>
+                        <p>{{this.Visitatitular7.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular6.uniforme}}" alt="" id="player6">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular6.id"></i>
+                        <p>{{this.Visitatitular6.nombre}}</p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular5.uniforme}}" alt="" id="player7">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular5.id"></i>
+                        <p>{{this.Visitatitular5.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular4.uniforme}}" alt="" id="player8">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular4.id"></i>
+                        <p>{{this.Visitatitular4.nombre}}</p>
+                    </div>
+
+                    <div class="player">
+                        <img src="{{this.Visitatitular3.uniforme}}" alt="" id="player9">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular3.id"></i>
+                        <p>{{this.Visitatitular3.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular2.uniforme}}" alt="" id="player10">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular2.id"></i>
+                        <p>{{this.Visitatitular2.nombre}}</p>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular1.uniforme}}" alt="" id="portero">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular1.id"></i>
+                        <p>{{this.Visitatitular1.nombre}}</p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ********************************************************************** -->
+            <div class="container-fluid" *ngIf="Visitais4_5_1">
+                <!--***************** 4-5-1 *****************-->
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular11.uniforme}}" alt="" id="player1">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular11.id"></i>
+                        <p>{{this.Visitatitular11.nombre}}</p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular10.uniforme}}" alt="" id="player2">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular10.id"></i>
+                        <p>{{this.Visitatitular10.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular9.uniforme}}" alt="" id="player3">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular9.id"></i>
+                        <p>{{this.Visitatitular9.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular8.uniforme}}" alt="" id="player4">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular8.id"></i>
+                        <p>{{this.Visitatitular8.nombre}}</p>
+                    </div>
+
+                    <div class="player">
+                        <img src="{{this.Visitatitular7.uniforme}}" alt="" id="player5">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular7.id"></i>
+                        <p>{{this.Visitatitular7.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular6.uniforme}}" alt="" id="player6">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular6.id"></i>
+                        <p>{{this.Visitatitular6.nombre}}</p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular5.uniforme}}" alt="" id="player7">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular5.id"></i>
+                        <p>{{this.Visitatitular5.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular4.uniforme}}" alt="" id="player8">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular4.id"></i>
+                        <p>{{this.Visitatitular4.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular3.uniforme}}" alt="" id="player9">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular3.id"></i>
+                        <p>{{this.Visitatitular3.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular2.uniforme}}" alt="" id="player10">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular2.id"></i>
+                        <p>{{this.Visitatitular2.nombre}}</p>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular1.uniforme}}" alt="" id="portero">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular1.id"></i>
+                        <p>{{this.Visitatitular1.nombre}}</p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ********************************************************************** -->
+            <div class="container-fluid" *ngIf="Visitais5_3_2">
+                <!--***************** 5_3_2 *****************-->
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular11.uniforme}}" alt="" id="player1">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular11.id"></i>
+                        <p>{{this.Visitatitular11.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular10.uniforme}}" alt="" id="player2">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular10.id"></i>
+                        <p>{{this.Visitatitular10.nombre}}</p>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="player">
+                        <img src="{{this.Visitatitular9.uniforme}}" alt="" id="player3">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular9.id"></i>
+                        <p>{{this.Visitatitular9.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular8.uniforme}}" alt="" id="player4">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular8.id"></i>
+                        <p>{{this.Visitatitular8.nombre}}</p>
+                    </div>
+
+                    <div class="player">
+                        <img src="{{this.Visitatitular7.uniforme}}" alt="" id="player5">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular7.id"></i>
+                        <p>{{this.Visitatitular7.nombre}}</p>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular6.uniforme}}" alt="" id="player6">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular6.id"></i>
+                        <p>{{this.Visitatitular6.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular5.uniforme}}" alt="" id="player7">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular5.id"></i>
+                        <p>{{this.Visitatitular5.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular4.uniforme}}" alt="" id="player8">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular4.id"></i>
+                        <p>{{this.Visitatitular4.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular3.uniforme}}" alt="" id="player9">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular3.id"></i>
+                        <p>{{this.Visitatitular3.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular2.uniforme}}" alt="" id="player10">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular2.id"></i>
+                        <p>{{this.Visitatitular2.nombre}}</p>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular1.uniforme}}" alt="" id="portero">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular1.id"></i>
+                        <p>{{this.Visitatitular1.nombre}}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ********************************************************************** -->
+
+            <div class="container-fluid" *ngIf="Visitais5_4_1">
+                <!--***************** 5_4_1 *****************-->
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular11.uniforme}}" alt="" id="player1">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular11.id"></i>
+                        <p>{{this.Visitatitular11.nombre}}</p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular10.uniforme}}" alt="" id="player2">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular10.id"></i>
+                        <p>{{this.Visitatitular10.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular9.uniforme}}" alt="" id="player3">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular9.id"></i>
+                        <p>{{this.Visitatitular9.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular8.uniforme}}" alt="" id="player4">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular8.id"></i>
+                        <p>{{this.Visitatitular8.nombre}}</p>
+                    </div>
+
+                    <div class="player">
+                        <img src="{{this.Visitatitular7.uniforme}}" alt="" id="player5">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular7.id"></i>
+                        <p>{{this.Visitatitular7.nombre}}</p>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular6.uniforme}}" alt="" id="player6">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular6.id"></i>
+                        <p>{{this.Visitatitular6.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular5.uniforme}}" alt="" id="player7">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular5.id"></i>
+                        <p>{{this.Visitatitular5.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular4.uniforme}}" alt="" id="player8">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular4.id"></i>
+                        <p>{{this.Visitatitular4.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular3.uniforme}}" alt="" id="player9">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular3.id"></i>
+                        <p>{{this.Visitatitular3.nombre}}</p>
+                    </div>
+                    <div class="player">
+                        <img src="{{this.Visitatitular2.uniforme}}" alt="" id="player10">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular2.id"></i>
+                        <p>{{this.Visitatitular2.nombre}}</p>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <img src="{{this.Visitatitular1.uniforme}}" alt="" id="portero">
+                        <i class="far fa-copyright" *ngIf="this.VisitacurrentFormation.capitan == this.Visitatitular1.id"></i>
+                        <p>{{this.Visitatitular1.nombre}}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ********************************************************************** -->
+            <!-- *************************************************************** -->
+        </div>
+        <div class="col-md-2" id="banca">
+            <div class="row">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">Banca</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="player">
+                    <img src="{{this.Visitabanca1.uniforme}}" alt="">
+                    <p>{{Visitabanca1.nombre}}</p>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="player">
+                    <img src="{{this.Visitabanca2.uniforme}}" alt="">
+                    <p>{{Visitabanca2.nombre}}</p>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="player">
+                    <img src="{{this.Visitabanca3.uniforme}}" alt="">
+                    <p>{{Visitabanca3.nombre}}</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    
+</div>

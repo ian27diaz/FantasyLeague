@@ -61,7 +61,7 @@
   </nav>
 
   <div *ngFor="let enfrentamiento of enfrentamientosJornada">
-    <div class="row teamStats" routerLink="123" routerLinkActive="active">
+    <div class="row teamStats" routerLink="123" routerLinkActive="active" (click)=abrirEnfrentamiento(enfrentamiento.id)>
         <div class="col-md-4 col-sm-10 Oscuro">
             <h3><img src={{this.equiposService.getEquipoByID(enfrentamiento.local).escudo}} alt="" class="logoImg"> {{this.equiposService.getEquipoByID(enfrentamiento.local).nombre}}</h3>
         </div>

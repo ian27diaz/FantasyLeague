@@ -12,6 +12,7 @@ import { LobbyComponent } from './lobby/lobby.component';
 
 import { EnfrentamientoComponent } from './Liga/Enfrentamientos/enfrentamiento/enfrentamiento.component';
 import { PruebaComponent } from './prueba/prueba.component';
+import { SinLigaComponent } from './sin-liga/sin-liga.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
   ]},
   {path: 'futbolistas', component: FutbolistasComponent},
   {path: 'lobby', component: LobbyComponent},
+  {path: 'sinliga', component: SinLigaComponent},
   {path: 'pruebaEnfrentamiento', component: EnfrentamientoComponent},
   {path: 'pruebita', component: PruebaComponent}
 ];
